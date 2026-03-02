@@ -46,6 +46,7 @@ const NAV_STRUCTURE: NavItem[] = [
     children: [
       { title: "센터 소개", href: "/about/intro", description: "성범죄 전문 심리치료 특화 기관" },
       { title: "원장 프로필", href: "/about/profile", description: "윤영준 원장의 전문성과 이력" },
+      { title: "부원장 프로필", href: "/about/vice-profile", description: "소윤주 부원장의 전문성과 이력" },
       { title: "대표 인사말", href: "/about/greeting", description: "재범방지 중심의 치료 철학" },
       { title: "상담전문가", href: "/about/experts", description: "검증된 성범죄 특화 전문가" },
       { title: "방송/대외활동", href: "/about/activities", description: "공신력 있는 활동 내역" },
@@ -85,6 +86,11 @@ const NAV_STRUCTURE: NavItem[] = [
       { title: "심리평가/소견서", href: "/legal/assessment", description: "재범위험성 및 인지왜곡 평가" },
       { title: "반성문 코칭", href: "/legal/coaching", description: "책임 인식 기반 진술서 가이드" },
       { title: "변호사 협업", href: "/legal/collaboration", description: "법률-심리 통합 대응 프로세스" },
+      { title: "성범죄 재범방지교육", href: "/legal/education/prevention", description: "재발 방지를 위한 핵심 교육" },
+      { title: "성인지 감수성 교육", href: "/legal/education/sensitivity", description: "성적 권리와 존중의 이해" },
+      { title: "성인지 왜곡 교정 교육", href: "/legal/education/distortion", description: "잘못된 성 관념의 인지적 교정" },
+      { title: "준법정신 강화교육", href: "/legal/education/compliance", description: "법질서 준수 및 사회적 책임" },
+      { title: "성차별 교육", href: "/legal/education/discrimination", description: "평등한 성 역할과 차별 해소" },
     ]
   },
   {
@@ -276,6 +282,9 @@ const Hero = () => (
             <Link to="/legal/info" className="px-10 py-5 bg-white text-slate-900 text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center gap-2">
               양형자료 안내
             </Link>
+            <Link to="/legal/education/prevention" className="px-10 py-5 bg-white text-slate-900 text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center gap-2">
+              재범방지교육 안내
+            </Link>
           </div>
 
           <div className="mt-16 flex items-center gap-8 border-t border-slate-200 pt-8">
@@ -300,45 +309,45 @@ const Hero = () => (
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative hidden lg:block"
+          className="relative mt-12 lg:mt-0"
         >
-          <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+          <div className="relative z-10 rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl border-4 lg:border-8 border-white">
             <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200" 
+              src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/f9a962cdba50a44e19725b3a6862df5d.png" 
               alt="Professional Counseling" 
-              className="w-full h-[600px] object-cover"
+              className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
           
-          {/* Floating Cards */}
+          {/* Floating Cards - Hidden on mobile for better focus */}
           <motion.div 
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -right-10 p-6 bg-white rounded-3xl shadow-2xl border border-slate-100 z-20 max-w-[240px]"
+            className="absolute -top-6 -right-6 lg:-top-10 lg:-right-10 p-4 lg:p-6 bg-white rounded-2xl lg:rounded-3xl shadow-2xl border border-slate-100 z-20 max-w-[180px] lg:max-w-[240px] hidden sm:block"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center">
-                <ShieldCheck className="w-6 h-6" />
+            <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg lg:rounded-xl bg-green-50 text-green-600 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 lg:w-6 lg:h-6" />
               </div>
-              <span className="font-bold text-slate-900">신뢰와 보안</span>
+              <span className="font-bold text-slate-900 text-sm lg:text-base">신뢰와 보안</span>
             </div>
-            <p className="text-xs text-slate-500 leading-relaxed">모든 상담 기록은 암호화되어 철저히 보호됩니다.</p>
+            <p className="text-[10px] lg:text-xs text-slate-500 leading-relaxed">모든 상담 기록은 암호화되어 철저히 보호됩니다.</p>
           </motion.div>
 
           <motion.div 
             animate={{ y: [0, 20, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-10 -left-10 p-6 bg-slate-900 text-white rounded-3xl shadow-2xl z-20 max-w-[240px]"
+            className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 p-4 lg:p-6 bg-slate-900 text-white rounded-2xl lg:rounded-3xl shadow-2xl z-20 max-w-[180px] lg:max-w-[240px] hidden sm:block"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                <Scale className="w-6 h-6" />
+            <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg lg:rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                <Scale className="w-5 h-5 lg:w-6 lg:h-6" />
               </div>
-              <span className="font-bold">법적 조력</span>
+              <span className="font-bold text-sm lg:text-base">법적 조력</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">전문가 소견서 및 양형자료 준비를 완벽히 지원합니다.</p>
+            <p className="text-[10px] lg:text-xs text-slate-400 leading-relaxed">전문가 소견서 및 양형자료 준비를 완벽히 지원합니다.</p>
           </motion.div>
 
           {/* Decorative Circles */}
@@ -501,11 +510,11 @@ const HomeExperts = () => (
             image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png" 
           },
           { 
-            name: "김도윤 부원장", 
-            role: "범죄심리학 박사", 
-            tags: ["재범위험성 평가", "디지털 성범죄"],
-            desc: "디지털 성범죄의 심리적 기제 분석 전문가로, 인지 왜곡 교정 프로그램 개발을 주도하고 있습니다. IT 기술과 심리학을 결합한 고도화된 치료 솔루션을 제시합니다.",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=500" 
+            name: "소윤주 부원장", 
+            role: "부원장 / 기능의학·최면 전문가", 
+            tags: ["기능의학", "최면전문가", "MHS전문가"],
+            desc: "원광대 의대 출신의 기능의학 전문가이자 최면 치료 전문가입니다. 몸과 마음의 통합적 치유를 위해 기능의학, 명상, 심신정화 식이요법을 결합한 독창적인 MHS 프로그램을 운영합니다.",
+            image: "https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
           },
           { 
             name: "박지은 수석상담사", 
@@ -931,8 +940,16 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
     className="bg-white min-h-screen"
   >
     {/* Page Header */}
-    <div className="bg-slate-900 py-24 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-slate-900 py-32 text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src={`https://picsum.photos/seed/case-${slug}/1920/1080`} 
+          alt="Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/" className="inline-flex items-center gap-2 text-indigo-400 font-bold mb-8 hover:text-indigo-300 transition-colors">
           <ArrowLeft className="w-4 h-4" />
           사건유형 전체보기
@@ -1074,8 +1091,16 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
     className="bg-white min-h-screen"
   >
     {/* Page Header */}
-    <div className="bg-indigo-600 py-24 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-indigo-600 py-32 text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src={`https://picsum.photos/seed/treat-${slug}/1920/1080`} 
+          alt="Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/" className="inline-flex items-center gap-2 text-indigo-200 font-bold mb-8 hover:text-white transition-colors">
           <ArrowLeft className="w-4 h-4" />
           상담/치료 전체보기
@@ -1175,14 +1200,151 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
   </motion.div>
 );
 
+const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
+  const getEducationDetails = (slug: string) => {
+    switch (slug) {
+      case 'prevention':
+        return {
+          subtitle: "재발 방지를 위한 핵심 심리 교육",
+          details: [
+            "성범죄 발생의 심리적 기제 분석",
+            "재범 위험 요인 파악 및 통제 전략",
+            "충동 조절 및 상황 대처 훈련",
+            "건강한 성적 가치관 확립"
+          ]
+        };
+      case 'sensitivity':
+        return {
+          subtitle: "성적 권리와 존중의 이해",
+          details: [
+            "성인지 감수성의 개념과 중요성",
+            "성적 자기결정권의 이해",
+            "일상 속의 성차별적 요소 인지",
+            "타인의 성적 경계 존중하기"
+          ]
+        };
+      case 'distortion':
+        return {
+          subtitle: "잘못된 성 관념의 인지적 교정",
+          details: [
+            "성 관련 인지 왜곡의 유형 파악",
+            "피해자 유발론 등 잘못된 신념 교정",
+            "객관적 상황 판단 능력 배양",
+            "공감 능력 향상 프로그램"
+          ]
+        };
+      case 'compliance':
+        return {
+          subtitle: "법질서 준수 및 사회적 책임",
+          details: [
+            "성범죄 관련 법률 체계 이해",
+            "범죄 행위의 사회적 파급력 인식",
+            "준법 의식 내면화 과정",
+            "사회 복귀를 위한 책임감 강화"
+          ]
+        };
+      case 'discrimination':
+        return {
+          subtitle: "평등한 성 역할과 차별 해소",
+          details: [
+            "성차별의 역사적·사회적 배경",
+            "고정관념 탈피와 다양성 존중",
+            "평등한 소통 방식 연습",
+            "건강한 공동체 의식 함양"
+          ]
+        };
+      default:
+        return {
+          subtitle: "법원 제출용 전문 교육 이수 프로그램입니다.",
+          details: [
+            "전문 커리큘럼 이수",
+            "심리 상태 분석 및 평가",
+            "변화 양상 기록",
+            "이수 확인서 발급"
+          ]
+        };
+    }
+  };
+
+  const content = getEducationDetails(slug);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="bg-white min-h-screen"
+    >
+      <div className="bg-slate-50 py-24 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">{title}</h1>
+          <p className="text-lg text-slate-500">{content.subtitle}</p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">교육 프로그램 상세</h2>
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                  <BookOpen className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-4">주요 교육 내용</h4>
+                  <ul className="space-y-3">
+                    {content.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-slate-600">
+                        <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">이수 확인서 발급</h4>
+                  <p className="text-slate-500 text-sm leading-relaxed">교육 이수 후 법원 및 검찰 제출용 공식 이수 확인서와 전문가 소견서를 발급해 드립니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="rounded-[40px] overflow-hidden shadow-2xl">
+              <img 
+                src={`https://picsum.photos/seed/edu-${slug}/800/600`} 
+                alt={title} 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const LegalPage = () => (
   <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     className="bg-slate-50 min-h-screen"
   >
-    <div className="bg-slate-900 py-32 text-white text-center">
-      <div className="max-w-4xl mx-auto px-4">
+    <div className="relative bg-slate-900 py-40 text-white text-center overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1920" 
+          alt="Legal Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
         <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">법원·검찰 제출용 양형자료</h1>
         <p className="text-xl text-slate-400 leading-relaxed">
           심리치료는 당신의 진지한 반성과 재범 방지 의지를 입증하는 객관적인 증거입니다.
@@ -1209,7 +1371,7 @@ const LegalPage = () => (
 
       <div className="mt-24 bg-white rounded-[40px] p-12 lg:p-20 shadow-sm border border-slate-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="order-2 lg:order-1">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">왜 심리치료가 양형에 중요한가요?</h2>
             <div className="space-y-8">
               <div className="flex gap-6">
@@ -1232,23 +1394,40 @@ const LegalPage = () => (
               </div>
             </div>
           </div>
-          <div className="bg-slate-900 rounded-3xl p-10 text-white">
-            <h3 className="text-2xl font-bold mb-8">자료 발급 프로세스</h3>
-            <div className="space-y-6">
-              {[
-                "1. 초기 상담 및 심리 평가 실시",
-                "2. 맞춤형 교정 프로그램 이수 (최소 8회기 이상 권장)",
-                "3. 중간/종결 평가 및 변화 분석",
-                "4. 전문가 소견서 및 평가 보고서 작성",
-                "5. 변호인 협의 후 법원/검찰 제출"
-              ].map((step, idx) => (
-                <div key={idx} className="text-slate-300 font-medium">{step}</div>
-              ))}
+          <div className="order-1 lg:order-2">
+            <div className="rounded-3xl overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" 
+                alt="Legal Consultation" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <button className="w-full mt-12 py-4 bg-[#4F46E5] text-white font-bold rounded-2xl hover:bg-[#4338ca] transition-all">
-              양형자료 관련 상담 신청
-            </button>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-24">
+        <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">성범죄 재범방지 교육 프로그램</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: "성범죄 재범방지교육", href: "/legal/education/prevention", desc: "재발 방지를 위한 핵심 심리 교육" },
+            { title: "성인지 감수성 교육", href: "/legal/education/sensitivity", desc: "성적 권리와 존중의 이해" },
+            { title: "성인지 왜곡 교정 교육", href: "/legal/education/distortion", desc: "잘못된 성 관념의 인지적 교정" },
+            { title: "준법정신 강화교육", href: "/legal/education/compliance", desc: "법질서 준수 및 사회적 책임" },
+            { title: "성차별 교육", href: "/legal/education/discrimination", desc: "평등한 성 역할과 차별 해소" }
+          ].map((edu, idx) => (
+            <Link key={idx} to={edu.href} className="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{edu.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">{edu.desc}</p>
+              <div className="text-[#4F46E5] text-sm font-bold flex items-center gap-1">
+                상세보기 <ArrowRight className="w-4 h-4" />
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -1274,7 +1453,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       {slug === 'intro' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-3xl font-bold text-slate-900">설립 목적 및 차별점</h2>
             <p className="text-slate-600 leading-relaxed">
@@ -1285,14 +1464,24 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
               <p className="text-indigo-100">우리는 내담자가 자신의 책임을 온전히 인식하고, 변화된 삶을 살 수 있도록 돕는 것을 사명으로 합니다.</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-4">
-            <div className="p-6 rounded-2xl border border-slate-100 shadow-sm">
-              <h4 className="font-bold text-slate-900 mb-2">재범방지 중심 구조</h4>
-              <p className="text-sm text-slate-500">단순 정서 지원을 넘어 행동 교정과 재발 방지 루틴 설계에 집중합니다.</p>
+          <div className="relative">
+            <div className="rounded-[48px] overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
+                alt="Center Interior" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <div className="p-6 rounded-2xl border border-slate-100 shadow-sm">
-              <h4 className="font-bold text-slate-900 mb-2">법적 절차 이해 기반</h4>
-              <p className="text-sm text-slate-500">수사 및 재판 과정에서 필요한 심리적 안정과 객관적 평가를 지원합니다.</p>
+            <div className="absolute -bottom-8 -right-8 grid grid-cols-1 gap-4 w-64">
+              <div className="p-6 rounded-2xl bg-white shadow-xl border border-slate-100">
+                <h4 className="font-bold text-slate-900 mb-2">재범방지 중심 구조</h4>
+                <p className="text-xs text-slate-500">단순 정서 지원을 넘어 행동 교정과 재발 방지 루틴 설계에 집중합니다.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-white shadow-xl border border-slate-100">
+                <h4 className="font-bold text-slate-900 mb-2">법적 절차 이해 기반</h4>
+                <p className="text-xs text-slate-500">수사 및 재판 과정에서 필요한 심리적 안정과 객관적 평가를 지원합니다.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1330,14 +1519,17 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                 </ul>
               </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <section className="bg-slate-50/50 p-8 rounded-[32px] border border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-2">
                   <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
                   전문 자격 및 국제 인증
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">미국최면사고시위원회 (ACHE)</h4>
+                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h4 className="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <Globe className="w-4 h-4 text-indigo-500" />
+                      미국최면사고시위원회 (ACHE)
+                    </h4>
                     <ul className="space-y-2 text-sm text-slate-600">
                       <li>• 국제 최면전문가 (International Master Hypnotist)</li>
                       <li>• 국제 최면치료사 (International Hypnotherapist)</li>
@@ -1345,8 +1537,11 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                       <li>• 국제 의학최면치료사 (International Medical Hypnotherapist)</li>
                     </ul>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">미국 최면대학 (HCC)</h4>
+                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h4 className="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-indigo-500" />
+                      미국 최면대학 (HCC)
+                    </h4>
                     <ul className="space-y-2 text-sm text-slate-600">
                       <li>• 최면전문가 (Master Hypnotist)</li>
                       <li>• 최면치료사 (Hypnotherapist)</li>
@@ -1355,12 +1550,30 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                     </ul>
                   </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-slate-50">
-                   <h4 className="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">NLP 및 코칭</h4>
-                   <ul className="space-y-2 text-sm text-slate-600">
-                      <li>• NLP 프랙티셔너 / 마스터 프랙티셔너</li>
-                      <li>• NLP 프로코치 (전문가)</li>
-                   </ul>
+                <div className="mt-8 pt-8 border-t border-slate-200/50">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                       <h4 className="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                         <Zap className="w-4 h-4 text-indigo-500" />
+                         NLP 및 코칭
+                       </h4>
+                       <ul className="space-y-2 text-sm text-slate-600">
+                          <li>• NLP 프랙티셔너 / 마스터 프랙티셔너</li>
+                          <li>• NLP 프로코치 (전문가)</li>
+                       </ul>
+                     </div>
+                     <div className="bg-indigo-600 p-6 rounded-2xl shadow-xl shadow-indigo-100 border border-indigo-500">
+                       <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                         <ShieldCheck className="w-4 h-4 text-indigo-200" />
+                         기타 전문 자격
+                       </h4>
+                       <ul className="space-y-2 text-sm text-indigo-50">
+                          <li>• 성폭력 전문 상담사</li>
+                          <li>• 가정폭력 전문 상담사</li>
+                          <li>• 뇌교육 상담사</li>
+                       </ul>
+                     </div>
+                   </div>
                 </div>
               </section>
 
@@ -1370,11 +1583,11 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                   주요 학회 및 활동
                 </h3>
                 <ul className="space-y-3 text-slate-600">
-                  <li>• 기학아카데미 교육원장</li>
+                  <li>• 성범죄심리상담학회 회장</li>
                   <li>• 미국 로렐라이즈 메디테이션 센터 원장</li>
-                  <li>• 프라나요가협회 회장</li>
-                  <li>• 제5심리과학회 회장</li>
-                  <li>• 동서통합심리상담학회 회장</li>
+                  <li>• (전)제5심리과학회 회장</li>
+                  <li>• (전)동서통합심리상담학회 회장</li>
+                  <li>• 사단법인 장애어린이집 이사</li>
                 </ul>
               </section>
 
@@ -1404,9 +1617,125 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                     <h4 className="font-bold text-slate-800 mb-3">기업 및 관공서</h4>
                     <p>삼성, LG, 대우, 기아자동차, 웅진코웨이, SK가스 등 대기업 임직원 대상 심리 프로그램 진행. 경찰서(상주, 군위, 구미, 점촌), 구미시청 등 관공서 출강 및 상담.</p>
                   </div>
+                  <div className="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
+                    <h4 className="font-bold text-indigo-900 mb-3">공공 및 사회 활동 (성범죄 및 위기 상담 특화)</h4>
+                    <ul className="space-y-2 text-indigo-800">
+                      <li>• 대구가정법원 위탁보호위원</li>
+                      <li>• 경북권 전경, 의경 담당 심리상담사</li>
+                      <li>• 경북 소방대원 심리상담 및 교육</li>
+                      <li>• 학교폭력 자치위원, 경북교육지원청 위원 활동</li>
+                      <li>• 청소년 대상 인터넷 중독 및 자살 예방 교육 전문 강사</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  저서 및 논문
+                </h3>
+                <div className="space-y-6 text-slate-600">
                   <div>
-                    <h4 className="font-bold text-slate-800 mb-3">공공 및 사회 활동</h4>
-                    <p>대구가정법원 위탁보호위원, 학교폭력 자치위원, 경북교육지원청 위원 활동. 청소년 대상 인터넷 중독 및 자살 예방 교육 전문 강사.</p>
+                    <h4 className="font-bold text-slate-800 mb-2">주요 저서</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li>• 삶과 운명을 바꾸는 마음의 기술 (부제: 내면을 깨우면 무엇이든 가능하다)</li>
+                      <li>• 자기탐구 내면아이 워크북</li>
+                      <li>• The Secret of Korean Power (영문판)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">출판 예정</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li>• 리얼리티 코드 (부제: 당신의 현실을 다시 쓰는 법)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">학술 논문</h4>
+                    <p className="text-sm">• 정서인식명확성이 청소년의 학업스트레스로 인한 우울에 미치는 영향 연구</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {slug === 'vice-profile' && (
+        <div className="space-y-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            <div className="lg:col-span-1 sticky top-32">
+              <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <img 
+                  src="https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
+                  alt="소윤주 부원장" 
+                  className="w-full aspect-[3/4] object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold text-slate-900">소윤주 <span className="text-lg font-medium text-slate-500">부원장</span></h3>
+                <p className="text-[#4F46E5] font-bold">기능의학전문가 │ 최면전문가 │ MHS전문가</p>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-2 space-y-16">
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  학력 및 약력
+                </h3>
+                <ul className="space-y-3 text-slate-600">
+                  <li>• 원광대학교 의과대학</li>
+                  <li>• 전) 부산서울피부과의원</li>
+                  <li>• 전) 대전 DS피부과의원</li>
+                  <li>• 전) 대전 J의원</li>
+                  <li>• 전) 대구 파르베의원</li>
+                  <li>• 현) 미안의원 부원장</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  주요 학회 활동
+                </h3>
+                <ul className="space-y-3 text-slate-600">
+                  <li>• 제5심리과학학회 이사</li>
+                  <li>• 동서통합심리학회 이사</li>
+                  <li>• 대한레이저피부모발학회</li>
+                  <li>• 대한미용성형레이저학회</li>
+                  <li>• 대한일차진료학회</li>
+                  <li>• 대한필러학회</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  방송활동 및 출강
+                </h3>
+                <div className="space-y-8 text-sm text-slate-600 leading-relaxed">
+                  <p>• KBS '동행', MBC 등 다수 방송 출연</p>
+                  <p>• 고용노동부, 교육지원청, 한화글로벌, 삼성탈레스, 한화, LG 이노텍 등 다수 기업 및 관공서 강의</p>
+                  <p>• 중·고, 대학교 인터넷 중독예방, 자살예방교육 강의, 심리검사 및 교육</p>
+                  <p>• 서리풀 타임즈 의학부(의과학) 칼럼위원</p>
+                  <p>• 뇌과학기술인협회, 나우명상</p>
+                </div>
+              </section>
+
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  저서 및 강의내용
+                </h3>
+                <div className="space-y-6 text-slate-600">
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">저서</h4>
+                    <p>회복과 성장, 심신건강 최면치료</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">강의내용</h4>
+                    <p>몸, 마음 건강과 기능의학, 명상과 건강, 명상과 심신건강, 심신정화를 위한 식이요법</p>
                   </div>
                 </div>
               </section>
@@ -1447,9 +1776,24 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "윤영준 원장", role: "상담학 박사 / 국제 임상최면치료사", image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png" },
-              { name: "김도윤 부원장", role: "범죄심리학 박사 / 재범위험성 평가 전문가", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200" },
-              { name: "박지은 실장", role: "청소년 성범죄 상담 / 놀이치료 전문가", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200" }
+              { 
+                name: "윤영준 원장", 
+                role: "상담학 박사 / 국제 임상최면치료사", 
+                image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png",
+                desc: "성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임."
+              },
+              { 
+                name: "소윤주 부원장", 
+                role: "기능의학 / 최면 / MHS 전문가", 
+                image: "https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg",
+                desc: "기능의학 기반의 심신 통합 치유 전문가."
+              },
+              { 
+                name: "박지은 실장", 
+                role: "청소년 성범죄 상담 / 놀이치료 전문가", 
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
+                desc: "아청법 사건 및 가족 시스템 치료 전문가."
+              }
             ].map((expert, idx) => (
               <div key={idx} className="text-center group">
                 <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
@@ -1457,7 +1801,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-1">{expert.name}</h3>
                 <p className="text-sm text-[#4F46E5] font-bold mb-4">{expert.role}</p>
-                <p className="text-xs text-slate-500 leading-relaxed px-8">성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임.</p>
+                <p className="text-xs text-slate-500 leading-relaxed px-8">{expert.desc}</p>
               </div>
             ))}
           </div>
@@ -1766,7 +2110,7 @@ export default function App() {
               <React.Fragment key={child.href}>
                 <Route 
                   path={child.href} 
-                  element={<PlaceholderPage title={child.title} />} 
+                  element={child.href.includes('/education/') ? <EducationPage title={child.title} slug={child.href.split('/').pop() || ''} /> : <PlaceholderPage title={child.title} />} 
                 />
               </React.Fragment>
             ))}
