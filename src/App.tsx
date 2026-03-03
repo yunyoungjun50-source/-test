@@ -141,7 +141,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-base lg:text-lg font-bold tracking-tight text-slate-900 leading-none">
+              <span className="text-sm lg:text-lg font-bold tracking-tight text-slate-900 leading-none">
                 성범죄심리상담치료센터<span className="text-[#4F46E5]">부산</span>
               </span>
               <span className="text-[10px] lg:text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-0.5">Busan Center</span>
@@ -1053,7 +1053,7 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
 
         {/* Sidebar Sticky */}
         <div className="lg:col-span-1">
-          <div className="sticky top-32 space-y-6">
+          <div className="lg:sticky lg:top-32 space-y-6">
             <div className="p-8 rounded-3xl bg-[#4F46E5] text-white shadow-xl shadow-indigo-200">
               <h3 className="text-xl font-bold mb-4">양형자료 연계</h3>
               <p className="text-indigo-100 text-sm leading-relaxed mb-6">
@@ -1556,12 +1556,12 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
       {slug === 'profile' && (
         <div className="space-y-24">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            <div className="lg:col-span-1 sticky top-32">
+            <div className="lg:col-span-1 lg:sticky lg:top-32">
               <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <img 
                   src="https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png" 
                   alt="윤영준 원장" 
-                  className="w-full aspect-[3/4] object-cover"
+                  className="w-full aspect-square lg:aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -1729,12 +1729,12 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
       {slug === 'vice-profile' && (
         <div className="space-y-24">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            <div className="lg:col-span-1 sticky top-32">
+            <div className="lg:col-span-1 lg:sticky lg:top-32">
               <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <img 
                   src="https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
                   alt="소윤주 부원장" 
-                  className="w-full aspect-[3/4] object-cover"
+                  className="w-full aspect-square lg:aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
