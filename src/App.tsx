@@ -768,6 +768,648 @@ const Footer = () => (
 
 // --- Pages ---
 
+const JuvenileCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 분석 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태 분석
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">아동·청소년 관련 사건은 법적·사회적 파장이 크고, 수사 과정 또한 매우 엄격하게 진행됩니다.</p>
+            <p>사건에 연루된 많은 분들이 이렇게 말씀하십니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“이렇게까지 커질 줄 몰랐습니다.”</p>
+              <p>“단순한 대화라고 생각했습니다.”</p>
+              <p>“상대가 미성년자인 줄 몰랐습니다.”</p>
+              <p>“순간적인 충동이었고, 깊이 생각하지 못했습니다.”</p>
+            </div>
+            <p>지금 가장 힘든 것은 법적 처벌의 두려움, 그리고 동시에 가족과 사회에 대한 죄책감, 수치심, 혼란일 것입니다. 저희 센터는 비난이 아닌 사실 기반 분석과 심리 구조 이해를 통해, 당신이 현재 상황을 정리하고 재발을 막을 수 있도록 돕습니다.</p>
+          </div>
+        </div>
+        <div className="relative">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5b23ae94a4d182dd2f6590a7e39c8e28.png" 
+            alt="Juvenile Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic">"행동을 가능하게 만든 심리 구조를 분석하지 않으면, 재발 방지는 불가능합니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { 
+            title: "① 인지 왜곡", 
+            items: ["“상대가 동의했다.”", "“요즘은 다 이런다.”", "“실제 접촉은 없었다.”", "“사진만 본 건데 큰 문제인가?”"] 
+          },
+          { 
+            title: "② 충동 및 자극 의존", 
+            items: ["음주 후 반복되는 행동", "야동·음란채팅 중독", "스트레스 해소 방식의 왜곡", "디지털 환경 속 점진적 둔감화"] 
+          },
+          { 
+            title: "③ 정서적 결핍", 
+            items: ["인정 욕구 및 관계 단절감", "통제감 상실", "현실 관계에서의 좌절", "왜곡된 친밀감 추구"] 
+          }
+        ].map((group, idx) => (
+          <div key={idx} className="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+            <h4 className="font-bold text-slate-900 mb-4">{group.title}</h4>
+            <ul className="space-y-2 text-sm text-slate-500">
+              {group.items.map((item, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-indigo-400">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          저희 센터의 목표는 단순한 “반성문 작성”이 아닙니다. <br />
+          진짜 목표는 재범 방지와 심리 구조 교정입니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { title: "인지 왜곡 교정", icon: Zap },
+            { title: "충동 조절 훈련", icon: ShieldCheck },
+            { title: "성적 자극 재구조화", icon: Search },
+            { title: "정서 회복 및 자기통제", icon: Users }
+          ].map((item, idx) => (
+            <div key={idx} className="p-6 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <item.icon className="w-8 h-8 text-indigo-400 mx-auto mb-4" />
+              <h4 className="font-bold">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 p-8 rounded-3xl bg-indigo-600/20 border border-indigo-500/30 text-center">
+          <p className="text-lg leading-relaxed">
+            저희는 상담 과정을 통해 <br />
+            <span className="text-white font-bold">“나는 왜 그 행동을 했는가?” → “다시는 하지 않기 위해 무엇을 바꿀 것인가?”</span> <br />
+            이 질문에 구체적으로 답하도록 돕습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응 (아동청소년법 특화)
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>아동청소년법 사건은 <span className="font-bold text-slate-900">재범 위험성 판단</span>이 핵심 요소입니다.</p>
+            <p>저희 센터는 단순한 형식적 문서가 아니라, 객관적 심리 변화와 구조적 개선을 보여주는 전문적 심리 보고를 제공합니다.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+              {[
+                { title: "심리 평가", desc: "객관적 지표를 통한 진단" },
+                { title: "변화 과정 기록", desc: "상담 참여 및 인식 변화" },
+                { title: "재범방지 계획", desc: "구체적이고 실천적인 전략" }
+              ].map((item, idx) => (
+                <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="font-bold text-slate-900 mb-2">{item.title}</div>
+                  <div className="text-xs text-slate-500">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">이런 분들께 권합니다</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 수사 중 불안과 공황을 겪는 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 재범이 두려운 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 양형자료 준비가 필요한 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 성적 충동을 통제하고 싶은 분</li>
+            </ul>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const TongmaeumCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">통신매체이용음란 사건은 대부분 온라인 공간에서 발생합니다.</p>
+            <p>상담실에서 많은 분들이 이렇게 말합니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“장난처럼 시작했습니다.”</p>
+              <p>“상대가 불쾌할 거라고 깊이 생각하지 못했습니다.”</p>
+              <p>“온라인이라 현실과 다르게 느껴졌습니다.”</p>
+            </div>
+            <p>디지털 환경은 익명성과 거리감을 제공합니다. 이 거리감은 순간적으로 공감 기능을 약화시키고, 충동을 빠르게 행동으로 연결시킬 수 있습니다.</p>
+            <p className="bg-indigo-50 p-6 rounded-2xl text-indigo-900 font-medium">
+              사건을 정확히 이해하는 것이 재발 방지의 출발점입니다. 저희 센터는 그 당시의 심리 상태를 구조적으로 분석합니다.
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/f178f4a48cb6a50a5a1352119518e6e3.png" 
+            alt="Tongmaeum Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic">"중요한 것은 환경을 피하는 것이 아니라 그 안에서 스스로를 통제할 수 있는 능력을 갖추는 것입니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "작동 감정 분석", desc: "당시 어떤 감정이 작동했는지" },
+          { title: "행동 정당화 기제", desc: "어떤 생각이 행동을 정당화했는지" },
+          { title: "반복 가능성 탐색", desc: "반복 가능성은 어디에서 비롯되는지" }
+        ].map((item, idx) => (
+          <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+            <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+            <p className="text-sm text-slate-500">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          통신매체이용음란 문제의 핵심은 <br />
+          “다시는 같은 상황에서 같은 선택을 하지 않도록 만드는 것”입니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: "왜곡된 인식 교정", icon: Zap },
+            { title: "디지털 충동 관리 훈련", icon: ShieldCheck },
+            { title: "공감 능력 회복", icon: Users },
+            { title: "자극-행동 구조 분석", icon: Search },
+            { title: "현실적 재발 방지 계획", icon: ClipboardCheck }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+              <item.icon className="w-8 h-8 text-indigo-400 mb-6" />
+              <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 p-8 rounded-3xl bg-indigo-600/20 border border-indigo-500/30 text-center">
+          <p className="text-lg leading-relaxed">
+            후회만으로는 구조가 바뀌지 않을 수 있습니다. <br />
+            막연한 다짐이 아니라 구조적 변화가 필요합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>통신매체이용음란 사건에서는 <span className="font-bold text-slate-900">온라인에서의 인식 변화와 책임 인식의 성숙</span>이 중요합니다.</p>
+            <p>저희 센터는 상담을 통해 형성된 변화의 흐름을 차분하고 전문적인 기준 안에서 정리합니다. 형식적인 반성이 아니라 실질적인 인식 전환과 재발 방지 의지가 자연스럽게 드러나도록 준비합니다.</p>
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 mt-8">
+              <p className="text-slate-900 font-medium italic">이러한 과정은 현재의 상태와 앞으로의 가능성을 설명하는 자료로서 의미 있게 참고될 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">전문적 정리</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              변화의 흐름을 전문적인 기준 안에서 정리하여 실질적인 인식 전환을 보여줍니다.
+            </p>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const DeepfakeCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">딥페이크 및 합성물 사건은 직접적인 접촉이 없다는 이유로 처음에는 심각하게 인식되지 않는 경우가 많습니다.</p>
+            <p>많은 내담자들이 이렇게 말합니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“실제 촬영은 아니었습니다.”</p>
+              <p>“장난처럼 시작했습니다.”</p>
+              <p>“온라인에서 흔히 보이는 일이라고 생각했습니다.”</p>
+            </div>
+            <p>그러나 시간이 지나면서 상황의 무게를 체감하게 됩니다. 딥페이크·합성물은 기술의 문제처럼 보이지만 실제로는 심리 구조의 문제일 수 있습니다.</p>
+            <p className="bg-indigo-50 p-6 rounded-2xl text-indigo-900 font-medium">
+              특히 온라인 환경은 “가상”이라는 착각을 만들지만, 결과는 현실에 영향을 줍니다. 사건 이후 남는 것은 강한 불안과 자기 의문입니다.
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/67d97b84c9f7063f52c317540fa1688a.png" 
+            alt="Deepfake Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic">"정확한 이해가 변화의 시작입니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: "현실감 약화", desc: "디지털 공간에서의 현실감 약화" },
+          { title: "대상 거리감", desc: "대상에 대한 심리적 거리감" },
+          { title: "인지 왜곡", desc: "‘직접적인 피해가 아닐 것’이라는 왜곡" },
+          { title: "자극 추구 패턴", desc: "자극 추구 성향과 반복 패턴" }
+        ].map((item, idx) => (
+          <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+            <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+            <p className="text-sm text-slate-500">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          딥페이크·합성물 문제의 핵심은 기술을 멈추는 것이 아니라 <br />
+          왜곡된 인식과 충동 구조를 교정하는 것입니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: "왜곡된 인지 교정", icon: Zap },
+            { title: "디지털 책임 인식 강화", icon: ShieldCheck },
+            { title: "공감 능력 회복", icon: Users },
+            { title: "자극-행동 구조 분석", icon: Search },
+            { title: "재발 방지 계획 수립", icon: ClipboardCheck }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+              <item.icon className="w-8 h-8 text-indigo-400 mb-6" />
+              <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 p-8 rounded-3xl bg-indigo-600/20 border border-indigo-500/30 text-center">
+          <p className="text-lg leading-relaxed">
+            충동은 억제만으로는 사라지지 않습니다. 이해하고 재구성해야 약화됩니다. <br />
+            막연한 다짐이 아니라 구조적 변화가 필요합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>사건 이후 많은 분들이 느끼는 것은 불안과 막막함입니다. <span className="font-bold text-slate-900">“내가 어떤 노력을 하고 있다는 것을 과연 어떻게 전달할 수 있을까.”</span></p>
+            <p>중요한 것은 말의 길이가 아니라 과정의 존재입니다. 상담은 단순한 참여가 아니라 시간을 들여 이어가는 변화의 흐름입니다. 그 흐름은 스스로에게도, 그리고 외부에서도 확인 가능한 형태로 남을 필요가 있습니다.</p>
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 mt-8">
+              <p className="text-slate-900 font-medium italic">시간을 들여 이어온 상담의 과정은 그 자체로 현재의 상태와 앞으로의 가능성을 설명하는 근거가 되며, 이러한 정리된 변화의 흐름은 판단 과정에서 의미 있게 참고될 수 있습니다.</p>
+            </div>
+            <p className="text-xl font-bold text-[#4F46E5] mt-8">결국 중요한 것은 말이 아니라 과정이며, 그 과정이 정리될 때 변화는 더욱 설득력을 갖습니다.</p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">안전한 출발</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              딥페이크·합성물 사건은 “가상이었다”는 이유로 가볍게 끝나지 않습니다. 그 선택의 구조를 이해하고 다시는 같은 판단을 반복하지 않도록 준비하는 것이 진짜 대응입니다.
+            </p>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const FilmingCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">최근 불법촬영 사건의 상당수는 휴대전화 카메라를 이용한 ‘카촬’ 형태로 발생합니다.</p>
+            <p>많은 내담자들이 상담실에서 이렇게 말합니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“그때는 들킬 거라고 생각하지 못했습니다.”</p>
+              <p>“순간적인 호기심이었습니다.”</p>
+              <p>“심각성을 제대로 인식하지 못했습니다.”</p>
+              <p>“지금 생각하면 왜 그랬는지 스스로도 이해가 안 됩니다.”</p>
+            </div>
+            <p>카촬은 대부분 계획적 범죄라기보다 짧은 순간의 충동과 왜곡된 판단에서 시작됩니다. 디지털 환경은 판단을 빠르게 만들고, 충동을 더 쉽게 행동으로 연결시킵니다.</p>
+            <p className="bg-indigo-50 p-6 rounded-2xl text-indigo-900 font-medium">
+              사건을 정확히 이해하는 것이 재발 방지의 시작입니다. 저희 센터는 그 순간의 심리 구조를 함께 정리합니다.
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/a2e502646d4ab5610566f267760a51ca.png" 
+            alt="Filming Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic">"환경을 없애는 것이 아니라 그 안에서 통제 가능한 자신을 만드는 것이 목표입니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: "자기 합리화", desc: "‘한 번쯤은 괜찮겠지’라는 생각" },
+          { title: "거리감/비현실감", desc: "화면 속 대상에 대한 거리감" },
+          { title: "현실감 약화", desc: "디지털 환경에서의 판단력 저하" },
+          { title: "즉각적 반응", desc: "자극에 대한 즉각적 충동 반응" }
+        ].map((item, idx) => (
+          <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+            <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+            <p className="text-sm text-slate-500">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          카촬 문제의 핵심은 단순한 반성이 아니라 반복 가능성의 차단입니다. <br />
+          디지털 자극은 계속 존재합니다. 환경을 피하는 것이 아니라 통제력을 갖추는 것이 핵심입니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: "인지 및 합리화 교정", icon: Zap },
+            { title: "디지털 충동 관리 훈련", icon: ShieldCheck },
+            { title: "자극-행동 구조 분석", icon: Search },
+            { title: "공감 능력 회복", icon: Users },
+            { title: "현실적 재발 방지 계획", icon: ClipboardCheck }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+              <item.icon className="w-8 h-8 text-indigo-400 mb-6" />
+              <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 p-8 rounded-3xl bg-indigo-600/20 border border-indigo-500/30 text-center">
+          <p className="text-lg leading-relaxed">
+            충동은 억누르는 것이 아니라 이해하고 재구성해야 줄어듭니다. <br />
+            막연한 다짐이 아니라 구조적인 변화가 필요합니다.
+          </p>
+          <p className="text-2xl font-bold mt-6 text-indigo-300">
+            “다시는 안 하겠다”는 다짐이 실질적인 결과로 이어지는 과정을 만듭니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>사건 이후 많은 분들이 <span className="font-bold text-slate-900">“내가 정말 변화하고 있다는 것을 어떻게 보여줄 수 있을까”</span> 고민합니다.</p>
+            <p>저희 센터는 상담 과정을 기반으로 양형자료를 체계적으로 정리합니다. 이는 형식적인 반성문이 아니라 실제 변화의 과정을 담은 자료입니다.</p>
+            <p>구체적인 노력과 구조화된 변화는 법원의 양형 판단 과정에서 의미 있게 참고될 수 있습니다.</p>
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 mt-8">
+              <p className="text-slate-900 font-medium">카촬 문제는 “한 번의 실수”로만 정리되기 어렵습니다. 그 순간을 이해하고 다시는 같은 선택을 반복하지 않도록 준비하는 것, 그것이 진짜 대응입니다.</p>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">변화의 시작</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              혼자 고민하며 불안을 키우기보다 지금 이 시점에서 구조를 정리하는 것이 가장 안전한 선택일 수 있습니다.
+            </p>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const MolestationCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">강제추행 사건은 단순한 “신체 접촉”의 문제가 아닙니다. <br />그 순간, 무엇이 판단을 흐리게 했는가가 핵심입니다.</p>
+            <p>많은 내담자들은 이렇게 말합니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“의도는 그게 아니었습니다.”</p>
+              <p>“분위기를 오해했습니다.”</p>
+              <p>“순간적으로 선을 넘었습니다.”</p>
+            </div>
+            <p>그러나 그 이면에는 감정 조절의 취약성, 성인지 왜곡, 관계 해석의 오류, 충동과 합리화가 동시에 작동한 심리 구조가 존재하는 경우가 많습니다.</p>
+            <p className="bg-rose-50 p-6 rounded-2xl text-rose-900 font-medium">
+              사건을 정확히 이해하지 못하면 반성은 감정에 머무르고, 변화는 구조로 이어지지 않습니다.
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/fff22c558386aeb6f29c77afcb70056b.png" 
+            alt="Molestation Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic">"사건을 객관적으로 해부해야 재발 가능성을 낮출 수 있습니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: "상황 인식 왜곡", desc: "상황 인식은 어떻게 왜곡되었는가" },
+          { title: "의사 해석 오류", desc: "상대의 의사를 왜 잘못 해석했는가" },
+          { title: "감정-충동 연결", desc: "충동은 어떤 감정과 연결되어 있었는가" },
+          { title: "반복 위험 요인", desc: "반복 위험 요인은 무엇인가" }
+        ].map((item, idx) => (
+          <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+            <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+            <p className="text-sm text-slate-500">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          강제추행 대응의 핵심은 “다시는 같은 상황을 만들지 않는 것”입니다. <br />
+          상담은 단순한 반성 유도가 아닙니다. 행동의 구조를 바꾸는 과정입니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: "성인지 왜곡 교정", icon: Zap },
+            { title: "충동 조절 능력 강화", icon: ShieldCheck },
+            { title: "감정 조절 및 스트레스 관리", icon: Zap },
+            { title: "공감 능력 회복", icon: Users },
+            { title: "재발 방지 계획 구체화", icon: ClipboardCheck }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+              <item.icon className="w-8 h-8 text-indigo-400 mb-6" />
+              <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 p-8 rounded-3xl bg-indigo-600/20 border border-indigo-500/30 text-center">
+          <p className="text-lg leading-relaxed">
+            막연한 다짐은 오래가지 않습니다. 구조를 바꾸어야 행동이 바뀝니다. <br />
+            상담을 통해 충동이 작동하는 지점을 명확히 알고, 위험 상황을 예측하며, 실제 대응 전략을 훈련합니다.
+          </p>
+          <p className="text-2xl font-bold mt-6 text-indigo-300">
+            이 과정이 있을 때 “다시는 하지 않겠다”는 말이 실질적인 가능성으로 바뀝니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>강제추행 사건에서 중요한 것은 단순한 반성 표현이 아니라 <span className="font-bold text-slate-900">구조적 변화의 근거</span>입니다.</p>
+            <p>저희 센터는 상담 과정을 기반으로 양형자료를 체계적으로 정리합니다. 형식적인 문서가 아니라 실질적인 변화 과정을 담은 자료를 준비합니다.</p>
+            <p>이는 단순한 방어를 위한 문서가 아니라 사건에 대한 인식 변화와 재발 방지 노력을 객관적으로 정리하는 과정입니다.</p>
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 mt-8">
+              <p className="text-slate-900 font-medium">상담을 통해 형성된 구체적 변화 과정과 구조화된 재발 방지 계획은 당사자의 책임 인식과 개선 의지를 보다 명확하게 보여줄 수 있으며, 이러한 전문적이고 체계적인 자료는 양형과정에서 매우 의미 있게 참고될 수 있습니다.</p>
+            </div>
+            <p className="text-xl font-bold text-[#4F46E5] mt-8">중요한 것은 형식이 아니라 실질적인 변화의 내용입니다.</p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">전문 대응의 가치</h4>
+            <ul className="space-y-4 text-sm text-slate-600">
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 행동 원인에 대한 직면</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 재발 방지를 위한 구체적 준비</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 삶의 방향성 재설정</li>
+            </ul>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
 const RapeCaseContent = () => (
   <div className="space-y-24">
     {/* 2. 사건 개요 설명 */}
@@ -963,9 +1605,13 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
 
     {/* Content Sections */}
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      {slug === 'rape' ? (
-        <RapeCaseContent />
-      ) : (
+      {slug === 'rape' && <RapeCaseContent />}
+      {slug === 'molestation' && <MolestationCaseContent />}
+      {slug === 'filming' && <FilmingCaseContent />}
+      {slug === 'deepfake' && <DeepfakeCaseContent />}
+      {slug === 'tongmaeum' && <TongmaeumCaseContent />}
+      {slug === 'juvenile' && <JuvenileCaseContent />}
+      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2 space-y-20">
             
