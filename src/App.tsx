@@ -768,6 +768,163 @@ const Footer = () => (
 
 // --- Pages ---
 
+const WorkplaceCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div className="lg:col-span-2">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">직장과 학교는 단순한 공간이 아닙니다. 나의 경력과 미래, 사회적 신뢰가 연결된 공간입니다.</p>
+            <p>그곳에서 사건이 발생했다는 사실만으로도 이미 큰 불안과 수치심, 두려움, 억울함을 동시에 경험하게 됩니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“왜 이렇게까지 커졌을까…”</p>
+              <p>“나는 그런 의도가 아니었는데…”</p>
+              <p>“앞으로 직장은? 학교는? 인생은 어떻게 되는 걸까…”</p>
+            </div>
+            <p>저희는 그 마음부터 이해합니다. 직장·학교 사건은 신분·평판·경력에 직접적인 영향을 주기 때문에 심리적 충격이 훨씬 크게 작용합니다.</p>
+          </div>
+        </div>
+        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/8117b97c4f504f2544908af2745f2723.png" 
+            alt="Workplace Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
+            <p className="text-slate-900 text-sm font-bold italic">"사건의 맥락과 관계의 구조를 전문적으로 분석합니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+          <h4 className="font-bold text-slate-900 mb-4">주요 사건 유형</h4>
+          <ul className="space-y-2 text-sm text-slate-500">
+            <li>• 직장 내 성희롱·성추행 신고</li>
+            <li>• 교수–학생 간 부적절한 관계</li>
+            <li>• 동료·상사와의 사적 메시지 문제</li>
+            <li>• 교내 성비위 조사</li>
+            <li>• 술자리 이후 오해 및 진술 충돌</li>
+          </ul>
+        </div>
+        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+          <h4 className="font-bold text-slate-900 mb-4">흔히 겪는 심리 상태</h4>
+          <ul className="space-y-2 text-sm text-slate-500">
+            <li>• 극심한 불안, 공황, 수면장애</li>
+            <li>• 억울함과 분노, 자책</li>
+            <li>• 반복적인 상황 재생(플래시백)</li>
+            <li>• 직장·학교 복귀에 대한 공포</li>
+            <li>• 주변 시선에 대한 과도한 위축</li>
+          </ul>
+        </div>
+        <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+          <h4 className="font-bold text-slate-900 mb-4">사건의 특수성</h4>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            법적 문제와 함께 ‘조직 내 징계’가 동시에 진행된다는 점이 가장 큰 특징입니다. 저희는 사건의 맥락, 관계의 구조, 감정의 흐름을 전문적으로 분석합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          직장·학교 사건은 ‘성 문제’이기도 하지만 동시에 <br />
+          관계 경계와 권력 구조에 대한 이해 부족 문제이기도 합니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { title: "사건 구조 분석", icon: Search },
+            { title: "재발 방지 구조 확립", icon: ShieldCheck },
+            { title: "인지 왜곡 교정", icon: Zap },
+            { title: "심리적 안정 회복", icon: Users }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <item.icon className="w-8 h-8 text-indigo-400 mx-auto mb-6" />
+              <h4 className="text-xl font-bold">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 및 징계 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 및 징계 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>직장·학교 사건은 형사 절차뿐 아니라 <span className="font-bold text-slate-900">내부 징계위원회, 인사위원회, 교권·학폭위원회</span> 등이 동시에 진행될 수 있습니다.</p>
+            <p>따라서 양형자료 역시 단순 반성문 수준으로는 부족합니다. 판단하는 기관이 궁금해하는 것은 단 하나, “이 사람이 다시 이런 행동을 할 가능성이 있는가?”입니다. 저희는 감정적인 글이 아니라 구조적이고 설득력 있는 자료를 준비합니다.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              {[
+                { title: "사건 이해 및 분석", desc: "관계 구조 및 맥락 분석" },
+                { title: "재발 방지 계획", desc: "구체적이고 실천적인 전략" },
+                { title: "심리평가 소견", desc: "전문가 진단 및 평가" },
+                { title: "상담 참여 증빙", desc: "실질적 노력의 기록" }
+              ].map((item, idx) => (
+                <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="font-bold text-slate-900 mb-2">✔ {item.title}</div>
+                  <div className="text-sm text-slate-500">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">이런 분들께 권합니다</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 직장 내 성희롱 신고를 받은 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 학교 조사위원회 출석 예정인 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 교수·강사·교사로 징계 절차 중인 분</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 억울함과 불안을 동시에 겪는 분</li>
+            </ul>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-slate-50 p-12 rounded-[48px]">
+      <div className="max-w-3xl mx-auto text-center">
+        <h3 className="text-2xl font-bold text-slate-900 mb-12">저희 센터의 원칙</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            { title: "비난하지 않습니다", desc: "있는 그대로의 사실을 직시합니다." },
+            { title: "객관적으로 분석합니다", desc: "맥락과 구조를 파헤칩니다." },
+            { title: "재발 방지 중심", desc: "미래의 안전을 최우선으로 합니다." },
+            { title: "실질적 도움", desc: "설득력 있는 자료를 만듭니다." }
+          ].map((item, idx) => (
+            <div key={idx} className="text-center">
+              <div className="text-indigo-500 font-bold mb-2">{item.title}</div>
+              <p className="text-slate-500 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
 const StalkingCaseContent = () => (
   <div className="space-y-24">
     {/* 1. 사건 개요 및 심리 상태 분석 */}
@@ -1743,7 +1900,8 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
       {slug === 'tongmaeum' && <TongmaeumCaseContent />}
       {slug === 'juvenile' && <JuvenileCaseContent />}
       {slug === 'stalking' && <StalkingCaseContent />}
-      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && slug !== 'stalking' && (
+      {slug === 'workplace' && <WorkplaceCaseContent />}
+      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && slug !== 'stalking' && slug !== 'workplace' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2 space-y-20">
             
