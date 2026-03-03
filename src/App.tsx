@@ -117,6 +117,16 @@ const NAV_STRUCTURE: NavItem[] = [
 
 // --- Components ---
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -715,22 +725,22 @@ const ProcessSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-white border-t border-slate-100 pt-20 pb-12">
+  <footer className="bg-white border-t border-slate-100 pt-20 pb-12 relative z-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div className="col-span-1 lg:col-span-1">
-          <Link to="/" className="flex items-center gap-2 mb-6">
+          <Link to="/" className="flex items-center gap-2 mb-6 relative z-10">
             <Scale className="w-6 h-6 text-[#4F46E5]" />
             <span className="text-xl font-bold text-slate-900">성범죄심리상담치료센터부산</span>
           </Link>
           <p className="text-slate-500 text-sm leading-relaxed mb-6">
             부산 지역 최고의 성범죄 특화 심리치료 전문 기관입니다. 철저한 비밀 보장과 전문적인 개입을 통해 재발 없는 삶을 지원합니다.
           </p>
-          <div className="flex gap-4">
-            <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#4F46E5] hover:text-white transition-all">
+          <div className="flex gap-4 relative z-10">
+            <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#4F46E5] hover:text-white transition-all cursor-pointer">
               <MessageSquare className="w-5 h-5" />
             </button>
-            <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#4F46E5] hover:text-white transition-all">
+            <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#4F46E5] hover:text-white transition-all cursor-pointer">
               <PhoneCall className="w-5 h-5" />
             </button>
           </div>
@@ -742,7 +752,10 @@ const Footer = () => (
             <ul className="space-y-4">
               {item.children?.map((child) => (
                 <li key={child.title}>
-                  <Link to={child.href} className="text-slate-500 text-sm hover:text-[#4F46E5] transition-colors">
+                  <Link 
+                    to={child.href} 
+                    className="text-slate-500 text-sm hover:text-[#4F46E5] transition-colors block py-1 relative z-10 cursor-pointer"
+                  >
                     {child.title}
                   </Link>
                 </li>
@@ -3356,7 +3369,7 @@ const Home = () => (
             <Link 
               key={idx} 
               to={child.href}
-              className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg transition-all text-center group"
+              className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg transition-all text-center group relative z-10 cursor-pointer"
             >
               <span className="text-slate-900 font-bold group-hover:text-[#4F46E5]">{child.title}</span>
             </Link>
@@ -3387,6 +3400,7 @@ const PlaceholderPage = ({ title }: { title: string }) => (
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="flex-grow">
