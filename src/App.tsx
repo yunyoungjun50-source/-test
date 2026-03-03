@@ -772,8 +772,8 @@ const JuvenileCaseContent = () => (
   <div className="space-y-24">
     {/* 1. 사건 개요 및 심리 상태 분석 */}
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div className="lg:col-span-2">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
               <AlertCircle className="w-6 h-6" />
@@ -792,15 +792,15 @@ const JuvenileCaseContent = () => (
             <p>지금 가장 힘든 것은 법적 처벌의 두려움, 그리고 동시에 가족과 사회에 대한 죄책감, 수치심, 혼란일 것입니다. 저희 센터는 비난이 아닌 사실 기반 분석과 심리 구조 이해를 통해, 당신이 현재 상황을 정리하고 재발을 막을 수 있도록 돕습니다.</p>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
             src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5b23ae94a4d182dd2f6590a7e39c8e28.png" 
             alt="Juvenile Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
-            <p className="text-slate-900 font-bold italic">"행동을 가능하게 만든 심리 구조를 분석하지 않으면, 재발 방지는 불가능합니다."</p>
+          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
+            <p className="text-slate-900 text-sm font-bold italic">"행동을 가능하게 만든 심리 구조를 분석하지 않으면, 재발 방지는 불가능합니다."</p>
           </div>
         </div>
       </div>
