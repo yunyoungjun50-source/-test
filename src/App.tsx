@@ -768,6 +768,137 @@ const Footer = () => (
 
 // --- Pages ---
 
+const StalkingCaseContent = () => (
+  <div className="space-y-24">
+    {/* 1. 사건 개요 및 심리 상태 분석 */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div className="lg:col-span-2">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            사건 개요 및 심리 상태 분석
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900">스토킹 및 주거침입 사건은 단순한 감정 문제로 시작되었을 수 있지만, 법적으로는 매우 무겁게 다뤄지는 사안입니다.</p>
+            <p>많은 내담자분들이 이렇게 말씀하십니다.</p>
+            <div className="pl-6 border-l-4 border-slate-200 space-y-2 py-2 italic text-slate-500">
+              <p>“좋아하는 마음이었는데 이렇게까지 될 줄 몰랐습니다.”</p>
+              <p>“상대가 오해한 것 같습니다.”</p>
+              <p>“헤어진 뒤 감정이 정리되지 않았습니다.”</p>
+              <p>“한 번 찾아간 것뿐인데 범죄가 될 줄 몰랐습니다.”</p>
+            </div>
+            <p>이러한 사건은 집착, 거절 수용의 어려움, 분리불안, 왜곡된 기대감 등이 복합적으로 작용한 결과인 경우가 많습니다. 우리 센터는 실질적인 재발 방지와 법적 대응을 함께 고려하는 구조화된 개입을 진행합니다.</p>
+          </div>
+        </div>
+        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/3c964b98d9be3d76c9a43b274660a27e.png" 
+            alt="Stalking Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
+            <p className="text-slate-900 text-sm font-bold italic">"감정의 왜곡을 바로잡고, 법적 대응과 심리 회복을 함께합니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: "관계 단절 거부", desc: "“이대로 끝날 수 없다”는 강한 집착과 오해" },
+          { title: "정서적 의존", desc: "관계 단절 시 극심한 공허감과 분리불안" },
+          { title: "왜곡된 합리화", desc: "“만나서 이야기하면 해결된다”는 생각" },
+          { title: "통제력 저하", desc: "밤 시간대 감정 증폭 및 음주 후 연락/방문" }
+        ].map((item, idx) => (
+          <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 text-center">
+            <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+            <p className="text-sm text-slate-500">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 2. 상담 및 치료 목표 */}
+    <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
+        <p className="text-xl text-indigo-200 text-center mb-16">
+          스토킹 및 주거침입 사건은 재발 위험성을 낮추는 구체적 개입이 필요합니다. <br />
+          단순 상담이 아닌 구조화된 재범방지 프로그램을 운영합니다.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { title: "집착/왜곡 사고 교정", icon: Zap },
+            { title: "감정/충동 통제 훈련", icon: ShieldCheck },
+            { title: "정서적 독립성 회복", icon: Users },
+            { title: "재범 방지 행동 계획", icon: ClipboardCheck }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <item.icon className="w-8 h-8 text-indigo-400 mx-auto mb-6" />
+              <h4 className="text-xl font-bold">{item.title}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 양형자료 대응 */}
+    <section>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+          <Gavel className="w-6 h-6" />
+        </div>
+        양형자료 대응
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <div className="prose prose-lg text-slate-600 max-w-none">
+            <p>법원은 <span className="font-bold text-slate-900">재범 가능성, 피해자에 대한 인식 변화, 접근 통제 가능성</span> 등을 중요하게 봅니다.</p>
+            <p>형식적인 반성문이 아니라 구체적인 변화 과정이 입증되어야 합니다. 스토킹 사건은 “계속될 가능성”이 가장 중요한 판단 기준이 되므로, 재발 가능성이 구조적으로 낮아졌다는 점을 전문적으로 입증하는 것이 핵심입니다.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+              {[
+                { title: "심리 분석 보고", desc: "사건 당시 심리 구조 분석" },
+                { title: "상담 경과 보고", desc: "실질적인 변화 과정 기록" },
+                { title: "재범 방지 계획", desc: "구체적인 행동 지침 수립" }
+              ].map((item, idx) => (
+                <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="font-bold text-slate-900 mb-2">{item.title}</div>
+                  <div className="text-xs text-slate-500">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <div className="p-8 rounded-3xl bg-indigo-50 border border-indigo-100">
+            <h4 className="font-bold text-slate-900 mb-4">이런 분들께 권합니다</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 헤어진 연인에게 반복 연락한 경우</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 상대 주거지 인근을 방문한 경우</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 차단 이후에도 연락을 시도한 경우</li>
+              <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" /> 감정이 조절되지 않아 찾아간 경우</li>
+            </ul>
+          </div>
+          <Link to="/apply" className="block w-full py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100">
+            상담 및 자료 준비 시작하기
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-indigo-50 p-12 rounded-[48px] text-center">
+      <h3 className="text-2xl font-bold text-slate-900 mb-6">당신은 지금 두려울 수 있습니다</h3>
+      <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        경찰 조사, 접근금지, 주변 시선... 머리가 하얘지는 것이 정상입니다. <br />
+        하지만 중요한 것은 지금부터의 대응 방식입니다. 심리 구조를 정확히 이해하고 재발 방지 계획을 세우면 결과는 달라질 수 있습니다.
+      </p>
+    </section>
+  </div>
+);
+
 const JuvenileCaseContent = () => (
   <div className="space-y-24">
     {/* 1. 사건 개요 및 심리 상태 분석 */}
@@ -918,8 +1049,8 @@ const TongmaeumCaseContent = () => (
   <div className="space-y-24">
     {/* 1. 사건 개요 및 심리 상태 */}
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div className="lg:col-span-2">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
               <AlertCircle className="w-6 h-6" />
@@ -940,15 +1071,15 @@ const TongmaeumCaseContent = () => (
             </p>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
             src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/f178f4a48cb6a50a5a1352119518e6e3.png" 
             alt="Tongmaeum Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
-            <p className="text-slate-900 font-bold italic">"중요한 것은 환경을 피하는 것이 아니라 그 안에서 스스로를 통제할 수 있는 능력을 갖추는 것입니다."</p>
+          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
+            <p className="text-slate-900 text-sm font-bold italic">"중요한 것은 환경을 피하는 것이 아니라 그 안에서 스스로를 통제할 수 있는 능력을 갖추는 것입니다."</p>
           </div>
         </div>
       </div>
@@ -1611,7 +1742,8 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
       {slug === 'deepfake' && <DeepfakeCaseContent />}
       {slug === 'tongmaeum' && <TongmaeumCaseContent />}
       {slug === 'juvenile' && <JuvenileCaseContent />}
-      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && (
+      {slug === 'stalking' && <StalkingCaseContent />}
+      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && slug !== 'stalking' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2 space-y-20">
             
