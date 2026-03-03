@@ -1885,9 +1885,17 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
           사건유형 전체보기
         </Link>
         <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">{title} 전문 대응</h1>
-        <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-          {title} 사건은 법적 처벌뿐만 아니라 심리적 왜곡을 바로잡는 것이 재발 방지의 핵심입니다.
-        </p>
+        <div className="max-w-2xl leading-relaxed">
+          {slug === 'workplace' ? (
+            <p className="text-2xl lg:text-3xl text-slate-300 font-medium">
+              (직장 내 성희롱 · 교수-학생 관계 · 동료 간 사건 · 교내 성비위 등)
+            </p>
+          ) : (
+            <p className="text-xl text-slate-400">
+              {title} 사건은 법적 처벌뿐만 아니라 심리적 왜곡을 바로잡는 것이 재발 방지의 핵심입니다.
+            </p>
+          )}
+        </div>
       </div>
     </div>
 
