@@ -313,7 +313,7 @@ const Hero = () => (
         >
           <div className="relative z-10 rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl border-4 lg:border-8 border-white">
             <img 
-              src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/f9a962cdba50a44e19725b3a6862df5d.png" 
+              src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/4a50ee1d8c22f9992951cf64c1105d47.png" 
               alt="Professional Counseling" 
               className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover"
               referrerPolicy="no-referrer"
@@ -1148,36 +1148,102 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
     {/* Detailed Content */}
     <div className="bg-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">왜 {title} 치료가 필요한가?</h2>
-            <div className="space-y-6">
-              <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-slate-900 mb-2">행동 루프의 해체</h4>
-                <p className="text-sm text-slate-500 leading-relaxed">충동-자극-행동으로 이어지는 고착화된 심리적 루프를 분석하여 근본적인 변화를 이끌어냅니다.</p>
+        {slug === 'addiction' ? (
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">왜 성중독 · 행동중독 치료가 필요할까요?</h2>
+            
+            <div className="bg-white rounded-[40px] p-8 lg:p-16 shadow-xl border border-slate-100 space-y-12">
+              <div className="text-center space-y-4">
+                <p className="text-2xl font-medium text-slate-400 italic">“이번이 마지막입니다.”</p>
+                <p className="text-lg text-slate-600">많은 분들이 그렇게 말합니다. 그리고 또 반복됩니다.</p>
               </div>
-              <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-slate-900 mb-2">객관적 자기 인식</h4>
-                <p className="text-sm text-slate-500 leading-relaxed">자신의 행동이 타인에게 미치는 영향을 객관적으로 바라보고 책임을 수용하는 과정을 거칩니다.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                  <p className="text-lg text-slate-700 leading-relaxed">
+                    성중독과 행동중독은 <span className="font-bold text-indigo-600">단순한 의지의 문제가 아닙니다.</span><br />
+                    반복된 자극이 뇌에 학습되고, 스트레스와 감정을 처리하는 방식이 왜곡되며 특정 상황에서 통제가 무너지는 구조가 형성됩니다.
+                  </p>
+                  <p className="text-lg text-slate-700 leading-relaxed">
+                    처벌은 행동을 멈추게 할 수는 있습니다. 하지만 <span className="font-bold text-rose-500">충동의 구조까지 바꾸지는 못합니다.</span>
+                  </p>
+                  <p className="text-lg text-slate-700 font-medium">
+                    문제는 한 번의 행동이 아니라 계속 이어지는 패턴입니다.
+                  </p>
+                </div>
+                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                  <h4 className="font-bold text-slate-900 mb-6">이런 반복을 겪고 계신가요?</h4>
+                  <ul className="space-y-4">
+                    {[
+                      "멈추고 싶은데 잘 되지 않는다",
+                      "술이나 특정 상황에서 반복된다",
+                      "후회하면서도 다시 같은 선택을 한다"
+                    ].map((text, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2" />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 text-sm text-slate-500 italic">
+                    이것은 도덕성의 문제가 아니라 충동 조절과 감정 처리 시스템의 문제일 수 있습니다.
+                  </p>
+                </div>
               </div>
-              <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-slate-900 mb-2">실질적 대처 기술</h4>
-                <p className="text-sm text-slate-500 leading-relaxed">고위험 상황에서 즉각적으로 사용할 수 있는 충동 차단 기술을 훈련합니다.</p>
+
+              <div className="pt-12 border-t border-slate-100">
+                <p className="text-xl text-slate-800 leading-relaxed mb-8">
+                  치료는 “하지 말라”는 조언이 아닙니다.<br />
+                  <span className="font-bold text-indigo-600">왜 반복되는지, 어디서 통제가 무너지는지, 어떤 왜곡된 인식이 개입하는지</span> 그 구조를 객관적으로 분석하고 교정하는 과정입니다.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 bg-rose-50 rounded-2xl border border-rose-100">
+                    <p className="text-rose-800 font-medium">치료받지 않은 충동은 사라지지 않습니다. 잠시 멈췄다가 다른 방식으로 나타날 수 있습니다.</p>
+                  </div>
+                  <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <p className="text-emerald-800 font-medium">지금 멈추는 선택은 자신을 보호하는 결정입니다.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-900 text-white p-10 rounded-[32px] text-center">
+                <p className="text-lg text-slate-300 mb-4">저희 센터는 구조를 분석하고, 재발 위험을 낮추며, 다시 통제 가능한 삶으로 돌아갈 수 있도록 돕습니다.</p>
+                <p className="text-2xl font-bold">반복을 끝내고 싶다면, 지금이 시작입니다.</p>
               </div>
             </div>
           </div>
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" 
-              alt="Counseling" 
-              className="rounded-3xl shadow-2xl"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
-              <p className="text-slate-900 font-bold italic">"부산 성범죄 특화 심리 상담, 교정 치료 및 전문 상담을 지향합니다."</p>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">왜 {title} 치료가 필요한가?</h2>
+              <div className="space-y-6">
+                <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                  <h4 className="font-bold text-slate-900 mb-2">행동 루프의 해체</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">충동-자극-행동으로 이어지는 고착화된 심리적 루프를 분석하여 근본적인 변화를 이끌어냅니다.</p>
+                </div>
+                <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                  <h4 className="font-bold text-slate-900 mb-2">객관적 자기 인식</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">자신의 행동이 타인에게 미치는 영향을 객관적으로 바라보고 책임을 수용하는 과정을 거칩니다.</p>
+                </div>
+                <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                  <h4 className="font-bold text-slate-900 mb-2">실질적 대처 기술</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">고위험 상황에서 즉각적으로 사용할 수 있는 충동 차단 기술을 훈련합니다.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" 
+                alt="Counseling" 
+                className="rounded-3xl shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
+                <p className="text-slate-900 font-bold italic">"부산 성범죄 특화 심리 상담, 교정 치료 및 전문 상담을 지향합니다."</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
 
