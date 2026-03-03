@@ -517,11 +517,11 @@ const HomeExperts = () => (
             image: "https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
           },
           { 
-            name: "박지은 수석상담사", 
-            role: "청소년 성상담 전문가", 
-            tags: ["아청법 사건", "가족 시스템 치료"],
-            desc: "청소년 및 청년층의 성인지 감수성 향상과 가족 간의 갈등 해결을 통한 재발 방지에 집중합니다. 부모 상담과 병행하는 통합 치료 시스템을 운영합니다.",
-            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=500" 
+            name: "허선무 변호사", 
+            role: "변호사 / 성범죄 전문", 
+            tags: ["사법시험 54회", "성범죄 전문"],
+            desc: "사법시험 54회 합격 및 사법연수원(44기)을 수료한 법률 전문가입니다. 창원지방법원 조정위원, 창원지방검찰청 형사조정위원, 창원지방법원 법인파산관재인, 대한법률구조공단 창원지부 구조위원 등을 역임하며 대한변호사협회에 등록된 성범죄 전문 변호사로 활동하고 있습니다.",
+            image: "https://www.soullaw.co.kr/images/sub/member/member_view23.jpg" 
           }
         ].map((expert, idx) => (
           <motion.div 
@@ -3107,10 +3107,10 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                 desc: "기능의학 기반의 심신 통합 치유 전문가."
               },
               { 
-                name: "박지은 실장", 
-                role: "청소년 성범죄 상담 / 놀이치료 전문가", 
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
-                desc: "아청법 사건 및 가족 시스템 치료 전문가."
+                name: "허선무 변호사", 
+                role: "사법시험 54회 / 성범죄 전문 변호사", 
+                image: "https://www.soullaw.co.kr/images/sub/member/member_view23.jpg",
+                desc: "창원지방법원 조정위원 및 형사조정위원 역임, 성범죄 전문 법률 조력자."
               }
             ].map((expert, idx) => (
               <div key={idx} className="text-center group">
