@@ -26,7 +26,8 @@ import {
   AlertCircle,
   Gavel,
   Lock,
-  Zap
+  Zap,
+  Smartphone
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
@@ -3213,46 +3214,495 @@ const GuidePage = ({ title, slug }: { title: string; slug: string }) => (
   </motion.div>
 );
 
-const ArchivePage = ({ title, slug }: { title: string; slug: string }) => (
-  <motion.div 
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    className="bg-white min-h-screen"
-  >
-    <div className="bg-slate-50 py-24 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">{title}</h1>
-        <p className="text-lg text-slate-500">성범죄 예방과 교정을 위한 전문 지식과 사례를 공유합니다.</p>
-      </div>
-    </div>
+const DigitalRiskTest = () => {
+  const [answers, setAnswers] = useState<number[]>(new Array(20).fill(-1));
+  const [showResult, setShowResult] = useState(false);
 
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      {slug === 'check' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            { title: "성인지 감수성 자가진단", desc: "나의 성인지 관점은 객관적인가요?", items: 15 },
-            { title: "디지털 성범죄 위험도 체크", desc: "온라인 활동 중 위험 요소가 있나요?", items: 12 },
-            { title: "충동 조절 능력 평가", desc: "특정 상황에서 나의 통제력은 어느 정도인가요?", items: 20 },
-            { title: "재범 위험성 간이 측정", desc: "전문 도구를 활용한 간이 위험도 체크", items: 10 }
-          ].map((item, idx) => (
-            <div key={idx} className="p-10 rounded-[32px] border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center group-hover:bg-[#4F46E5] group-hover:text-white transition-colors">
-                  <ClipboardCheck className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-full">{item.items} 문항</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-              <p className="text-slate-500 text-sm mb-8">{item.desc}</p>
-              <button className="w-full py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-colors">
-                테스트 시작하기
-              </button>
+  const questions = [
+    { category: "음란물 및 자극 노출 영역", text: "야동·성적 쇼츠·SNS 노출 콘텐츠를 주 3회 이상 시청한다." },
+    { category: "음란물 및 자극 노출 영역", text: "자극 강도가 점점 높아지는 경향이 있다." },
+    { category: "음란물 및 자극 노출 영역", text: "미성년으로 보이는 콘텐츠에 노출된 적이 있다." },
+    { category: "음란물 및 자극 노출 영역", text: "“이 정도는 괜찮겠지”라고 스스로 합리화한 적이 있다." },
+    { category: "음란물 및 자극 노출 영역", text: "시청 후 죄책감이 들지만 반복된다." },
+    { category: "온라인 관계 위험 영역", text: "오픈채팅·DM 등에서 성적 대화를 시도한 적이 있다." },
+    { category: "온라인 관계 위험 영역", text: "상대 나이를 명확히 확인하지 않은 채 대화한 적이 있다." },
+    { category: "온라인 관계 위험 영역", text: "익명성이 있으니 괜찮다고 느낀 적이 있다." },
+    { category: "온라인 관계 위험 영역", text: "사진이나 영상을 요구하거나 받은 적이 있다." },
+    { category: "온라인 관계 위험 영역", text: "저장해 둔 이미지·영상이 있다." },
+    { category: "충동 통제 영역", text: "스트레스나 음주 후 온라인 접속이 증가한다." },
+    { category: "충동 통제 영역", text: "외로움이나 분노가 들 때 자극 콘텐츠를 찾는다." },
+    { category: "충동 통제 영역", text: "“한 번만 더”라는 생각이 반복된다." },
+    { category: "충동 통제 영역", text: "스스로 통제하기 어렵다고 느낀 적이 있다." },
+    { category: "충동 통제 영역", text: "지우고 다시 반복한 경험이 있다." },
+    { category: "법적 위험 인식 영역", text: "아청법 기준을 정확히 모른다." },
+    { category: "법적 위험 인식 영역", text: "포렌식으로 복원 가능하다는 사실을 가볍게 여긴 적이 있다." },
+    { category: "법적 위험 인식 영역", text: "“다운만 받았지 유포는 안 했다”고 안심한 적이 있다." },
+    { category: "법적 위험 인식 영역", text: "캡처·저장도 처벌 대상이 될 수 있음을 충분히 인식하지 못했다." },
+    { category: "법적 위험 인식 영역", text: "디지털 기록이 영구적으로 남는다는 점을 깊이 생각하지 않았다." },
+  ];
+
+  const totalScore = answers.reduce((acc, curr) => acc + (curr === -1 ? 0 : curr), 0);
+  const isComplete = !answers.includes(-1);
+
+  const getResult = (score: number) => {
+    if (score <= 15) return { title: "낮은 위험군", color: "text-emerald-600", bg: "bg-emerald-50", desc: "비교적 통제 가능하나 주의가 필요한 상태입니다. 현재의 건강한 온라인 활동 습관을 유지하시되, 자극적인 콘텐츠에 대한 경계심을 늦추지 마세요." };
+    if (score <= 30) return { title: "경계군", color: "text-amber-600", bg: "bg-amber-50", desc: "반복적인 패턴이 존재하며, 인지 왜곡이 시작될 수 있는 단계입니다. 전문가와의 상담을 통해 자신의 온라인 활동 패턴을 객관적으로 점검하고 교정 개입을 받는 것을 권장합니다." };
+    if (score <= 45) return { title: "고위험군", color: "text-orange-600", bg: "bg-orange-50", desc: "충동 조절의 어려움과 왜곡된 사고 구조가 형성된 상태입니다. 법적 위험성이 매우 높으며, 혼자만의 의지로는 통제가 어려울 수 있습니다. 즉각적인 전문 상담이 필요합니다." };
+    return { title: "재범 위험군", color: "text-red-600", bg: "bg-red-50", desc: "매우 심각한 수준의 중독 증상과 왜곡된 인지 구조를 보이고 있습니다. 즉각적인 상담 및 외부 자극 차단 개입이 필수적이며, 체계적인 치료 프로그램 이수가 시급합니다." };
+  };
+
+  const result = getResult(totalScore);
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {!showResult ? (
+        <div className="space-y-12">
+          <div className="bg-slate-900 p-8 rounded-[32px] text-white">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Smartphone className="w-6 h-6 text-indigo-400" />
+              디지털 성범죄 위험도 자가 체크
+            </h2>
+            <p className="text-slate-400 mb-6 font-medium">“온라인 활동 중 위험 요소가 있나요?”</p>
+            <div className="space-y-2 text-sm text-slate-500">
+              <p>• 최근 6개월 기준으로 체크하세요.</p>
+              <p>• 자신의 온라인 활동을 객관적으로 돌아보는 기회로 삼으세요.</p>
             </div>
-          ))}
-        </div>
-      )}
+          </div>
 
-      {slug === 'column' && (
+          <div className="space-y-16">
+            {["음란물 및 자극 노출 영역", "온라인 관계 위험 영역", "충동 통제 영역", "법적 위험 인식 영역"].map((cat, catIdx) => (
+              <div key={cat} className="space-y-8">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm">{catIdx + 1}</span>
+                  {cat}
+                </h3>
+                <div className="space-y-4">
+                  {questions.filter(q => q.category === cat).map((q, qIdx) => {
+                    const globalIdx = questions.findIndex(item => item.text === q.text);
+                    return (
+                      <div key={globalIdx} className="p-6 rounded-2xl border border-slate-100 bg-white hover:border-indigo-200 transition-all">
+                        <p className="text-slate-700 font-medium mb-6">
+                          <span className="text-indigo-500 mr-2">{globalIdx + 1}.</span>
+                          {q.text}
+                        </p>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                          {[
+                            { score: 0, label: "전혀 아니다" },
+                            { score: 1, label: "가끔 그렇다" },
+                            { score: 2, label: "자주 그렇다" },
+                            { score: 3, label: "매우 그렇다" }
+                          ].map(item => (
+                            <button
+                              key={item.score}
+                              onClick={() => {
+                                const newAnswers = [...answers];
+                                newAnswers[globalIdx] = item.score;
+                                setAnswers(newAnswers);
+                              }}
+                              className={`flex flex-col items-center justify-center py-3 px-2 rounded-xl transition-all border ${
+                                answers[globalIdx] === item.score 
+                                  ? 'bg-[#4F46E5] text-white border-[#4F46E5] shadow-lg shadow-indigo-100' 
+                                  : 'bg-slate-50 text-slate-400 border-slate-100 hover:border-indigo-200'
+                              }`}
+                            >
+                              <span className="text-lg font-black mb-1">{item.score}</span>
+                              <span className="text-[10px] font-bold whitespace-nowrap">{item.label}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-12 border-t border-slate-100 flex flex-col items-center gap-6">
+            {!isComplete && (
+              <p className="text-amber-600 text-sm font-bold flex items-center gap-2">
+                <AlertCircle className="w-4 h-4" />
+                모든 문항에 답변해 주세요.
+              </p>
+            )}
+            <button
+              disabled={!isComplete}
+              onClick={() => {
+                setShowResult(true);
+                window.scrollTo(0, 0);
+              }}
+              className={`w-full max-md py-5 rounded-2xl font-bold text-lg transition-all ${
+                isComplete 
+                  ? 'bg-slate-900 text-white shadow-xl shadow-slate-200 hover:bg-slate-800 hover:-translate-y-1' 
+                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+              }`}
+            >
+              결과 확인하기
+            </button>
+          </div>
+        </div>
+      ) : (
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="space-y-8"
+        >
+          <div className={`p-12 rounded-[48px] text-center ${result.bg} border border-indigo-100`}>
+            <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center mx-auto mb-8">
+              <Smartphone className="w-10 h-10 text-[#4F46E5]" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900 mb-2">진단 결과</h2>
+            <div className="text-5xl font-black text-slate-900 mb-8">{totalScore} <span className="text-xl font-bold text-slate-400">/ 60점</span></div>
+            
+            <div className={`inline-block px-8 py-3 rounded-full font-black text-xl mb-6 ${result.color} bg-white shadow-sm`}>
+              {result.title}
+            </div>
+            
+            <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto text-lg">
+              {result.desc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-8 rounded-[32px] bg-slate-900 text-white">
+              <h4 className="font-bold text-xl mb-6 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-indigo-400" />
+                디지털 성범죄의 위험성
+              </h4>
+              <p className="text-slate-400 leading-relaxed">
+                디지털 성범죄는 '기록의 영구성'과 '확산의 신속성' 때문에 피해자에게 씻을 수 없는 고통을 줍니다. 또한 수사 기관의 포렌식 기술은 매우 정교하여 삭제된 기록도 복원이 가능합니다. 단순 시청이나 소지도 엄격한 처벌 대상이 됨을 명심해야 합니다.
+              </p>
+            </div>
+            <div className="p-8 rounded-[32px] bg-indigo-50 border border-indigo-100">
+              <h4 className="font-bold text-xl text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-indigo-500" />
+                대응 솔루션
+              </h4>
+              <ul className="space-y-4 text-slate-600">
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">1</div>
+                  <span>디지털 기기 사용 환경의 물리적 차단 설정</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">2</div>
+                  <span>충동 조절 및 스트레스 관리 전문 상담</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">3</div>
+                  <span>디지털 성범죄 관련 법률 및 윤리 교육</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            <button 
+              onClick={() => {
+                setAnswers(new Array(20).fill(-1));
+                setShowResult(false);
+                window.scrollTo(0, 0);
+              }}
+              className="flex-1 py-5 bg-white text-slate-900 font-bold rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all"
+            >
+              다시 테스트하기
+            </button>
+            <Link 
+              to="/apply"
+              className="flex-[2] py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100"
+            >
+              상담 및 교육 신청하기
+            </Link>
+          </div>
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+const GenderSensitivityTest = () => {
+  const [answers, setAnswers] = useState<number[]>(new Array(20).fill(-1));
+  const [showResult, setShowResult] = useState(false);
+
+  const questions = [
+    { category: "피해 인식 영역", text: "상대방이 명확히 거부하지 않았다면 동의했다고 볼 수 있다고 생각한다." },
+    { category: "피해 인식 영역", text: "술에 취한 상태에서는 판단력이 떨어지므로 어느 정도는 이해할 수 있다고 본다." },
+    { category: "피해 인식 영역", text: "상대가 평소 호의적으로 행동했다면 성적 의도가 있었다고 해석한 적이 있다." },
+    { category: "피해 인식 영역", text: "피해자가 즉시 신고하지 않았다면 상황이 심각하지 않았다고 생각한 적이 있다." },
+    { category: "피해 인식 영역", text: "피해자의 복장이나 행동이 오해를 불러일으킬 수 있다고 자주 생각한다." },
+    { category: "책임 인식 영역", text: "상황이 그렇게 된 것은 서로의 책임이라고 느낀 적이 있다." },
+    { category: "책임 인식 영역", text: "억울하다는 생각이 먼저 떠오른다." },
+    { category: "책임 인식 영역", text: "상대가 명확히 거부하지 않았으니 문제 될 줄 몰랐다고 생각한다." },
+    { category: "책임 인식 영역", text: "나는 의도하지 않았으니 큰 잘못은 아니라고 느낀 적이 있다." },
+    { category: "책임 인식 영역", text: "법이 너무 엄격하다고 느낀 적이 있다." },
+    { category: "공감 능력 영역", text: "상대가 느꼈을 두려움이나 불안을 구체적으로 상상하기 어렵다." },
+    { category: "공감 능력 영역", text: "“그 정도로 상처받을 일인가?”라고 생각한 적이 있다." },
+    { category: "공감 능력 영역", text: "상대 입장에서 감정 일기를 써본 적이 없다." },
+    { category: "공감 능력 영역", text: "피해자의 삶이 이후 어떻게 달라졌을지 깊이 생각해본 적이 없다." },
+    { category: "공감 능력 영역", text: "사건 이후 나의 억울함이 상대의 고통보다 더 크게 느껴졌다." },
+    { category: "왜곡 사고 영역", text: "“남자라면 그럴 수 있다”는 말을 이해하는 편이다." },
+    { category: "왜곡 사고 영역", text: "성적 충동은 어쩔 수 없는 본능이라고 생각한다." },
+    { category: "왜곡 사고 영역", text: "음란물의 영향은 실제 행동과는 별개라고 본다." },
+    { category: "왜곡 사고 영역", text: "대부분의 성범죄는 과장되었다고 느낀 적이 있다." },
+    { category: "왜곡 사고 영역", text: "성인지 교육은 형식적이라고 생각한 적이 있다." },
+  ];
+
+  const totalScore = answers.reduce((acc, curr) => acc + (curr === -1 ? 0 : curr), 0);
+  const isComplete = !answers.includes(-1);
+
+  const getResult = (score: number) => {
+    if (score <= 15) return { title: "비교적 건강한 성인지 관점", color: "text-emerald-600", bg: "bg-emerald-50", desc: "현재 성인지 관점이 비교적 객관적이고 건강한 상태입니다. 하지만 성인지 감수성은 지속적인 학습과 성찰이 필요한 영역이므로 꾸준한 관심을 권장합니다." };
+    if (score <= 30) return { title: "부분적 왜곡 존재 (교정 필요)", color: "text-amber-600", bg: "bg-amber-50", desc: "일부 문항에서 성인지 왜곡이 발견됩니다. 특정 상황에서 피해자의 입장을 충분히 고려하지 못할 위험이 있으므로, 전문가와의 상담을 통해 자신의 인지 구조를 점검해보는 것이 좋습니다." };
+    if (score <= 45) return { title: "성인지 왜곡 위험군", color: "text-orange-600", bg: "bg-orange-50", desc: "성인지 관점에 상당한 왜곡이 존재하며, 이는 실제 행동으로 이어질 위험이 높은 상태입니다. 자신의 사고 패턴이 타인에게 어떤 고통을 줄 수 있는지 깊이 있는 성찰과 전문적인 교정 교육이 시급합니다." };
+    return { title: "고위험 왜곡 사고 패턴", color: "text-red-600", bg: "bg-red-50", desc: "매우 위험한 수준의 성인지 왜곡 사고를 보이고 있습니다. 이는 법적 문제뿐만 아니라 심각한 사회적 갈등을 초래할 수 있는 패턴입니다. 즉시 전문적인 심리치료와 행동 교정 프로그램에 참여하시기를 강력히 권고합니다." };
+  };
+
+  const result = getResult(totalScore);
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {!showResult ? (
+        <div className="space-y-12">
+          <div className="bg-indigo-50 p-8 rounded-[32px] border border-indigo-100">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <ClipboardCheck className="w-6 h-6 text-[#4F46E5]" />
+              성인지 감수성 자가진단
+            </h2>
+            <p className="text-slate-600 mb-6 font-medium">“나의 성인지 관점은 객관적인가요?”</p>
+            <div className="space-y-2 text-sm text-slate-500">
+              <p>• 아래 문항을 읽고, 지난 6개월 기준으로 가장 가까운 항목에 체크하세요.</p>
+              <p>• 솔직하게 답변할수록 더 정확한 결과를 얻을 수 있습니다.</p>
+            </div>
+            <div className="mt-8 grid grid-cols-4 gap-2 text-center text-xs font-bold text-slate-400">
+              <div className="p-2 bg-white rounded-lg border border-slate-100">0: 전혀 아니다</div>
+              <div className="p-2 bg-white rounded-lg border border-slate-100">1: 가끔 그렇다</div>
+              <div className="p-2 bg-white rounded-lg border border-slate-100">2: 자주 그렇다</div>
+              <div className="p-2 bg-white rounded-lg border border-slate-100">3: 매우 그렇다</div>
+            </div>
+          </div>
+
+          <div className="space-y-16">
+            {["피해 인식 영역", "책임 인식 영역", "공감 능력 영역", "왜곡 사고 영역"].map((cat, catIdx) => (
+              <div key={cat} className="space-y-8">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center text-sm">{catIdx + 1}</span>
+                  {cat}
+                </h3>
+                <div className="space-y-4">
+                  {questions.filter(q => q.category === cat).map((q, qIdx) => {
+                    const globalIdx = questions.findIndex(item => item.text === q.text);
+                    return (
+                      <div key={globalIdx} className="p-6 rounded-2xl border border-slate-100 bg-white hover:border-indigo-200 transition-all">
+                        <p className="text-slate-700 font-medium mb-6">
+                          <span className="text-indigo-500 mr-2">{globalIdx + 1}.</span>
+                          {q.text}
+                        </p>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                          {[
+                            { score: 0, label: "전혀 아니다" },
+                            { score: 1, label: "가끔 그렇다" },
+                            { score: 2, label: "자주 그렇다" },
+                            { score: 3, label: "매우 그렇다" }
+                          ].map(item => (
+                            <button
+                              key={item.score}
+                              onClick={() => {
+                                const newAnswers = [...answers];
+                                newAnswers[globalIdx] = item.score;
+                                setAnswers(newAnswers);
+                              }}
+                              className={`flex flex-col items-center justify-center py-3 px-2 rounded-xl transition-all border ${
+                                answers[globalIdx] === item.score 
+                                  ? 'bg-[#4F46E5] text-white border-[#4F46E5] shadow-lg shadow-indigo-100' 
+                                  : 'bg-slate-50 text-slate-400 border-slate-100 hover:border-indigo-200'
+                              }`}
+                            >
+                              <span className="text-lg font-black mb-1">{item.score}</span>
+                              <span className="text-[10px] font-bold whitespace-nowrap">{item.label}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-12 border-t border-slate-100 flex flex-col items-center gap-6">
+            {!isComplete && (
+              <p className="text-amber-600 text-sm font-bold flex items-center gap-2">
+                <AlertCircle className="w-4 h-4" />
+                모든 문항에 답변해 주세요.
+              </p>
+            )}
+            <button
+              disabled={!isComplete}
+              onClick={() => {
+                setShowResult(true);
+                window.scrollTo(0, 0);
+              }}
+              className={`w-full max-w-md py-5 rounded-2xl font-bold text-lg transition-all ${
+                isComplete 
+                  ? 'bg-[#4F46E5] text-white shadow-xl shadow-indigo-100 hover:bg-[#4338ca] hover:-translate-y-1' 
+                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+              }`}
+            >
+              결과 확인하기
+            </button>
+          </div>
+        </div>
+      ) : (
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="space-y-8"
+        >
+          <div className={`p-12 rounded-[48px] text-center ${result.bg} border border-indigo-100`}>
+            <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center mx-auto mb-8">
+              <ClipboardCheck className="w-10 h-10 text-[#4F46E5]" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900 mb-2">진단 결과</h2>
+            <div className="text-5xl font-black text-slate-900 mb-8">{totalScore} <span className="text-xl font-bold text-slate-400">/ 60점</span></div>
+            
+            <div className={`inline-block px-8 py-3 rounded-full font-black text-xl mb-6 ${result.color} bg-white shadow-sm`}>
+              {result.title}
+            </div>
+            
+            <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto text-lg">
+              {result.desc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-8 rounded-[32px] bg-slate-900 text-white">
+              <h4 className="font-bold text-xl mb-6 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-indigo-400" />
+                전문가 소견
+              </h4>
+              <p className="text-slate-400 leading-relaxed">
+                성인지 왜곡은 단순한 생각의 차이가 아니라, 타인의 권리를 침해할 수 있는 위험한 인지 구조입니다. 특히 '피해자 유발론'이나 '책임 회피'적 사고는 재범의 가장 큰 원인이 됩니다. 저희 센터는 이러한 왜곡된 인지 구조를 객관적으로 분석하고 교정하는 특화 프로그램을 운영하고 있습니다.
+              </p>
+            </div>
+            <div className="p-8 rounded-[32px] bg-indigo-50 border border-indigo-100">
+              <h4 className="font-bold text-xl text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-indigo-500" />
+                다음 단계 안내
+              </h4>
+              <ul className="space-y-4 text-slate-600">
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">1</div>
+                  <span>전문가와의 1:1 심층 인지 분석 상담</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">2</div>
+                  <span>성인지 왜곡 교정 특화 교육 이수</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold text-indigo-500 shrink-0 shadow-sm">3</div>
+                  <span>재범 방지를 위한 행동 계약 수립</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            <button 
+              onClick={() => {
+                setAnswers(new Array(20).fill(-1));
+                setShowResult(false);
+                window.scrollTo(0, 0);
+              }}
+              className="flex-1 py-5 bg-white text-slate-900 font-bold rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all"
+            >
+              다시 테스트하기
+            </button>
+            <Link 
+              to="/apply"
+              className="flex-[2] py-5 bg-[#4F46E5] text-white text-center font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-100"
+            >
+              상담 및 교육 신청하기
+            </Link>
+          </div>
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
+  const [activeTest, setActiveTest] = useState<string | null>(null);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="bg-white min-h-screen"
+    >
+      <div className="bg-slate-50 py-24 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 mb-4">
+            {activeTest && (
+              <button 
+                onClick={() => setActiveTest(null)}
+                className="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#4F46E5] transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+            )}
+            <h1 className="text-4xl font-bold text-slate-900">{activeTest ? activeTest : title}</h1>
+          </div>
+          <p className="text-lg text-slate-500">
+            {activeTest 
+              ? "객관적인 자가진단을 통해 자신의 상태를 점검해보세요." 
+              : "성범죄 예방과 교정을 위한 전문 지식과 사례를 공유합니다."
+            }
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        {slug === 'check' && !activeTest && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { title: "성인지 감수성 자가진단", desc: "나의 성인지 관점은 객관적인가요?", items: 20, id: 'gender' },
+              { title: "디지털 성범죄 위험도 체크", desc: "온라인 활동 중 위험 요소가 있나요?", items: 20, id: 'digital' },
+              { title: "충동 조절 능력 평가", desc: "특정 상황에서 나의 통제력은 어느 정도인가요?", items: 20, id: 'impulse' },
+              { title: "재범 위험성 간이 측정", desc: "전문 도구를 활용한 간이 위험도 체크", items: 10, id: 'recidivism' }
+            ].map((item, idx) => (
+              <div key={idx} className="p-10 rounded-[32px] border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center group-hover:bg-[#4F46E5] group-hover:text-white transition-colors">
+                    <ClipboardCheck className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-full">{item.items} 문항</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-500 text-sm mb-8">{item.desc}</p>
+                <button 
+                  onClick={() => (item.id === 'gender' || item.id === 'digital') && setActiveTest(item.title)}
+                  className={`w-full py-4 font-bold rounded-2xl transition-colors ${
+                    (item.id === 'gender' || item.id === 'digital')
+                      ? 'bg-slate-900 text-white hover:bg-slate-800' 
+                      : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                  }`}
+                >
+                  {(item.id === 'gender' || item.id === 'digital') ? '테스트 시작하기' : '준비 중입니다'}
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {slug === 'check' && activeTest === "성인지 감수성 자가진단" && (
+          <GenderSensitivityTest />
+        )}
+
+        {slug === 'check' && activeTest === "디지털 성범죄 위험도 체크" && (
+          <DigitalRiskTest />
+        )}
+
+        {slug === 'column' && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             { title: "성범죄, 왜 재발하는가? 심리적 메커니즘 분석", date: "2024.05.20", category: "심리 분석" },
@@ -3284,7 +3734,8 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => (
       )}
     </div>
   </motion.div>
-);
+  );
+};
 
 const ApplicationPage = () => (
   <motion.div 
