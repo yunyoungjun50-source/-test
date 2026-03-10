@@ -2832,7 +2832,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
               전문가 칼럼: 성범죄 재범방지 교육의 중요성
             </motion.div>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 tracking-tight leading-[1.25] max-w-[800px] mx-auto break-keep [text-wrap:balance]">
-              성범죄 재범방지 교육이 중요한 이유<br className="hidden sm:block" />
+              성범죄 재범방지 교육이 중요한 이유 : <br className="hidden sm:block" />
               단순한 절차가 아니라 <span className="text-indigo-400">‘변화의 증거’</span>입니다
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
