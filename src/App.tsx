@@ -1895,140 +1895,129 @@ const RapeCaseContent = () => (
 
     {/* 7. 자주 묻는 질문 */}
     <section>
-      <h2 className="text-3xl font-bold text-slate-900 mb-12">자주 �        ) : slug === 'offender' ? (
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 leading-tight">성범죄 가해자 심리상담은 단순한 반성 과정이 아닙니다</h2>
-                <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                  <p>많은 분들이 성범죄 가해자 심리상담을 <span className="text-slate-900 font-bold">"잘못을 인정하는 과정"</span>이라고 생각하기도 합니다.</p>
-                  <p>하지만 실제 성범죄 가해자 심리상담은 그보다 훨씬 넓은 의미를 가지고 있습니다.</p>
-                  
-                  <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
-                    <p className="font-bold text-slate-900">성범죄 가해자 심리상담에서는</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2.5 shrink-0" />
-                        <span>사건이 발생한 상황과 배경을 차분하게 정리하고</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2.5 shrink-0" />
-                        <span>자신의 감정과 행동 패턴을 이해하며</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2.5 shrink-0" />
-                        <span>비슷한 상황이 다시 발생하지 않도록 준비하는 과정이 이루어집니다.</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <p className="text-indigo-600 font-bold">
-                    이 과정은 단순히 사건만을 다루는 것이 아니라 앞으로의 삶을 안정적으로 정리하는 과정이기도 합니다.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <img 
-                  src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/44741954c21f7b7bc7e4cb7feee9ef2e.png" 
-                  alt="Counseling Session" 
-                  className="rounded-[40px] shadow-2xl w-full"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
-                  <p className="text-slate-900 font-bold italic">"변화는 구조를 바꿀 때 시작됩니다."</p>
-                </div>
-              </div>
+      <h2 className="text-3xl font-bold text-slate-900 mb-12">자주 묻는 질문 (FAQ)</h2>
+      <div className="space-y-6">
+        {[
+          { q: "음주 상태였는데도 책임이 있나요?", a: "성범죄 가해자 심리상담은 술에 의존했던 당시의 인식 구조를 정밀하게 재정비하는 과정입니다." },
+          { q: "상대방과 관계가 있었는데도 문제가 되나요?", a: "과거의 관계 유무와 무관하게, 해당 시점에서의 명확한 동의 구조가 핵심입니다. 본 센터는 동의 인식의 왜곡 여부를 객관적으로 점검합니다." },
+          { q: "억울한 부분이 있어도 상담이 필요한가요?", a: `억울함의 감정과는 별개로, 본인의 행동 패턴에서 나타나는 반복 위험 요인을 점검하고 차단하는 것은 향후 삶을 위해 반드시 필요합니다.` }
+        ].map((faq, idx) => (
+          <div key={idx} className="p-8 rounded-3xl border border-slate-100 bg-white">
+            <div className="flex gap-4 mb-4">
+              <span className="text-[#4F46E5] font-black text-xl">Q.</span>
+              <h4 className="text-lg font-bold text-slate-900">{faq.q}</h4>
             </div>
-
-            <div className="bg-white rounded-[40px] p-10 lg:p-16 shadow-sm border border-slate-100 mb-24">
-              <h3 className="text-3xl font-bold text-slate-900 mb-8">성범죄 가해자 심리상담은 변화하려는 의지를 보여주는 과정이기도 합니다</h3>
-              <div className="space-y-8 text-lg text-slate-600 leading-relaxed">
-                <p>사건 이후 어떤 태도를 보이는지는 이후 과정에서 중요한 의미를 가질 수 있습니다.</p>
-                <p>사건이 발생한 뒤 자신의 행동을 돌아보고 재발을 방지하려는 노력을 시작하는 것은 <span className="font-bold text-slate-900">개인의 삶을 위해서도 매우 중요한 과정</span>입니다.</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="space-y-4">
-                    <p className="font-bold text-slate-900">실제로 많은 분들이 사건 이후 성범죄 가해자 심리상담을 통해</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                        <span>자신의 행동 원인을 이해하고</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                        <span>충동이나 판단 오류가 발생했던 상황을 분석하며</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
-                        <span>다시 같은 일이 발생하지 않도록 행동을 교정하는 과정을 시작합니다.</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="p-8 bg-indigo-50 rounded-3xl border border-indigo-100">
-                    <p className="text-indigo-900 font-medium">
-                      이러한 과정은 단순히 개인의 심리 회복에만 의미가 있는 것이 아니라 <span className="font-bold">변화를 위해 실제로 어떤 노력을 했는지를 보여주는 과정</span>이 되기도 합니다.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="space-y-6 pt-8 border-t border-slate-100">
-                  <p>
-                    전문 상담기관에서의 성범죄 가해자 심리상담 참여, 교육 과정, 행동 교정 노력 등은 필요할 경우 <span className="font-bold text-indigo-600 underline decoration-2 underline-offset-4">객관적인 자료나 전문가 의견 형태로 정리될 수 있으며 재판 과정에서 비중있게 참고되는 요소가 됩니다.</span>
-                  </p>
-                  <p>
-                    물론 성범죄 가해자 심리상담이 재판의 결과를 직접적으로 결정하는 것은 아닙니다. 그러나 사건 이후 아무런 변화 노력 없이 시간을 보내는 것보다 자신의 행동을 이해하고 재발을 방지하려는 노력을 실제로 시작하는 것은 <span className="font-bold text-slate-900">양형 과정에서 충분히 고려될 수 있는 중요한 요소</span>가 될 수 있습니다.
-                  </p>
-                  <p className="bg-slate-900 text-white p-8 rounded-2xl">
-                    즉, 사건 이후 어떤 태도로 변화 노력을 했는지, 재발 방지를 위해 어떤 과정을 시작했는지는 <span className="text-indigo-300 font-bold">양형 판단 과정에서 의미 있게 반영될 가능성이 높습니다.</span>
-                  </p>
-                  <p className="text-center font-bold text-xl text-slate-900">
-                    따라서 성범죄 가해자 심리상담은 단순히 마음을 정리하는 시간이 아니라 <br className="hidden sm:block" />
-                    <span className="text-indigo-600">앞으로의 삶을 다시 정리하고 변화의 과정을 시작하는 첫 단계</span>가 될 수 있습니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-              <div className="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">혼자 고민할수록 상황은 더 복잡해질 수 있습니다</h3>
-                <p className="text-slate-600 mb-8">사건 이후 많은 분들이 주변에 이야기하지 못한 채 혼자 고민을 이어가게 됩니다.</p>
-                <div className="bg-rose-50 p-8 rounded-3xl border border-rose-100 space-y-4">
-                  <p className="font-bold text-rose-900">하지만 혼자서 생각이 계속 반복되면</p>
-                  <ul className="space-y-3 text-rose-800">
-                    <li className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      <span>불안이 더 커지거나</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      <span>분노가 더 커지거나</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                      <span>상황 판단이 흐려질 수 있습니다.</span>
-                    </li>
-                  </ul>
-                </div>
-                <p className="mt-8 text-slate-900 font-bold text-center">
-                  전문가와 함께 상황을 정리하면 생각보다 빠르게 마음이 정리되는 경우도 많습니다.
-                </p>
-              </div>
-              <div className="bg-indigo-600 text-white p-10 rounded-[40px] flex flex-col justify-center text-center space-y-8">
-                <h3 className="text-3xl font-bold">성범죄 가해자 심리상담은 삶을 다시 정리하는 출발점이 될 수 있습니다</h3>
-                <div className="space-y-4 text-lg text-indigo-100">
-                  <p>성범죄 가해자 심리상담을 시작하는 것은 자신을 포기하는 것이 아니라 <br />오히려 자신의 삶을 다시 정리하려는 선택입니다.</p>
-                  <p>사건 이후의 삶은 아직 끝난 것이 아닙니다.</p>
-                  <p className="text-2xl font-black text-white">지금의 선택이 앞으로의 방향을 바꿀 수 있습니다.</p>
-                </div>
-                <p className="text-indigo-200 font-medium">
-                  혼자 고민하기보다 전문가와 함께 상황을 차분히 정리해 보는 것이 도움이 될 수 있습니다.
-                </p>
-              </div>
+            <div className="flex gap-4">
+              <span className="text-slate-300 font-black text-xl">A.</span>
+              <p className="text-slate-600 leading-relaxed">{faq.a}</p>
             </div>
           </div>
-        ) : slug === 'paraphilia' ? (
- border border-slate-200 shadow-sm">
+        ))}
+      </div>
+    </section>
+
+    {/* 8. 이런 분들이 상담을 받습니다 */}
+    <section className="p-12 lg:p-20 rounded-[48px] bg-indigo-50 border border-indigo-100">
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">이런 분들께 권장합니다</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          "음주 상황에서 의도치 않게 사건이 발생한 경우",
+          "상대방과의 관계 해석이 극명하게 엇갈리는 경우",
+          "특정 상황에서 충동 통제가 어려웠던 경험이 있는 경우",
+          "법적 절차를 앞두고 자신의 심리 상태 정리가 필요한 경우",
+          "다시는 같은 실수를 반복하고 싶지 않은 경우"
+        ].map((text, idx) => (
+          <div key={idx} className="p-6 bg-white rounded-2xl shadow-sm flex items-center gap-4">
+            <div className="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></div>
+            <span className="text-slate-700 font-medium">{text}</span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-16 text-center">
+        <a 
+          href={NAVER_PLACE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-10 py-5 bg-[#4F46E5] text-white font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-xl shadow-indigo-200"
+        >
+          성범죄 가해자 심리상담 신청하기
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </div>
+    </section>
+  </div>
+);
+
+const CasePage = ({ title, slug }: { title: string; slug: string }) => (
+  <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="bg-white min-h-screen"
+  >
+    {/* Page Header */}
+    <div className="relative bg-slate-900 py-16 lg:py-32 text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src={`https://picsum.photos/seed/case-${slug}/1920/1080`} 
+          alt="Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Link to="/" className="inline-flex items-center gap-2 text-indigo-400 font-bold mb-8 hover:text-indigo-300 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          사건유형 전체보기
+        </Link>
+        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">{title} 전문 대응</h1>
+        <div className="max-w-2xl leading-relaxed">
+          {slug === 'workplace' ? (
+            <p className="text-2xl lg:text-3xl text-slate-300 font-medium">
+              (직장 내 성희롱 · 교수-학생 관계 · 동료 간 사건 · 교내 성비위 등)
+            </p>
+          ) : (
+            <p className="text-xl text-slate-400">
+              {title} 사건은 법적 처벌뿐만 아니라 심리적 왜곡을 바로잡는 것이 재발 방지의 핵심입니다.
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* Content Sections */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {slug === 'rape' && <RapeCaseContent />}
+      {slug === 'molestation' && <MolestationCaseContent />}
+      {slug === 'filming' && <FilmingCaseContent />}
+      {slug === 'deepfake' && <DeepfakeCaseContent />}
+      {slug === 'tongmaeum' && <TongmaeumCaseContent />}
+      {slug === 'juvenile' && <JuvenileCaseContent />}
+      {slug === 'stalking' && <StalkingCaseContent />}
+      {slug === 'workplace' && <WorkplaceCaseContent />}
+      {slug !== 'rape' && slug !== 'molestation' && slug !== 'filming' && slug !== 'deepfake' && slug !== 'tongmaeum' && slug !== 'juvenile' && slug !== 'stalking' && slug !== 'workplace' && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-20">
+            
+            {/* Section 1: Overview */}
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              사건 개요 및 심리 상태
+            </h2>
+            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+              <p className="text-slate-600 leading-relaxed mb-8">
+                {title} 관련 사건에 연루된 경우, 대다수의 내담자들은 극도의 공포와 수치심, 그리고 상황에 대한 합리화나 왜곡된 인지 상태를 경험하게 됩니다.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { label: "공포/불안", desc: "법적 처벌 및 사회적 낙인에 대한 두려움" },
+                  { label: "인지 왜곡", desc: "자신의 행동을 정당화하거나 축소하려는 경향" },
+                  { label: "충동 조절", desc: "특정 상황에서의 통제력 상실" },
+                  { label: "죄책감/수치심", desc: "자신에 대한 혐오 및 심리적 위축" }
+                ].map((item, idx) => (
+                  <div key={idx} className="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
                     <div className="font-bold text-slate-900 mb-1">{item.label}</div>
                     <div className="text-sm text-slate-500">{item.desc}</div>
                   </div>
@@ -2288,6 +2277,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                     이 과정은 단순히 사건만을 다루는 것이 아니라 앞으로의 삶을 안정적으로 정리하는 과정이기도 합니다.
                   </p>
                 </div>
+              </div>
               <div className="relative">
                 <img 
                   src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/44741954c21f7b7bc7e4cb7feee9ef2e.png" 
@@ -2301,10 +2291,43 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
               </div>
             </div>
 
-            <div className=");
+            <div className="bg-white rounded-[40px] p-10 lg:p-16 shadow-sm border border-slate-100 mb-24">
+              <h3 className="text-3xl font-bold text-slate-900 mb-8">성범죄 가해자 심리상담은 변화하려는 의지를 보여주는 과정이기도 합니다</h3>
+              <div className="space-y-8 text-lg text-slate-600 leading-relaxed">
+                <p>사건 이후 어떤 태도를 보이는지는 이후 과정에서 중요한 의미를 가질 수 있습니다.</p>
+                <p>사건이 발생한 뒤 자신의 행동을 돌아보고 재발을 방지하려는 노력을 시작하는 것은 <span className="font-bold text-slate-900">개인의 삶을 위해서도 매우 중요한 과정</span>입니다.</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <p className="font-bold text-slate-900">실제로 많은 분들이 사건 이후 성범죄 가해자 심리상담을 통해</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                        <span>자신의 행동 원인을 이해하고</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                        <span>충동이나 판단 오류가 발생했던 상황을 분석하며</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</div>
+                        <span>다시 같은 일이 발생하지 않도록 행동을 교정하는 과정을 시작합니다.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="p-8 bg-indigo-50 rounded-3xl border border-indigo-100">
+                    <p className="text-indigo-900 font-medium">
+                      이러한 과정은 단순히 개인의 심리 회복에만 의미가 있는 것이 아니라 <span className="font-bold">변화를 위해 실제로 어떤 노력을 했는지를 보여주는 과정</span>이 되기도 합니다.
+                    </p>
+                  </div>
+                </div>
 
-const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
-�� 수 있는 중요한 요소</span>가 될 수 있습니다.
+                <div className="space-y-6 pt-8 border-t border-slate-100">
+                  <p>
+                    전문 상담기관에서의 성범죄 가해자 심리상담 참여, 교육 과정, 행동 교정 노력 등은 필요할 경우 <span className="font-bold text-indigo-600 underline decoration-2 underline-offset-4">객관적인 자료나 전문가 의견 형태로 정리될 수 있으며 재판 과정에서 비중있게 참고되는 요소가 됩니다.</span>
+                  </p>
+                  <p>
+                    물론 성범죄 가해자 심리상담이 재판의 결과를 직접적으로 결정하는 것은 아닙니다. 그러나 사건 이후 아무런 변화 노력 없이 시간을 보내는 것보다 자신의 행동을 이해하고 재발을 방지하려는 노력을 실제로 시작하는 것은 <span className="font-bold text-slate-900">양형 과정에서 충분히 고려될 수 있는 중요한 요소</span>가 될 수 있습니다.
                   </p>
                   <p className="bg-slate-900 text-white p-8 rounded-2xl">
                     즉, 사건 이후 어떤 태도로 변화 노력을 했는지, 재발 방지를 위해 어떤 과정을 시작했는지는 <span className="text-indigo-300 font-bold">양형 판단 과정에서 의미 있게 반영될 가능성이 높습니다.</span>
@@ -2624,34 +2647,6 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
   </motion.div>
 );
 
-      {slug === 'greeting' && (
-        <div className="max-w-4xl mx-auto">
-          <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-12 shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200" 
-              alt="Greeting" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed space-y-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">"비난을 넘어, 책임 있는 변화의 길로 안내하겠습니다."</h2>
-            <p>안녕하십니까, 성범죄심리상담치료센터창원 원장 윤영준입니다.</p>
-            <p>성범죄 사건에 직면했을 때, 대부분의 사람들은 극심한 혼란과 두려움, 그리고 사회적 비난에 대한 공포를 경험합니다. 하지만 진정한 해결은 단순히 처벌을 피하는 것이 아니라, 자신의 행동 이면에 숨겨진 심리적 구조를 직시하고 이를 교정하여 다시는 같은 실수를 반복하지 않는 삶을 설계하는 데 있습니다.</p>
-            <p>본 센터는 단순한 정서적 지지를 넘어, 뇌인지과학과 임상심리학적 근거를 바탕으로 한 고도의 교정 프로그램을 제공합니다. 우리는 내담자가 자신의 책임을 온전히 인식하고, 왜곡된 성 인지를 바로잡아 건강한 사회 구성원으로 복귀할 수 있도록 가장 객관적이고 전문적인 조력자가 될 것입니다.</p>
-            <p>변화는 용기 있는 직면에서 시작됩니다. 그 길에 저희가 함께하겠습니다.</p>
-            <div className="pt-12 border-t border-slate-100 text-right">
-              <p className="text-slate-500 mb-2">성범죄심리상담치료센터창원 대표원장</p>
-              <p className="text-2xl font-bold text-slate-900">윤 영 준</p>
-            </div>
-          </div>
-        </div>
-      )}�� 사회 구성원으로 복귀할 수 있도록 가장 객관적이고 전문적인 조력자가 될 것입니다.</p>
-            <p>변화는 용기 있는 직면에서 시작됩니다. 그 길에 저희가 함께하겠습니다.</p>
-            <div className="pt-12 border-t border-slate-100 text-right">
-              <p className="text-slate-500 mb-2">성범죄심리상담치료센터창원 대표원장</p>
-              <p className="text-2xl font-bold text-slate-900">윤 영 준</p>
-            </div>
 const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
   const getEducationDetails = (slug: string) => {
     switch (slug) {
@@ -2904,29 +2899,6 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
     </div>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
-      {slug === 'greeting' && (
-        <div className="max-w-4xl mx-auto">
-          <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-12 shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200" 
-              alt="Greeting" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed space-y-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">"비난을 넘어, 책임 있는 변화의 길로 안내하겠습니다."</h2>
-            <p>안녕하십니까, 성범죄심리상담치료센터창원 원장 윤영준입니다.</p>
-            <p>성범죄 사건에 직면했을 때, 대부분의 사람들은 극심한 혼란과 두려움, 그리고 사회적 비난에 대한 공포를 경험합니다. 하지만 진정한 해결은 단순히 처벌을 피하는 것이 아니라, 자신의 행동 이면에 숨겨진 심리적 구조를 직시하고 이를 교정하여 다시는 같은 실수를 반복하지 않는 삶을 설계하는 데 있습니다.</p>
-            <p>본 센터는 단순한 정서적 지지를 넘어, 뇌인지과학과 임상심리학적 근거를 바탕으로 한 고도의 교정 프로그램을 제공합니다. 우리는 내담자가 자신의 책임을 온전히 인식하고, 왜곡된 성 인지를 바로잡아 건강한 사회 구성원으로 복귀할 수 있도록 가장 객관적이고 전문적인 조력자가 될 것입니다.</p>
-            <p>변화는 용기 있는 직면에서 시작됩니다. 그 길에 저희가 함께하겠습니다.</p>
-            <div className="pt-12 border-t border-slate-100 text-right">
-              <p className="text-slate-500 mb-2">성범죄심리상담치료센터창원 대표원장</p>
-              <p className="text-2xl font-bold text-slate-900">윤 영 준</p>
-            </div>
-          </div>
-        </div>
-      )}
       {slug === 'intro' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
@@ -3181,48 +3153,59 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                   <li>• 대한미용성형레이저학회</li>
                   <li>• 대한일차진료학회</li>
                   <li>• 대한필러학회</li>
-          const getResult = (score: number) => {
-    if (score <= 15) return { title: "낮은 위험군", color: "text-emerald-600", bg: "bg-emerald-50", desc: "비교적 통제 가능하나 주의가 필요한 상태입니다. 현재의 건강한 온라인 활동 습관을 유지하시되, 자극적인 콘텐츠에 대한 경계심을 늦추지 마세요." };
-    if (score <= 30) return { title: "경계군", color: "text-amber-600", bg: "bg-amber-50", desc: "반복적인 패턴이 존재하며, 인지 왜곡이 시작될 수 있는 단계입니다. 전문가와의 상담을 통해 자신의 온라인 활동 패턴을 객관적으로 점검하고 교정 개입을 받는 것을 권장합니다." };
-    if (score <= 45) return { title: "고위험군", color: "text-orange-600", bg: "bg-orange-50", desc: "충동 조절의 어려움과 왜곡된 사고 구조가 형성된 상태입니다. 법적 위험성이 매우 높으며, 혼자만의 의지로는 통제가 어려울 수 있습니다. 즉각적인 전문 상담이 필요합니다." };
-    return { title: "재범 위험군", color: "text-red-600", bg: "bg-red-50", desc: "매우 심각한 수준의 중독 증상과 왜곡된 인지 구조를 보이고 있습니다. 즉각적인 상담 및 외부 자극 차단 개입이 필수적이며, 체계적인 치료 프로그램 이수가 시급합니다." };
-  };
+                </ul>
+              </section>
 
-  const result = getResult(totalScore);
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  방송활동 및 출강
+                </h3>
+                <div className="space-y-8 text-sm text-slate-600 leading-relaxed">
+                  <p>• KBS '동행', MBC 등 다수 방송 출연</p>
+                  <p>• 고용노동부, 교육지원청, 한화글로벌, 삼성탈레스, 한화, LG 이노텍 등 다수 기업 및 관공서 강의</p>
+                  <p>• 중·고, 대학교 인터넷 중독예방, 자살예방교육 강의, 심리검사 및 교육</p>
+                  <p>• 서리풀 타임즈 의학부(의과학) 칼럼위원</p>
+                  <p>• 뇌과학기술인협회, 나우명상</p>
+                </div>
+              </section>
 
-  return (
-    <div className="max-w-4xl mx-auto pb-24">
-      {/* Sticky Progress Bar */}
-      {!showResult && (
-        <div className="fixed top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
-          <motion.div 
-            className="h-full bg-[#4F46E5]"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-          />
+              <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-6 bg-[#4F46E5] rounded-full" />
+                  저서 및 강의내용
+                </h3>
+                <div className="space-y-6 text-slate-600">
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">저서</h4>
+                    <p>회복과 성장, 심신건강 최면치료</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-2">강의내용</h4>
+                    <p>몸, 마음 건강과 기능의학, 명상과 건강, 명상과 심신건강, 심신정화를 위한 식이요법</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
       )}
 
-      {!showResult ? (
-        <div className="space-y-16">
-          <header className="relative py-12 px-8 rounded-[40px] bg-slate-900 overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-3xl rounded-full -mr-32 -mt-32" />
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                  <Smartphone className="w-5 h-5 text-indigo-400" />
-                </div>
-                <span className="text-indigo-400 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                디지털 성범죄 <br /> 위험도 자가 체크
-              </h2>
-              <p className="text-slate-400 max-w-lg leading-relaxed">
-                온라인 활동 중 나도 모르게 형성된 위험 요소를 객관적으로 점검합니다. <br />
-                최근 6개월간의 활동을 기준으로 솔직하게 답변해 주세요.
-              </p>
-            </div>
-          </header>��학과 임상심리학적 근거를 바탕으로 한 고도의 교정 프로그램을 제공합니다. 우리는 내담자가 자신의 책임을 온전히 인식하고, 왜곡된 성 인지를 바로잡아 건강한 사회 구성원으로 복귀할 수 있도록 가장 객관적이고 전문적인 조력자가 될 것입니다.</p>
+      {slug === 'greeting' && (
+        <div className="max-w-4xl mx-auto">
+          <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-12 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1200" 
+              alt="Greeting" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed space-y-8">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">"비난을 넘어, 책임 있는 변화의 길로 안내하겠습니다."</h2>
+            <p>안녕하십니까, 성범죄심리상담치료센터창원 원장 윤영준입니다.</p>
+            <p>성범죄 사건에 직면했을 때, 대부분의 사람들은 극심한 혼란과 두려움, 그리고 사회적 비난에 대한 공포를 경험합니다. 하지만 진정한 해결은 단순히 처벌을 피하는 것이 아니라, 자신의 행동 이면에 숨겨진 심리적 구조를 직시하고 이를 교정하여 다시는 같은 실수를 반복하지 않는 삶을 설계하는 데 있습니다.</p>
+            <p>본 센터는 단순한 정서적 지지를 넘어, 뇌인지과학과 임상심리학적 근거를 바탕으로 한 고도의 교정 프로그램을 제공합니다. 우리는 내담자가 자신의 책임을 온전히 인식하고, 왜곡된 성 인지를 바로잡아 건강한 사회 구성원으로 복귀할 수 있도록 가장 객관적이고 전문적인 조력자가 될 것입니다.</p>
             <p>변화는 용기 있는 직면에서 시작됩니다. 그 길에 저희가 함께하겠습니다.</p>
             <div className="pt-12 border-t border-slate-100 text-right">
               <p className="text-slate-500 mb-2">성범죄심리상담치료센터창원 대표원장</p>
@@ -3519,7 +3502,6 @@ const ImpulseControlTest = () => {
                     return (
                       <motion.div 
                         key={globalIdx}
-                        id={`impulse-q-${globalIdx}`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -3586,24 +3568,15 @@ const ImpulseControlTest = () => {
             )}
             
             <button
+              disabled={!isComplete}
               onClick={() => {
-                if (!isComplete) {
-                  const firstUnanswered = answers.findIndex(a => a === -1);
-                  if (firstUnanswered !== -1) {
-                    const element = document.getElementById(`impulse-q-${firstUnanswered}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }
-                  return;
-                }
                 setShowResult(true);
                 window.scrollTo(0, 0);
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
                   ? 'bg-emerald-900 text-white shadow-2xl shadow-emerald-200 hover:bg-black hover:-translate-y-1 active:scale-95' 
-                  : 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95'
+                  : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
               결과 분석 리포트 보기
@@ -3732,57 +3705,41 @@ const DigitalRiskTest = () => {
   const getResult = (score: number) => {
     if (score <= 15) return { title: "낮은 위험군", color: "text-emerald-600", bg: "bg-emerald-50", desc: "비교적 통제 가능하나 주의가 필요한 상태입니다. 현재의 건강한 온라인 활동 습관을 유지하시되, 자극적인 콘텐츠에 대한 경계심을 늦추지 마세요." };
     if (score <= 30) return { title: "경계군", color: "text-amber-600", bg: "bg-amber-50", desc: "반복적인 패턴이 존재하며, 인지 왜곡이 시작될 수 있는 단계입니다. 전문가와의 상담을 통해 자신의 온라인 활동 패턴을 객관적으로 점검하고 교정 개입을 받는 것을 권장합니다." };
-    if (score <= 45) return { title: "고위험군", color: "text-orange-600", bg: "bg-orange-50", desc: "충동 조절�          <div className="pt-20 flex flex-col items-center gap-8">
-            <div className="text-center">
-              <p className="text-slate-400 text-sm mb-2">진행률 {Math.round(progress)}%</p>
-              <div className="w-48 h-1 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-slate-900 transition-all duration-500" style={{ width: `${progress}%` }} />
-              </div>
-            </div>
+    if (score <= 45) return { title: "고위험군", color: "text-orange-600", bg: "bg-orange-50", desc: "충동 조절의 어려움과 왜곡된 사고 구조가 형성된 상태입니다. 법적 위험성이 매우 높으며, 혼자만의 의지로는 통제가 어려울 수 있습니다. 즉각적인 전문 상담이 필요합니다." };
+    return { title: "재범 위험군", color: "text-red-600", bg: "bg-red-50", desc: "매우 심각한 수준의 중독 증상과 왜곡된 인지 구조를 보이고 있습니다. 즉각적인 상담 및 외부 자극 차단 개입이 필수적이며, 체계적인 치료 프로그램 이수가 시급합니다." };
+  };
 
-            {!isComplete && (
-              <p className="text-amber-600 text-sm font-bold flex items-center gap-2 animate-pulse">
-                <AlertCircle className="w-4 h-4" />
-                남은 문항을 모두 완료해 주세요.
-              </p>
-            )}
-            
-            <button
-              onClick={() => {
-                if (!isComplete) {
-                  const firstUnanswered = answers.findIndex(a => a === -1);
-                  if (firstUnanswered !== -1) {
-                    const element = document.getElementById(`recidivism-q-${firstUnanswered}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }
-                  return;
-                }
-                setShowResult(true);
-                window.scrollTo(0, 0);
-              }}
-              className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
-                isComplete 
-                  ? 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95' 
-                  : 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95'
-              }`}
-            >
-              결과 분석 리포트 보기
-            </button>
-          </div>
+  const result = getResult(totalScore);
+
+  return (
+    <div className="max-w-4xl mx-auto pb-24">
+      {/* Sticky Progress Bar */}
+      {!showResult && (
+        <div className="fixed top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
+          <motion.div 
+            className="h-full bg-[#4F46E5]"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+          />
         </div>
-      ) : (
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="space-y-12"
-        >
-          <div className={`relative p-16 rounded-[60px] text-center ${result.bg} border border-slate-100 overflow-hidden`}>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
+      )}
+
+      {!showResult ? (
+        <div className="space-y-16">
+          <header className="relative py-12 px-8 rounded-[40px] bg-slate-900 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-3xl rounded-full -mr-32 -mt-32" />
             <div className="relative z-10">
-              <div className="w-24 h-24 rounded-[32px] bg-white shadow-2xl flex items-center justify-center mx-auto mb-10">
-                <Scale className="w-12 h-12 text-slate-900" />�험 요소를 객관적으로 점검합니다. <br />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                  <Smartphone className="w-5 h-5 text-indigo-400" />
+                </div>
+                <span className="text-indigo-400 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                디지털 성범죄 <br /> 위험도 자가 체크
+              </h2>
+              <p className="text-slate-400 max-w-lg leading-relaxed">
+                온라인 활동 중 나도 모르게 형성된 위험 요소를 객관적으로 점검합니다. <br />
                 최근 6개월간의 활동을 기준으로 솔직하게 답변해 주세요.
               </p>
             </div>
@@ -3802,7 +3759,6 @@ const DigitalRiskTest = () => {
                     return (
                       <motion.div 
                         key={globalIdx}
-                        id={`digital-q-${globalIdx}`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -3877,24 +3833,15 @@ const DigitalRiskTest = () => {
             )}
             
             <button
+              disabled={!isComplete}
               onClick={() => {
-                if (!isComplete) {
-                  const firstUnanswered = answers.findIndex(a => a === -1);
-                  if (firstUnanswered !== -1) {
-                    const element = document.getElementById(`digital-q-${firstUnanswered}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }
-                  return;
-                }
                 setShowResult(true);
                 window.scrollTo(0, 0);
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
                   ? 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95' 
-                  : 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95'
+                  : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
               결과 분석 리포트 보기
@@ -4077,7 +4024,6 @@ const GenderSensitivityTest = () => {
                     return (
                       <motion.div 
                         key={globalIdx}
-                        id={`gender-q-${globalIdx}`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -4152,24 +4098,15 @@ const GenderSensitivityTest = () => {
             )}
             
             <button
+              disabled={!isComplete}
               onClick={() => {
-                if (!isComplete) {
-                  const firstUnanswered = answers.findIndex(a => a === -1);
-                  if (firstUnanswered !== -1) {
-                    const element = document.getElementById(`gender-q-${firstUnanswered}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }
-                  return;
-                }
                 setShowResult(true);
                 window.scrollTo(0, 0);
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
                   ? 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95' 
-                  : 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95'
+                  : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
               결과 분석 리포트 보기
@@ -4359,7 +4296,6 @@ const RecidivismRiskTest = () => {
                     return (
                       <motion.div 
                         key={globalIdx}
-                        id={`recidivism-q-${globalIdx}`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -4426,24 +4362,15 @@ const RecidivismRiskTest = () => {
             )}
             
             <button
+              disabled={!isComplete}
               onClick={() => {
-                if (!isComplete) {
-                  const firstUnanswered = answers.findIndex(a => a === -1);
-                  if (firstUnanswered !== -1) {
-                    const element = document.getElementById(`recidivism-q-${firstUnanswered}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }
-                  return;
-                }
                 setShowResult(true);
                 window.scrollTo(0, 0);
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
                   ? 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95' 
-                  : 'bg-slate-900 text-white shadow-2xl shadow-slate-200 hover:bg-black hover:-translate-y-1 active:scale-95'
+                  : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
               결과 분석 리포트 보기
