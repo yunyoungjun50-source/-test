@@ -28,7 +28,16 @@ import {
   Lock,
   Zap,
   Smartphone,
-  Calendar
+  Calendar,
+  CheckCircle2,
+  AlertTriangle,
+  PenTool,
+  FileCheck,
+  ClipboardList,
+  BarChart3,
+  GraduationCap,
+  Monitor,
+  HelpCircle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
@@ -1113,10 +1122,85 @@ const StalkingCaseContent = () => (
 
 const JuvenileCaseContent = () => (
   <div className="space-y-24">
-    {/* 1. 사건 개요 및 심리 상태 분석 */}
+    {/* 1. 아동·청소년 관련 성범죄 처벌 강화 */}
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
         <div className="lg:col-span-2">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            아동·청소년 관련 성범죄 처벌 강화
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p className="font-bold text-slate-900 text-xl">
+              최근 아동·청소년 대상 성범죄에 대한 사회적 인식과 법적 기준은 매우 엄격하게 변화하고 있습니다.
+            </p>
+            <p>
+              특히 「아동·청소년의 성보호에 관한 법률」(아청법)은 여러 차례 개정을 통해 처벌 범위와 수위를 대폭 확대해 왔습니다. 
+              2020년 개정 이후에는 디지털 환경에서 발생하는 성범죄에 대한 대응이 강화되면서, 아동·청소년이 등장하는 성적 영상물과 관련된 모든 행위에 대해 무관용 원칙이 적용되고 있습니다.
+            </p>
+            
+            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 mt-8">
+              <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-rose-500" />
+                주요 처벌 대상 행위
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "성착취 영상물의 제작 및 촬영",
+                  "영상물의 유포 또는 판매",
+                  "다운로드 및 단순 소지",
+                  "온라인 전송 및 공유",
+                  "스트리밍 시청 (일부 경우 포함)"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                    <div className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                    <span className="text-sm font-medium text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-sm text-slate-500 leading-relaxed">
+                ※ 디지털 환경에서는 영상물의 일부 장면만 존재하더라도 아동·청소년이 등장하는 성적 표현이 포함되어 있을 경우 법적 문제가 될 수 있으며, 메신저·클라우드·SNS 등을 통한 전달 및 저장 행위도 폭넓게 처벌 대상이 됩니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5b23ae94a4d182dd2f6590a7e39c8e28.png" 
+            alt="Juvenile Case Analysis" 
+            className="rounded-[40px] shadow-2xl w-full"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
+            <p className="text-slate-900 text-sm font-bold italic">"과거 벌금형 수준의 사건도 최근에는 정식 재판(구공판)으로 진행되는 사례가 급증하고 있습니다."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 2. 의제강간 관련 법률 개정 */}
+    <section className="bg-indigo-600 rounded-[48px] p-12 lg:p-20 text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="max-w-4xl mx-auto relative z-10">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-center">의제강간 관련 법률 개정 (만 16세 미만)</h2>
+        <div className="space-y-8 text-center">
+          <div className="inline-block px-6 py-3 bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 text-2xl font-black">
+            기존 만 13세 미만 → <span className="text-yellow-300">개정 만 16세 미만 확대</span>
+          </div>
+          <p className="text-xl text-indigo-100 leading-relaxed">
+            상대방의 동의 여부와 관계없이 일정 연령 이하의 청소년과의 성행위를 처벌 대상으로 규정합니다. 
+            이는 성인과 미성년자 사이의 권력 불균형과 판단 능력의 차이를 고려하여 해당 연령대의 청소년을 보다 적극적으로 보호하겠다는 취지입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. 사건 개요 및 심리 상태 분석 (기존 내용 보강) */}
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
           <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
               <AlertCircle className="w-6 h-6" />
@@ -1135,50 +1219,38 @@ const JuvenileCaseContent = () => (
             <p>지금 가장 힘든 것은 법적 처벌의 두려움, 그리고 동시에 가족과 사회에 대한 죄책감, 수치심, 혼란일 것입니다. 저희 센터는 비난이 아닌 사실 기반 분석과 심리 구조 이해를 통해, 당신이 현재 상황을 정리하고 재발을 막을 수 있도록 돕습니다.</p>
           </div>
         </div>
-        <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
-          <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5b23ae94a4d182dd2f6590a7e39c8e28.png" 
-            alt="Juvenile Case Analysis" 
-            className="rounded-[40px] shadow-2xl w-full"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute -bottom-8 -left-8 p-6 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-[200px]">
-            <p className="text-slate-900 text-sm font-bold italic">"행동을 가능하게 만든 심리 구조를 분석하지 않으면, 재발 방지는 불가능합니다."</p>
-          </div>
+        <div className="grid grid-cols-1 gap-6">
+          {[
+            { 
+              title: "① 인지 왜곡", 
+              items: ["“상대가 동의했다.”", "“요즘은 다 이런다.”", "“실제 접촉은 없었다.”", "“사진만 본 건데 큰 문제인가?”"] 
+            },
+            { 
+              title: "② 충동 및 자극 의존", 
+              items: ["음주 후 반복되는 행동", "야동·음란채팅 중독", "스트레스 해소 방식의 왜곡", "디지털 환경 속 점진적 둔감화"] 
+            },
+            { 
+              title: "③ 정서적 결핍", 
+              items: ["인정 욕구 및 관계 단절감", "통제감 상실", "현실 관계에서의 좌절", "왜곡된 친밀감 추구"] 
+            }
+          ].map((group, idx) => (
+            <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100">
+              <h4 className="font-bold text-slate-900 mb-3">{group.title}</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-500">
+                {group.items.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-indigo-400">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          { 
-            title: "① 인지 왜곡", 
-            items: ["“상대가 동의했다.”", "“요즘은 다 이런다.”", "“실제 접촉은 없었다.”", "“사진만 본 건데 큰 문제인가?”"] 
-          },
-          { 
-            title: "② 충동 및 자극 의존", 
-            items: ["음주 후 반복되는 행동", "야동·음란채팅 중독", "스트레스 해소 방식의 왜곡", "디지털 환경 속 점진적 둔감화"] 
-          },
-          { 
-            title: "③ 정서적 결핍", 
-            items: ["인정 욕구 및 관계 단절감", "통제감 상실", "현실 관계에서의 좌절", "왜곡된 친밀감 추구"] 
-          }
-        ].map((group, idx) => (
-          <div key={idx} className="p-8 rounded-3xl bg-slate-50 border border-slate-100">
-            <h4 className="font-bold text-slate-900 mb-4">{group.title}</h4>
-            <ul className="space-y-2 text-sm text-slate-500">
-              {group.items.map((item, i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-indigo-400">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
       </div>
     </section>
 
-    {/* 2. 상담 및 치료 목표 */}
+    {/* 4. 상담 및 치료 목표 (통합) */}
     <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">상담 및 치료 목표</h2>
@@ -1211,30 +1283,45 @@ const JuvenileCaseContent = () => (
       </div>
     </section>
 
-    {/* 3. 양형자료 대응 */}
+    {/* 5. 양형자료 대응 (통합) */}
     <section>
       <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
         <div className="w-10 h-10 rounded-xl bg-indigo-100 text-[#4F46E5] flex items-center justify-center">
           <Gavel className="w-6 h-6" />
         </div>
-        양형자료 대응 (아동청소년법 특화)
+        양형자료 대응 및 전문적 대응
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           <div className="prose prose-lg text-slate-600 max-w-none">
             <p>아동청소년법 사건은 <span className="font-bold text-slate-900">재범 위험성 판단</span>이 핵심 요소입니다.</p>
             <p>저희 센터는 단순한 형식적 문서가 아니라, 객관적 심리 변화와 구조적 개선을 보여주는 전문적 심리 보고를 제공합니다.</p>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               {[
+                { title: "법률 기준 적용", desc: "강화된 법률 기준 분석" },
                 { title: "심리 평가", desc: "객관적 지표를 통한 진단" },
-                { title: "변화 과정 기록", desc: "상담 참여 및 인식 변화" },
-                { title: "재범방지 계획", desc: "구체적이고 실천적인 전략" }
+                { title: "변화 과정 기록", desc: "상담 참여 및 인식 변화" }
               ].map((item, idx) => (
                 <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
                   <div className="font-bold text-slate-900 mb-2">{item.title}</div>
                   <div className="text-xs text-slate-500">{item.desc}</div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12 p-8 rounded-3xl bg-slate-50 border border-slate-100">
+              <h4 className="font-bold text-slate-900 mb-4">전문적 대응의 핵심 요소</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="font-bold text-indigo-600">구체적 상황 평가</div>
+                  <p className="text-sm">사건의 경위, 행위 정도, 전과 여부 등에 따른 객관적 평가를 진행합니다.</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-bold text-indigo-600">변화 노력 증명</div>
+                  <p className="text-sm">사건 이후의 태도 변화와 재발 방지를 위한 실질적 노력들을 체계적으로 정리합니다.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2715,6 +2802,243 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
 
   const content = getEducationDetails(slug);
 
+  if (slug === 'prevention') {
+    return (
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="bg-white min-h-screen"
+      >
+        {/* SEO Optimized Main Title Section */}
+        <div className="bg-slate-900 py-24 lg:py-32 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            <img 
+              src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1920" 
+              alt="Professional Background" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-bold mb-8 backdrop-blur-sm"
+            >
+              <ShieldCheck className="w-4 h-4" />
+              전문가 칼럼: 성범죄 재범방지 교육의 중요성
+            </motion.div>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight leading-tight">
+              성범죄 재범방지 교육이 중요한 이유:<br />
+              단순한 절차가 아니라 <span className="text-indigo-400">‘변화의 증거’</span>입니다
+            </h1>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              사건 이후의 막막함, 변화를 향한 첫걸음이 당신의 미래를 결정합니다.
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+          <article className="prose prose-slate prose-lg max-w-none">
+            
+            {/* Empathy Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-500 pl-6">사건 이후 느끼는 불안과 혼란에 대하여</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>성범죄 사건에 연루되면 많은 분들이 처음 겪는 상황에 큰 혼란을 느끼게 됩니다.</p>
+                <blockquote className="bg-slate-50 p-8 rounded-2xl border-none italic text-slate-700 font-medium">
+                  "앞으로 어떻게 해야 할까"<br />
+                  "내 상황이 얼마나 심각한 걸까"<br />
+                  "지금 무엇을 해야 하는 게 맞을까"
+                </blockquote>
+                <p>이런 질문들이 머릿속을 계속 맴돌게 됩니다. 실제로 <strong>성범죄 상담</strong>을 하다 보면 많은 분들이 사건 자체보다 앞으로의 결과에 대한 불안 때문에 더 큰 고통을 느끼고 있습니다.</p>
+                <p>이럴 때 중요한 것은 단순히 상황을 피하거나 시간을 보내는 것이 아니라, 지금부터 어떤 태도로 문제를 마주하느냐입니다. 그 과정에서 중요한 역할을 하는 것이 바로 <strong>성범죄 재범방지 교육</strong>과 심리 상담입니다.</p>
+              </div>
+            </section>
+
+            {/* Actual Case Section */}
+            <section className="mb-20 bg-indigo-50/50 p-10 lg:p-16 rounded-[40px] border border-indigo-100">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <MessageSquare className="w-8 h-8 text-indigo-600" />
+                실제 상담실 사례
+              </h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>상담실에는 사건 이후 처음으로 상담을 받으러 오는 분들이 많습니다. 몇 달 전에도 한 30대 직장인이 상담실을 찾아왔습니다.</p>
+                <p>문을 열고 들어와 의자에 앉았지만 한동안 말을 하지 못했습니다. 손을 계속 만지작거리다가 한참 뒤에 겨우 입을 열었습니다.</p>
+                <p className="font-bold text-slate-900 text-xl">"지금 수사를 받고 있습니다."</p>
+                <p>그는 휴대폰과 관련된 성범죄 사건으로 조사를 받고 있는 상황이었습니다. 잠을 제대로 못 자고 있었고 회사에서도 일이 손에 잡히지 않는 상태였습니다. 상담을 시작하고 얼마 지나지 않아 그는 이렇게 물었습니다.</p>
+                <p className="bg-white p-6 rounded-xl border border-indigo-200 font-bold text-indigo-700 text-center">"지금 제가 뭘 해야 합니까?"</p>
+                <p><strong>성범죄 사건 상담</strong>을 겪게 되면 많은 사람들이 막막함 때문에 아무 준비도 하지 못한 채 시간을 보내는 경우가 많습니다. 하지만 재판 과정에서는 사건 자체뿐 아니라 사건 이후 어떤 태도를 보였는지도 중요한 판단 요소가 됩니다.</p>
+              </div>
+            </section>
+
+            {/* Judge's Perspective Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <Gavel className="w-8 h-8 text-indigo-600" />
+                판사가 실제로 중요하게 보는 것
+              </h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>재판에서는 단순히 사건 사실만 보는 것이 아닙니다. 다음과 같은 부분이 함께 판단됩니다.</p>
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none p-0">
+                  <li className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">1</div>
+                    <span className="font-bold text-slate-900">사건 이후 어떤 노력을 했는지</span>
+                  </li>
+                  <li className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">2</div>
+                    <span className="font-bold text-slate-900">자신의 행동을 어떻게 인식하고 있는지</span>
+                  </li>
+                  <li className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">3</div>
+                    <span className="font-bold text-slate-900">재범 가능성이 얼마나 낮은지</span>
+                  </li>
+                </ul>
+                <p>이때 중요한 역할을 하는 것이 바로 <strong>재범방지 교육 프로그램</strong>과 <strong>성범죄 심리상담</strong> 기록입니다. 전문기관에서 진행한 교육과 상담 과정은 단순한 서류가 아니라 재범 방지를 위한 실제 노력의 기록이 되기 때문입니다.</p>
+              </div>
+            </section>
+
+            {/* Why Education is Important Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <BookOpen className="w-8 h-8 text-indigo-600" />
+                재범방지 교육이 중요한 이유
+              </h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>많은 분들이 처음에는 이렇게 말합니다.</p>
+                <blockquote className="border-l-4 border-slate-200 pl-6 italic">
+                  "그렇게까지 큰 문제라고 생각하지 못했습니다."<br />
+                  "순간적인 판단이었습니다."
+                </blockquote>
+                <p>하지만 상담과 교육을 진행하다 보면 자신의 행동이 상대방에게 어떤 영향을 줄 수 있었는지, 그리고 왜 그런 행동이 반복될 수 있는지에 대해 점차 이해하게 됩니다. 이 과정은 단순한 반성이 아니라 재발을 막기 위한 인식의 변화 과정입니다.</p>
+                <div className="bg-slate-900 text-white p-10 rounded-[32px] my-12">
+                  <h4 className="text-xl font-bold mb-6 text-indigo-400">재범방지 교육의 주요 내용</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-indigo-400" />
+                      <span>성 인식 교정</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-indigo-400" />
+                      <span>충동 조절 훈련</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-indigo-400" />
+                      <span>관계 인식 개선</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-indigo-400" />
+                      <span>재발 위험 상황 관리</span>
+                    </div>
+                  </div>
+                </div>
+                <p>이 과정은 단순히 사건을 넘기기 위한 절차가 아니라 앞으로의 삶에서 같은 문제가 반복되지 않도록 하는 예방 과정입니다.</p>
+              </div>
+            </section>
+
+            {/* Case Result Section */}
+            <section className="mb-20 bg-slate-50 p-10 lg:p-16 rounded-[40px] border border-slate-200">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">실제 상담 사례의 결과</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>앞서 상담했던 내담자는 교육 과정 동안 <strong>성 인식 교육, 충동 행동 분석, 사건 상황 정리, 재발 방지 계획</strong>을 하나씩 정리했습니다.</p>
+                <p>교육 과정에서 작성한 기록과 상담 소견서는 변호사를 통해 법원에 <strong>성범죄 양형자료</strong>로 제출되었습니다. 재판부에서는 사건 내용뿐 아니라 사건 이후의 태도와 재범 방지를 위한 노력을 함께 확인했습니다.</p>
+                <p className="text-lg font-bold text-indigo-700">그 결과 그는 예상했던 것보다 완화된 결과를 받을 수 있었습니다.</p>
+                <p>재판이 끝난 후 그는 상담실에 다시 찾아와 이렇게 말했습니다.</p>
+                <p className="italic font-medium text-slate-800">"그때 상담을 시작하지 않았으면 아무 준비도 못 했을 것 같습니다."</p>
+              </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <HelpCircle className="w-8 h-8 text-indigo-600" />
+                많은 분들이 궁금해하는 질문
+              </h2>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                  <h4 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-3">
+                    <span className="text-indigo-600">Q.</span>
+                    교육을 받으면 형량이 줄어드나요?
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed pl-8">
+                    교육만으로 결과가 결정되는 것은 아닙니다. 하지만 실제 재판에서는 <strong>사건 이후의 태도, 반성의 진정성, 재범 방지를 위한 노력</strong> 등의 요소들이 함께 고려됩니다. 전문기관에서 진행한 상담과 교육 기록은 이러한 부분을 설명할 수 있는 중요한 자료가 될 수 있습니다.
+                  </p>
+                </div>
+                <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                  <h4 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-3">
+                    <span className="text-indigo-600">Q.</span>
+                    교육 자료는 어디에 제출하나요?
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed pl-8">
+                    일반적으로 변호사를 통해 검찰 또는 법원에 양형 자료로 제출하게 됩니다. 교육 이수 확인서뿐 아니라 <strong>상담 확인서, 상담 소견서, 반성문, 교육 과정 기록</strong> 등의 자료가 함께 제출되는 경우가 많습니다.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Most Important Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">사건 이후 가장 중요한 것</h2>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>사건이 발생하면 누구나 당황하고 두려움을 느끼게 됩니다. 하지만 그 이후의 과정에서 가장 중요한 것은 문제를 피하려는 태도가 아니라 변화하려는 태도입니다.</p>
+                <p><strong>성범죄 재범방지 교육</strong>과 심리 상담은 단순히 서류를 준비하기 위한 절차가 아니라 <strong>자신의 행동을 돌아보고, 재발 가능성을 낮추고, 같은 문제가 반복되지 않도록 준비하는 과정</strong>입니다. 그리고 이러한 과정은 법적 절차에서도 의미 있는 판단 요소가 될 수 있습니다.</p>
+              </div>
+            </section>
+
+            {/* Related Keywords Section */}
+            <section className="mt-12 pt-8 border-t border-slate-100">
+              <div className="flex flex-wrap gap-2 items-center">
+                <span className="text-sm font-bold text-slate-400 mr-2">관련 키워드:</span>
+                {[
+                  "성범죄 재범방지 교육",
+                  "성범죄 상담",
+                  "성범죄 양형자료",
+                  "성범죄 심리상담",
+                  "재범방지 교육 상담"
+                ].map(keyword => (
+                  <span key={keyword} className="text-xs text-slate-400 bg-slate-50 px-3 py-1 rounded-full">
+                    #{keyword}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* Counseling Guide & Closing */}
+            <section className="mt-32 pt-20 border-t border-slate-200">
+              <div className="bg-indigo-600 rounded-[48px] p-12 lg:p-20 text-white text-center shadow-2xl shadow-indigo-200">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-8">당신의 변화를 위한 가장 객관적인 조력자가 되겠습니다</h2>
+                <p className="text-xl text-indigo-100 mb-12 leading-relaxed">
+                  사건 이후 무엇을 해야 할지 막막한 경우 상담이 도움이 될 수 있습니다.<br />
+                  전문가 상담을 통해 재범 방지와 심리적 정리를 함께 할 수 있습니다.<br />
+                  모든 상담 내용은 철저히 비밀보장이 되니 안심하고 문의해 주시기 바랍니다.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a 
+                    href={NAVER_PLACE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-white text-indigo-600 text-lg font-bold rounded-2xl hover:bg-slate-50 transition-all flex items-center gap-3"
+                  >
+                    상담 예약하기
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href={`tel:${CONTACT_PHONE}`}
+                    className="px-10 py-5 bg-indigo-500 text-white text-lg font-bold rounded-2xl hover:bg-indigo-400 transition-all flex items-center gap-3 border border-indigo-400"
+                  >
+                    전화 문의하기 ({CONTACT_PHONE})
+                    <PhoneCall className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </section>
+
+          </article>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -2776,12 +3100,13 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
   );
 };
 
-const LegalPage = () => (
+const CoachingPage = () => (
   <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     className="bg-slate-50 min-h-screen"
   >
+    {/* Hero Section */}
     <div className="relative bg-slate-900 py-40 text-white text-center overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
@@ -2792,6 +3117,132 @@ const LegalPage = () => (
         />
       </div>
       <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-base font-bold mb-8 backdrop-blur-md shadow-xl"
+        >
+          <PenTool className="w-5 h-5" />
+          진정성 있는 반성을 위한 전문 가이드
+        </motion.div>
+        <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">반성문 코칭</h1>
+        <p className="text-xl text-slate-400 leading-relaxed">
+          단순한 사과가 아닌, 책임 인식을 바탕으로 한 진실된 고백을 돕습니다.
+        </p>
+      </div>
+    </div>
+
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="space-y-24">
+        {/* 1. 반성문과 소감문에서 가장 많이 발생하는 문제 */}
+        <section className="bg-rose-50 rounded-[48px] p-12 lg:p-20 border border-rose-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">반성문과 소감문 작성 시 주의사항</h2>
+              <div className="space-y-6">
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  많은 분들이 직접 작성한 자료를 제출하지만, 다음과 같은 문제로 인해 오히려 전달력이 떨어지는 경우가 많습니다.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    "지나치게 감정적인 표현",
+                    "비논리적인 사건 설명",
+                    "변명처럼 보이는 내용",
+                    "반복적인 상투적 표현"
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-rose-200 text-rose-700 text-sm font-medium">
+                      <AlertTriangle className="w-5 h-5 shrink-0" />
+                      {text}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-600 leading-relaxed mt-6">
+                  진정성이 있음에도 불구하고 설득력이 전달되지 않을 수 있습니다. 
+                  따라서 <span className="font-bold text-slate-900">사건의 경위 → 인식 변화 → 재발 방지 노력</span>이라는 구조적인 흐름으로 정리되는 것이 중요합니다.
+                </p>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 bg-white p-10 rounded-[40px] shadow-xl border border-rose-100">
+              <div className="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-8">
+                <PenTool className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">전문적인 코칭의 필요성</h3>
+              <p className="text-slate-500 leading-relaxed">
+                자신의 진심이 재판부에 오해 없이 전달될 수 있도록, 전문가의 시각에서 글의 구조와 표현을 다듬는 과정이 필요합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 2. 코칭 프로세스 */}
+        <section>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">반성문 코칭 프로세스</h2>
+            <p className="text-slate-500">단순 대필이 아닌, 내담자의 진심을 끌어내는 과정입니다.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { step: "01", title: "사건 인식 분석", desc: "사건에 대한 내담자의 현재 인식과 감정 상태를 심층 분석합니다." },
+              { step: "02", title: "핵심 메시지 도출", desc: "재판부에 전달해야 할 진정성 있는 핵심 메시지를 함께 찾습니다." },
+              { step: "03", title: "구조적 흐름 설계", desc: "논리적이고 설득력 있는 글의 흐름을 설계하고 표현을 다듬습니다." }
+            ].map((item, idx) => (
+              <div key={idx} className="p-10 rounded-[40px] bg-white border border-slate-100 shadow-sm relative overflow-hidden group">
+                <div className="text-6xl font-black text-slate-50 absolute -top-4 -right-4 group-hover:text-indigo-50 transition-colors">{item.step}</div>
+                <h4 className="text-xl font-bold text-slate-900 mb-4 relative z-10">{item.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed relative z-10">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white text-center">
+          <h2 className="text-3xl font-bold mb-8">당신의 진심이 올바르게 전달되도록 돕겠습니다</h2>
+          <p className="text-xl text-slate-400 mb-12">
+            전문가의 코칭을 통해 더욱 설득력 있는 양형자료를 준비하세요.
+          </p>
+          <a 
+            href={NAVER_PLACE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[#4F46E5] text-white font-bold rounded-2xl hover:bg-[#4338ca] transition-all"
+          >
+            코칭 상담 예약하기
+            <ArrowRight className="w-6 h-6" />
+          </a>
+        </section>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const LegalPage = () => (
+  <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="bg-slate-50 min-h-screen"
+  >
+    {/* Hero Section */}
+    <div className="relative bg-slate-900 py-40 text-white text-center overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1920" 
+          alt="Legal Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-base font-bold mb-8 backdrop-blur-md shadow-xl"
+        >
+          <ShieldCheck className="w-5 h-5" />
+          성범죄 사건 심리상담 및 양형자료 지원 서비스 안내
+        </motion.div>
         <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">법원·검찰 제출용 양형자료</h1>
         <p className="text-xl text-slate-400 leading-relaxed">
           심리치료는 당신의 진지한 반성과 재범 방지 의지를 입증하는 객관적인 증거입니다.
@@ -2800,6 +3251,7 @@ const LegalPage = () => (
     </div>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 pb-24">
+      {/* Top Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { title: "전문가 소견서", desc: "상담 과정과 변화 양상을 전문적으로 기술한 공식 문서", icon: FileText },
@@ -2816,32 +3268,38 @@ const LegalPage = () => (
         ))}
       </div>
 
-      <div className="mt-24 bg-white rounded-[40px] p-12 lg:p-20 shadow-sm border border-slate-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">왜 심리치료가 양형에 중요한가요?</h2>
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
+      {/* Main Content Sections */}
+      <div className="mt-24 space-y-24">
+        
+        {/* 1. 사건 이후의 태도 */}
+        <section className="bg-white rounded-[40px] p-12 lg:p-20 shadow-sm border border-slate-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">성범죄 사건 이후, 가장 중요한 것은 “사건 이후의 태도”입니다</h2>
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>성범죄 사건에 연루된 많은 분들이 처음 겪는 상황 속에서 큰 혼란을 경험합니다. 수사 과정에서 무엇을 준비해야 하는지, 재판에서 어떤 부분이 중요하게 판단되는지 알기 어렵기 때문입니다.</p>
+                <p>하지만 실제 재판 과정에서는 단순히 사건의 사실관계만 보는 것이 아니라 <span className="text-indigo-600 font-bold">사건 이후 피고인이 어떤 태도와 노력을 보였는지</span>도 중요한 판단 요소로 작용합니다.</p>
+                
+                <div className="mt-8 p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                  <h4 className="font-bold text-slate-900 mb-4">주요 검토 사항</h4>
+                  <ul className="space-y-3">
+                    {[
+                      "사건에 대한 인식과 책임 의식",
+                      "자신의 행동에 대한 성찰 여부",
+                      "재발 방지를 위한 노력",
+                      "상담 및 교육 참여 여부",
+                      "주변의 관리와 변화 의지"
+                    ].map((text, i) => (
+                      <li key={i} className="flex items-center gap-3 text-sm">
+                        <CheckCircle2 className="w-5 h-5 text-indigo-500 shrink-0" />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-2">재범 위험성 감소의 입증</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">법원은 단순히 '반성한다'는 말보다, 구체적으로 어떤 노력을 통해 재범 가능성을 낮췄는지를 중요하게 평가합니다.</p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                  <Gavel className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-2">교정 의지의 객관화</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">전문 기관에서의 상담 이력은 피고인이 자신의 문제를 직시하고 해결하려는 강력한 의지가 있음을 보여줍니다.</p>
-                </div>
+                <p className="text-sm text-slate-500 mt-4 italic">이러한 부분을 객관적인 자료로 정리해 제출하는 것이 바로 양형 자료입니다.</p>
               </div>
             </div>
-          </div>
-          <div className="order-1 lg:order-2">
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img 
                 src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" 
@@ -2851,7 +3309,138 @@ const LegalPage = () => (
               />
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* 2. 왜 심리상담 기반의 양형 자료가 필요한가 */}
+        <section className="bg-indigo-600 rounded-[48px] p-12 lg:p-20 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">왜 심리상담 기반의 양형 자료가 필요한가</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <p className="text-xl text-indigo-100 leading-relaxed">
+                  많은 분들이 반성문이나 교육 감상문을 제출합니다. 그러나 실제 재판에서는 단순한 형식적인 문서가 긍정적으로 평가되는 경우는 거의 없습니다.
+                </p>
+                <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+                  <h4 className="font-bold mb-4">재판부의 핵심 질문</h4>
+                  <ul className="space-y-3 text-sm text-indigo-50">
+                    <li>• 단순한 사과인가, 진정한 반성인가?</li>
+                    <li>• 사건을 제대로 이해하고 있는가?</li>
+                    <li>• 자신의 문제를 인식하고 있는가?</li>
+                    <li>• 재발 방지를 위한 구체적인 계획이 있는가?</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-indigo-50 leading-relaxed">
+                  중요한 것은 <span className="text-yellow-300 font-bold">내용의 진정성과 논리적인 설명</span>입니다.
+                </p>
+                <p className="text-lg text-indigo-50 leading-relaxed">
+                  심리상담 기반 자료는 단순한 개인 의견이 아니라 <span className="underline decoration-yellow-300 underline-offset-4">전문 상담 과정에서 정리된 객관적인 기록</span>이라는 점에서 큰 의미가 있습니다.
+                </p>
+                <p className="text-lg text-indigo-50 leading-relaxed">
+                  상담 과정에서 드러난 심리 상태와 변화 과정, 재발 방지 계획 등이 정리되면 사건 이후의 태도를 보다 명확하게 설명할 수 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. 센터에서 제공하는 주요 상담 및 자료 */}
+        <section>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">센터 제공 주요 상담 및 자료</h2>
+            <p className="text-slate-500">단순한 서류 발급이 아닌, 내담자의 변화 과정을 객관적으로 정리합니다.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "상담확인서", desc: "상담 참여 사실을 증명하는 공식 문서", icon: FileCheck },
+              { title: "상담소견서", desc: "전문가의 시각에서 본 변화 양상 및 소견", icon: ClipboardList },
+              { title: "심리검사 결과 보고서", desc: "객관적 지표를 통한 심리 상태 진단", icon: BarChart3 },
+              { title: "교육 확인서", desc: "성인지 및 재발방지 교육 이수 증명", icon: GraduationCap }
+            ].map((item, idx) => (
+              <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all text-center">
+                <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-6">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-100 text-center text-slate-600">
+            <p>재판 과정에서 제출되는 문서의 특성을 고려하여 <span className="font-bold text-slate-900">내용의 논리성과 설득력</span>을 함께 검토합니다.</p>
+          </div>
+        </section>
+
+        {/* 4. 최근 성범죄 처벌 경향 */}
+        <section>
+          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">최근 성범죄 처벌 경향 및 특징</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-10 rounded-[40px] bg-white border border-slate-100 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-8">
+                <Scale className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 mb-4">판단 기준의 확대</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">과거에는 물리적 강제력이 중심이었지만, 현재는 <span className="font-bold text-indigo-600">상대방의 성적 자기결정권 침해 여부</span>가 핵심 기준입니다.</p>
+            </div>
+            <div className="p-10 rounded-[40px] bg-white border border-slate-100 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-8">
+                <Monitor className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 mb-4">디지털 성범죄 강화</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">통매음, 불법 촬영, 몰카, 딥페이크, 온라인 괴롭힘 등 디지털 환경의 침해를 폭넓게 처벌합니다.</p>
+            </div>
+            <div className="p-10 rounded-[40px] bg-white border border-slate-100 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-8">
+                <Users className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 mb-4">아청법 처벌 강화</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">아동·청소년 대상 범죄는 소지·다운로드·시청만으로도 강력한 처벌 대상이 됩니다.</p>
+            </div>
+          </div>
+          <div className="mt-12 text-center text-slate-600">
+            <p>법적 기준이 강화될수록 <span className="font-bold text-indigo-600">사건 이후의 태도와 변화 노력</span>에 대한 평가가 더욱 중요해집니다.</p>
+          </div>
+        </section>
+
+        {/* 5. 사건 이후 가장 중요한 것은 변화입니다 */}
+        <section className="bg-slate-900 rounded-[48px] p-12 lg:p-20 text-white text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8">사건 이후 가장 중요한 것은 변화입니다</h2>
+            <p className="text-xl text-slate-400 mb-16 leading-relaxed">
+              재판에서 가장 중요한 것은 사건 이후 어떤 변화가 있었는지입니다. <br />
+              객관적으로 정리된 변화 의지는 당신의 진심을 전달하는 가장 강력한 도구입니다.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {[
+                "행동에 대한 깊은 이해",
+                "진정성 있는 반성",
+                "구체적인 재발 방지 노력"
+              ].map((text, i) => (
+                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 font-bold">
+                  {text}
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8">
+              <p className="text-lg text-indigo-200">
+                성범죄 사건은 개인이 혼자 대응하기에 법적·심리적으로 매우 복잡합니다. <br />
+                상담을 통해 상황을 정리하는 것만으로도 막연한 불안에서 벗어날 수 있습니다.
+              </p>
+              <a 
+                href={NAVER_PLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-[#4F46E5] text-white font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-2xl shadow-indigo-900/50"
+              >
+                전문 상담 및 자료 준비 시작하기
+                <ArrowRight className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </section>
+
       </div>
 
       <div className="mt-24">
@@ -3288,7 +3877,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
                       className="flex-1 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-center hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
                     >
                       <PhoneCall className="w-5 h-5" />
-                      전화 문의하기
+                      전화 문의하기 ({CONTACT_PHONE})
                     </a>
                   </div>
                 </div>
@@ -3340,42 +3929,253 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => (
   </motion.div>
 );
 
-const GuidePage = ({ title, slug }: { title: string; slug: string }) => (
-  <motion.div 
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    className="bg-white min-h-screen"
-  >
-    <div className="bg-slate-900 py-12 lg:py-24 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl lg:text-5xl font-bold mb-6">{title}</h1>
-        <p className="text-xl text-slate-400">투명하고 체계적인 상담 안내를 확인하세요.</p>
-      </div>
-    </div>
+const FAQ_DATA = [
+  {
+    q: "Q1. 사건 직후 상담을 받는 것이 도움이 되나요?",
+    a: "네. 사건 이후 초기 단계에서 상담을 받는 것은 매우 중요합니다. 사건 직후에는 불안, 억울함, 수치심, 두려움 등 다양한 감정이 섞여 상황을 객관적으로 판단하기 어려운 경우가 많습니다. 상담을 통해 현재 상황을 차분하게 정리하고 향후 대응 방향을 준비할 수 있습니다."
+  },
+  {
+    q: "Q2. 상담을 받으면 양형에 실제로 도움이 되나요?",
+    a: "전문 상담기관에서의 상담 이력은 법원에서 피고인의 교정 의지와 재범 방지 노력을 확인하는 참고 자료로 활용될 수 있습니다. 상담 과정에서 나타난 인식 변화, 책임 인식, 행동 교정 노력 등은 상담 소견서나 자료 형태로 정리될 수 있습니다."
+  },
+  {
+    q: "Q3. 초범인데도 상담이 필요한가요?",
+    a: "초범이라 하더라도 사건이 발생한 심리적 배경을 이해하는 것은 매우 중요합니다. 많은 경우 단순한 실수처럼 보이지만 실제로는 충동 조절 문제, 스트레스 상황, 관계 문제, 인지 왜곡 등이 영향을 미치기도 합니다. 상담은 이러한 부분을 이해하고 재발을 예방하는 데 도움을 줍니다."
+  },
+  {
+    q: "Q4. 억울한 부분이 있어도 상담을 받아야 하나요?",
+    a: "억울함이 있는 상황에서도 상담은 도움이 될 수 있습니다. 강한 분노나 억울함은 상황 판단을 흐리게 만들 수 있기 때문에 전문가와 함께 사건을 객관적으로 정리하는 과정이 필요할 수 있습니다. 상담은 감정을 정리하고 안정적인 대응을 돕는 과정이기도 합니다."
+  },
+  {
+    q: "Q5. 상담을 받으면 불리해지지는 않나요?",
+    a: "상담은 법적 판단을 대신하는 과정이 아니라 심리적 이해와 행동 교정을 돕는 과정입니다. 많은 경우 상담은 자신의 행동을 이해하고 재발을 예방하려는 노력으로 해석되며 긍정적인 요소로 고려될 수 있습니다."
+  },
+  {
+    q: "Q6. 상담 내용이 가족이나 회사에 알려질 수 있나요?",
+    a: "본 센터는 철저한 비밀보장 원칙을 따르고 있습니다. 상담 내용, 상담 기록, 방문 사실 등은 내담자의 동의 없이 외부로 제공되지 않습니다. 직장이나 가족에게 상담 사실이 전달되는 일은 없습니다."
+  },
+  {
+    q: "Q7. 상담은 어떤 방식으로 진행되나요?",
+    a: "상담은 보통 다음 단계로 진행됩니다.\n\n1단계 – 초기 상담: 사건 상황과 현재 심리 상태를 파악합니다.\n2단계 – 심리 평가: 충동 조절, 감정 상태, 인지 패턴 등을 분석합니다.\n3단계 – 상담 진행: 인지 교정, 감정 조절, 행동 패턴 이해 등을 중심으로 상담이 진행됩니다.\n4단계 – 재범 방지 계획: 유사 상황에서의 대응 방법과 예방 전략을 함께 정리합니다."
+  },
+  {
+    q: "Q8. 상담은 몇 번 정도 받아야 하나요?",
+    a: "상담 횟수는 개인의 상황에 따라 달라질 수 있습니다. 사건의 특성, 심리 상태, 상담 목표 등을 고려하여 초기 상담 이후 상담 계획이 함께 결정됩니다."
+  },
+  {
+    q: "Q9. 상담을 받으면 어떤 변화가 기대되나요?",
+    a: "상담을 통해 자신의 행동 패턴과 감정 반응을 이해하고 충동 상황에서의 대처 능력을 키울 수 있습니다. 또한 사건 이후의 불안, 수치심, 스트레스 등을 정리하는 데에도 도움이 될 수 있습니다."
+  },
+  {
+    q: "Q10. 상담 기록은 어떻게 관리되나요?",
+    a: "상담 기록은 상담 윤리 기준에 따라 안전하게 보관됩니다. 필요한 경우 내담자의 동의 하에 상담 참여 사실이나 상담 과정에 대한 전문가 의견이 정리될 수 있습니다."
+  },
+  {
+    q: "Q11. 상담을 받는 사람들이 실제로 많나요?",
+    a: "사건 이후 상담을 통해 자신의 행동을 돌아보고 재발을 방지하려는 분들이 점점 늘고 있습니다. 상담은 문제를 숨기는 과정이 아니라 상황을 정리하고 삶을 다시 안정적으로 회복하는 과정이 될 수 있습니다."
+  },
+  {
+    q: "Q12. 상담을 받으면 재범 가능성이 줄어드나요?",
+    a: "상담에서는 충동 상황, 사고 패턴, 행동 패턴을 분석하고 교정하는 과정을 진행합니다. 이를 통해 동일한 상황에서의 행동 선택을 바꾸는 연습을 하게 되며 재발 위험을 줄이는 데 도움을 줄 수 있습니다."
+  },
+  {
+    q: "Q13. 상담이 꼭 필요한 상황은 어떤 경우인가요?",
+    a: "다음과 같은 경우 상담이 특히 도움이 될 수 있습니다.\n• 사건 이후 불안이나 스트레스가 매우 큰 경우\n• 충동적으로 행동했던 경험이 있는 경우\n• 사건 이후 관계나 직장 생활이 어려워진 경우\n• 상황을 어떻게 정리해야 할지 막막한 경우"
+  },
+  {
+    q: "Q14. 상담을 받는 것이 부끄러운 일인가요?",
+    a: "많은 분들이 처음에는 상담을 망설이지만 실제 상담을 시작하면 \"혼자 고민할 때보다 훨씬 정리가 된다\"고 이야기합니다. 상담은 문제를 숨기는 것이 아니라 자신의 삶을 다시 안정적으로 정리하기 위한 과정입니다."
+  },
+  {
+    q: "Q15. 상담을 시작하려면 어떻게 해야 하나요?",
+    a: "전화 또는 온라인 문의를 통해 상담 예약이 가능합니다. 초기 상담에서는 현재 상황을 함께 정리하고 내담자에게 필요한 상담 방향을 안내해 드립니다. 혼자 고민하기보다 전문가와 함께 상황을 정리해보는 것이 문제 해결의 시작이 될 수 있습니다."
+  }
+];
 
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
-      {slug === 'faq' && (
-        <div className="max-w-3xl mx-auto space-y-4">
-          {[
-            { q: "상담이 양형에 실제로 도움이 되나요?", a: "네, 전문 기관에서의 상담 이력과 재범 위험성 감소에 대한 소견서는 법원에서 피고인의 교정 의지를 확인하는 중요한 객관적 자료로 활용됩니다." },
-            { q: "초범인데 꼭 상담을 받아야 하나요?", a: "초범일수록 자신의 행동 기제를 정확히 파악하여 재범을 방지하는 것이 중요합니다. 또한 수사 단계에서의 초기 대응이 향후 결과에 큰 영향을 미칩니다." },
-            { q: "회사나 가족에게 알려지나요?", a: "본 센터는 철저한 비밀 보장 원칙을 준수합니다. 상담 기록은 본인의 동의 없이 외부로 유출되지 않으며, 방문 사실 또한 엄격히 보호됩니다." },
-            { q: "억울한 부분이 있는데 상담이 필요한가요?", a: "억울함이 분노나 왜곡된 인지로 이어져 상황을 악화시킬 수 있습니다. 상담을 통해 상황을 객관적으로 정리하고 법적 대응을 위한 심리적 안정을 찾는 것이 필요합니다." }
-          ].map((item, idx) => (
-            <div key={idx} className="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg transition-all">
-              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-start gap-3">
-                <span className="text-[#4F46E5]">Q.</span>
-                {item.q}
-              </h3>
-              <p className="text-slate-600 leading-relaxed pl-7">
-                {item.a}
-              </p>
-            </div>
-          ))}
+const SENTENCING_FAQ_DATA = [
+  {
+    q: "Q1. 판사는 무엇을 가장 중요하게 보나요?",
+    a: "판사는 사건의 사실관계뿐 아니라 피고인이 사건 이후 어떤 태도를 보였는지를 함께 살펴봅니다. 특히 책임 인식, 반성의 진정성, 재범 가능성, 사건 이후의 행동 변화 등이 중요한 판단 요소가 될 수 있습니다."
+  },
+  {
+    q: "Q2. 심리상담 기록이 실제로 양형자료가 될 수 있나요?",
+    a: "전문 상담기관에서의 상담 이력은 재범 방지를 위한 노력의 하나로 참고될 수 있습니다. 상담 과정에서 나타난 인식 변화, 행동 교정 노력, 충동 관리 계획 등은 객관적인 자료 형태로 정리될 수 있습니다."
+  },
+  {
+    q: "Q3. 단순히 반성문만 제출하면 충분한가요?",
+    a: "반성문은 자신의 생각을 표현하는 중요한 자료이지만, 실제 변화 노력까지 함께 보여주는 것이 더 중요합니다. 상담 참여, 교육 이수, 재발 방지 계획 등은 이러한 노력의 객관적인 근거가 될 수 있습니다."
+  },
+  {
+    q: "Q4. 초범인 경우에도 판사가 상담 여부를 보나요?",
+    a: "초범 여부도 중요한 요소지만 사건 이후 어떤 태도를 보였는지도 함께 고려됩니다. 자신의 행동 원인을 이해하고 재발을 방지하려는 노력이 있다면 긍정적으로 해석될 가능성이 있습니다."
+  },
+  {
+    q: "Q5. 재범 위험성은 어떻게 판단되나요?",
+    a: "재범 위험성은 사건의 특성, 개인의 생활환경, 충동 조절 능력, 사건 이후의 행동 변화 등을 종합적으로 고려하여 판단됩니다. 상담 과정에서는 이러한 부분을 분석하고 재발 가능성을 줄이기 위한 방법을 함께 찾게 됩니다."
+  },
+  {
+    q: "Q6. 사건 이후 아무 행동도 하지 않으면 불리한가요?",
+    a: "사건 이후 아무런 변화나 노력이 보이지 않는 경우에는 재범 위험성에 대한 우려가 제기될 수 있습니다. 반대로 자신의 행동을 돌아보고 개선하려는 노력은 긍정적인 요소로 고려될 수 있습니다."
+  },
+  {
+    q: "Q7. 상담을 받는다고 해서 처벌이 줄어드나요?",
+    a: "상담 자체가 처벌을 결정하는 요소는 아니지만, 사건 이후 변화하려는 노력과 재범 방지 의지를 보여주는 자료로 참고될 수 있습니다."
+  },
+  {
+    q: "Q8. 판사는 피고인의 태도를 중요하게 보나요?",
+    a: "네. 사건 이후의 태도는 매우 중요한 요소입니다. 책임을 회피하는 태도인지, 자신의 행동을 돌아보고 변화하려는 태도인지에 따라 사건을 바라보는 시각이 달라질 수 있습니다."
+  },
+  {
+    q: "Q9. 재범 방지를 위한 노력에는 어떤 것들이 있나요?",
+    a: "재범 방지를 위한 노력에는 심리상담 참여, 인지 교정 교육, 충동 조절 훈련, 생활 습관 개선 등이 포함될 수 있습니다. 이러한 과정은 자신의 행동 패턴을 이해하고 다시 같은 상황이 발생하지 않도록 준비하는 과정입니다."
+  },
+  {
+    q: "Q10. 상담을 받는 것이 왜 중요한가요?",
+    a: "상담은 단순히 형식적인 절차가 아니라 자신의 행동 원인을 이해하고 재발 가능성을 낮추기 위한 과정입니다. 사건 이후 삶을 다시 안정적으로 정리하고 건강한 방향으로 나아가기 위한 중요한 출발점이 될 수 있습니다."
+  }
+];
+
+const FAQAccordionItem = ({ q, a, isOpen, onClick }: { q: string, a: string, isOpen: boolean, onClick: () => void, key?: any }) => {
+  return (
+    <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-all mb-4">
+      <button 
+        onClick={onClick}
+        className="w-full px-6 py-5 flex items-center justify-between text-left group"
+      >
+        <div className="flex items-start gap-4">
+          <span className="text-[#2E7D32] font-black text-xl shrink-0 mt-0.5">Q.</span>
+          <span className="text-slate-900 font-bold text-lg leading-tight group-hover:text-[#2E7D32] transition-colors">{q.replace(/^Q\d+\.\s/, '')}</span>
         </div>
-      )}
+        <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#2E7D32]' : ''}`} />
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="px-6 pb-6 pt-2 border-t border-slate-50">
+              <div className="flex items-start gap-4">
+                <span className="text-[#1565C0] font-black text-xl shrink-0 mt-0.5">A.</span>
+                <div className="text-slate-600 leading-relaxed whitespace-pre-line text-[16px]">
+                  {a}
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-50 flex items-center gap-2 text-[#2E7D32] text-xs font-semibold">
+                <MessageSquare className="w-3.5 h-3.5" />
+                상담이 필요한 경우 언제든 편하게 문의하실 수 있습니다.
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
-      {slug === 'privacy' && (
+const GuidePage = ({ title, slug }: { title: string; slug: string }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openSentencingIndex, setOpenSentencingIndex] = useState<number | null>(null);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className={`min-h-screen ${slug === 'faq' ? 'bg-[#f7f9fb]' : 'bg-white'}`}
+    >
+      <div className={`${slug === 'faq' ? 'bg-[#2E7D32]' : 'bg-slate-900'} py-16 lg:py-24 text-white relative overflow-hidden`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-3xl lg:text-5xl font-bold mb-6 tracking-tight">{title}</h1>
+          <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
+            {slug === 'faq' 
+              ? "사건을 겪게 되면 누구나 큰 혼란과 두려움을 느끼게 됩니다. 가장 많이 질문하시는 내용들을 정리해 드립니다."
+              : "투명하고 체계적인 상담 안내를 확인하세요."}
+          </p>
+        </div>
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4 pointer-events-none" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
+        {slug === 'faq' && (
+          <div className="space-y-16">
+            {/* General FAQ Section */}
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1 h-8 bg-[#2E7D32] rounded-full" />
+                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900">자주 묻는 질문 (FAQ)</h2>
+              </div>
+              <div className="max-w-4xl">
+                {FAQ_DATA.map((item, idx) => (
+                  <FAQAccordionItem 
+                    key={idx}
+                    q={item.q}
+                    a={item.a}
+                    isOpen={openIndex === idx}
+                    onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  />
+                ))}
+              </div>
+            </section>
+
+            {/* Sentencing FAQ Section */}
+            <section>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1 h-8 bg-[#1565C0] rounded-full" />
+                <h2 className="text-2xl lg:text-3xl font-bold text-slate-900">판사가 실제로 보는 것 (양형자료 관련 FAQ)</h2>
+              </div>
+              <div className="max-w-4xl">
+                <div className="bg-white rounded-3xl p-8 lg:p-12 border border-slate-100 shadow-sm mb-8">
+                  <p className="text-slate-600 leading-relaxed mb-10 text-lg">
+                    사건을 겪은 많은 분들이 "판사는 무엇을 중요하게 볼까"라는 질문을 합니다. 실제 재판에서는 단순히 사건 사실뿐 아니라 사건 이후의 태도와 변화 가능성도 함께 고려됩니다.
+                  </p>
+                  {SENTENCING_FAQ_DATA.map((item, idx) => (
+                    <FAQAccordionItem 
+                      key={idx}
+                      q={item.q}
+                      a={item.a}
+                      isOpen={openSentencingIndex === idx}
+                      onClick={() => setOpenSentencingIndex(openSentencingIndex === idx ? null : idx)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+            
+            {/* Bottom CTA */}
+            <div className="bg-slate-900 rounded-[40px] p-12 text-center text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6">더 궁금한 점이 있으신가요?</h3>
+                <p className="text-slate-400 mb-10 max-w-lg mx-auto">
+                  혼자 고민하기보다 전문가와 함께 상황을 정리해보는 것이 문제 해결의 시작이 될 수 있습니다.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a 
+                    href={NAVER_PLACE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-4 bg-[#2E7D32] text-white font-bold rounded-2xl hover:bg-[#256320] transition-all flex items-center gap-2"
+                  >
+                    상담 예약하기
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href={`tel:${CONTACT_PHONE}`}
+                    className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition-all border border-white/10"
+                  >
+                    전화 문의하기 ({CONTACT_PHONE})
+                  </a>
+                </div>
+              </div>
+              <div className="absolute top-0 left-0 w-64 h-64 bg-[#2E7D32]/20 blur-[100px] rounded-full -ml-32 -mt-32" />
+            </div>
+          </div>
+        )}
+
+        {slug === 'privacy' && (
         <div className="max-w-4xl mx-auto">
           <div className="p-12 rounded-[40px] bg-slate-900 text-white">
             <div className="flex items-center gap-4 mb-10">
@@ -3404,7 +4204,8 @@ const GuidePage = ({ title, slug }: { title: string; slug: string }) => (
       )}
     </div>
   </motion.div>
-);
+  );
+};
 
 const ImpulseControlTest = () => {
   const [answers, setAnswers] = useState<number[]>(new Array(20).fill(-1));
@@ -4975,7 +5776,8 @@ export default function App() {
 
             {/* Legal Routes */}
             <Route path="/legal/info" element={<LegalPage />} />
-            {NAV_STRUCTURE[3].children?.filter(c => c.href !== '/legal/info').map(child => (
+            <Route path="/legal/coaching" element={<CoachingPage />} />
+            {NAV_STRUCTURE[3].children?.filter(c => c.href !== '/legal/info' && c.href !== '/legal/coaching').map(child => (
               <React.Fragment key={child.href}>
                 <Route 
                   path={child.href} 
