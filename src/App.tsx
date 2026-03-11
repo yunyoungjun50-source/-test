@@ -29,6 +29,7 @@ import {
   Gavel,
   Lock,
   Zap,
+  Shield,
   Smartphone,
   Calendar,
   CheckCircle2,
@@ -2624,79 +2625,155 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
             </div>
           </div>
         ) : slug === 'digital' ? (
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 leading-tight">왜 디지털 성범죄 치료가 필요합니까?</h2>
-                <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                  <p>많은 분들이 이렇게 말합니다.</p>
-                  <div className="pl-6 border-l-4 border-slate-200 space-y-3 py-2 italic text-slate-500">
-                    <p>“직접적인 접촉은 없었습니다.”</p>
-                    <p>“순간적인 호기희이었습니다.”</p>
-                    <p>“온라인이라 현실과는 다르다고 생각했습니다.”</p>
+          <div className="max-w-5xl mx-auto space-y-24">
+            {/* 1. 디지털 성범죄 상담·치료가 필요한 이유 */}
+            <section>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">디지털 성범죄 상담·치료가 필요한 이유</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100">
+                    <p className="text-slate-500 mb-6 italic">“많은 분들이 처음에는 이렇게 말합니다.”</p>
+                    <div className="space-y-4">
+                      {["“직접적인 접촉은 없었습니다.”", "“순간적인 호기심이었습니다.”", "“온라인에서 일어난 일이었습니다.”"].map((quote, i) => (
+                        <p key={i} className="text-lg font-medium text-slate-800 pl-4 border-l-4 border-indigo-200">{quote}</p>
+                      ))}
+                    </div>
                   </div>
-                  <p>하지만 사건 이후에는 다른 생각이 따라옵니다.</p>
-                  <ul className="space-y-2 text-slate-900 font-medium">
-                    <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-indigo-500" /> 왜 그 순간에 멈추지 못했는가.</li>
-                    <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-indigo-500" /> 왜 화면 속에서는 판단이 느슨해졌는가.</li>
-                    <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-indigo-500" /> 나는 다시 같은 상황이 오면 통제할 수 있는가.</li>
+                  <p className="text-slate-600 leading-relaxed">처음에는 사건을 그렇게 이해하려 합니다. 하지만 시간이 지나면 대부분 같은 질문에 다시 마주하게 됩니다.</p>
+                </div>
+                <div className="bg-indigo-900 text-white p-10 rounded-[40px] shadow-xl">
+                  <h3 className="text-xl font-bold mb-8 text-indigo-200">우리가 마주해야 할 질문들</h3>
+                  <ul className="space-y-6">
+                    {[
+                      "왜 그 순간에 멈추지 못했는가.",
+                      "왜 화면 앞에서는 판단이 느슨해졌는가.",
+                      "다시 같은 상황이 오면 나는 통제할 수 있는가."
+                    ].map((q, i) => (
+                      <li key={i} className="flex gap-4 items-start">
+                        <span className="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center shrink-0 text-xs">{i+1}</span>
+                        <p className="text-lg leading-tight">{q}</p>
+                      </li>
+                    ))}
                   </ul>
-                  <p className="bg-indigo-50 p-6 rounded-2xl text-indigo-900 mt-6">
-                    디지털 성범죄는 기술의 문제가 아니라 <br />
-                    <span className="font-bold">심리 구조의 문제</span>입니다.
+                  <p className="mt-10 pt-6 border-t border-indigo-800 text-indigo-300 text-sm">
+                    이 질문은 단순한 법적 문제를 넘어 자신의 행동을 이해하려는 과정에서 시작됩니다.
                   </p>
                 </div>
               </div>
-              <div className="relative">
-                <img 
-                  src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/67d97b84c9f7063f52c317540fa1688a.png" 
-                  alt="Digital Crime Therapy" 
-                  className="rounded-[40px] shadow-2xl w-full"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs">
-                  <p className="text-slate-900 font-bold italic">"온라인 환경의 특수성과 심리적 제동 장치의 약화"</p>
+            </section>
+
+            {/* 2. 디지털 성범죄는 단순한 환경의 문제가 아닙니다 */}
+            <section>
+              <div className="bg-slate-50 rounded-[40px] p-12 border border-slate-100">
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">디지털 성범죄는 단순한 환경의 문제가 아닙니다</h2>
+                <p className="text-slate-600 mb-12">디지털 성범죄에는 다음과 같은 행동들이 포함됩니다.</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+                  {[
+                    "불법촬영(카메라 촬영, 일명 카촬)",
+                    "촬영물 저장 및 소지",
+                    "촬영물 유포",
+                    "온라인 성적 콘텐츠 문제 행동",
+                    "딥페이크 및 합성물 관련 문제"
+                  ].map((item, i) => (
+                    <div key={i} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                      <span className="text-slate-700 font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
+                  <h3 className="text-xl font-bold text-slate-900 mb-8 text-center">반복되는 행동 패턴 (도파민 루프)</h3>
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    {[
+                      { title: "자극", color: "bg-rose-50 text-rose-600" },
+                      { title: "충동적인 행동", color: "bg-orange-50 text-orange-600" },
+                      { title: "불안과 후회", color: "bg-slate-50 text-slate-600" },
+                      { title: "자기 합리화", color: "bg-indigo-50 text-indigo-600" },
+                      { title: "다시 반복", color: "bg-rose-600 text-white" }
+                    ].map((step, i, arr) => (
+                      <React.Fragment key={i}>
+                        <div className={`px-6 py-4 rounded-2xl font-bold text-sm ${step.color} shadow-sm`}>
+                          {step.title}
+                        </div>
+                        {i < arr.length - 1 && (
+                          <ArrowRight className="w-5 h-5 text-slate-300 hidden md:block" />
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                  <p className="mt-10 text-center text-slate-500 text-sm">
+                    이 구조가 형성되면 비슷한 상황이 다시 왔을 때 같은 선택이 반복될 가능성이 높아집니다.
+                  </p>
                 </div>
               </div>
-            </div>
+            </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            {/* 3. 온라인 환경에서는 왜 판단이 약해질까요 */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">온라인에서는 왜 판단이 약해질까요?</h3>
-                <p className="text-slate-600 mb-8">디지털 환경은 익명성, 거리감, 즉각적인 자극을 제공하여 도덕적 제동 장치를 약화시킵니다.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mb-8">온라인 환경에서는 왜 판단이 약해질까요?</h2>
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {[
+                    { title: "익명성", icon: Shield },
+                    { title: "거리감", icon: MapPin },
+                    { title: "즉각적 자극", icon: Zap }
+                  ].map((item, i) => (
+                    <div key={i} className="text-center p-4 bg-slate-50 rounded-2xl">
+                      <item.icon className="w-6 h-6 mx-auto mb-2 text-indigo-600" />
+                      <p className="text-xs font-bold text-slate-900">{item.title}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  이러한 요소들은 순간적으로 도덕적 제동 장치를 약하게 만들 수 있습니다.
+                </p>
+              </div>
+
+              <div className="bg-rose-50 p-10 rounded-[40px] border border-rose-100">
+                <h2 className="text-2xl font-bold text-rose-900 mb-8">자주 발견되는 생각의 왜곡</h2>
                 <ul className="space-y-4">
                   {[
-                    "“다들 하는 일 같다”는 합리화",
-                    "“상대는 크게 상처받지 않았을 것”이라는 왜곡",
-                    "“이번 한 번쯤은 괜찮다”는 자기 설득"
+                    "“다들 하는 일 같았다.”",
+                    "“상대는 크게 상처받지 않았을 것 같았다.”",
+                    "“이번 한 번 정도는 괜찮을 것 같았다.”"
                   ].map((text, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-700">
-                      <div className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">!</div>
-                      <span>{text}</span>
+                    <li key={i} className="flex items-start gap-3 text-rose-800">
+                      <div className="w-5 h-5 rounded-full bg-rose-200 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">!</div>
+                      <span className="font-medium">{text}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-8 text-sm text-slate-500 italic">
-                  이러한 인지 왜곡이 반복되면 행동은 자연스러워지고 통제는 어려워집니다.
+                <p className="mt-8 text-sm text-rose-600 italic">
+                  이러한 생각이 반복되면 행동은 점점 자연스러워지고 자기 통제는 점점 어려워질 수 있습니다.
                 </p>
               </div>
-              <div className="bg-slate-900 text-white p-10 rounded-[40px]">
-                <h3 className="text-2xl font-bold mb-6">문제는 기술이 아니라 ‘패턴’입니다</h3>
-                <p className="text-slate-400 mb-8">자극 → 행동 → 불안 → 자기합리화 → 반복의 구조가 형성되면 다시 유사한 선택이 일어날 가능성이 높습니다.</p>
-                <div className="space-y-4">
-                  <p className="text-indigo-400 font-bold">상담은 묻습니다:</p>
-                  <ul className="space-y-3 text-sm">
-                    <li className="flex gap-2"><span className="text-indigo-500">•</span> 어떤 감정이 그 행동을 촉발했는가</li>
-                    <li className="flex gap-2"><span className="text-indigo-500">•</span> 어떤 왜곡된 생각이 개입했는가</li>
-                    <li className="flex gap-2"><span className="text-indigo-500">•</span> 어떤 상황에서 통제가 무너졌는가</li>
-                    <li className="flex gap-2"><span className="text-indigo-500">•</span> 다시 같은 환경이 오면 어떻게 다르게 반응할 것인가</li>
-                  </ul>
-                </div>
-                <p className="mt-8 text-white font-bold">막연한 반성이 아니라 구체적인 재발 방지 전략을 세웁니다.</p>
-              </div>
-            </div>
+            </section>
 
-            <div className="bg-white rounded-[40px] p-12 shadow-sm border border-slate-100 mb-24">
+            {/* 4. 상담은 행동의 구조를 이해하는 과정입니다 */}
+            <section className="bg-slate-900 text-white p-12 rounded-[40px]">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-bold mb-6">상담은 행동의 구조를 이해하는 과정입니다</h2>
+                <p className="text-slate-400">단순히 “왜 그랬는가”만 묻지 않습니다. 대신 구체적인 재발 방지 전략을 함께 만듭니다.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  "어떤 감정이 그 행동을 촉발했는가",
+                  "어떤 생각이 판단을 흐리게 만들었는가",
+                  "어떤 상황에서 통제가 무너졌는가",
+                  "비슷한 상황이 다시 오면 어떻게 다르게 대응할 것인가"
+                ].map((q, i) => (
+                  <div key={i} className="p-6 bg-slate-800 rounded-2xl border border-slate-700 flex gap-4">
+                    <HelpCircle className="w-6 h-6 text-indigo-400 shrink-0" />
+                    <p className="font-medium">{q}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 5. 디지털 성범죄 치료는 구조를 바꾸는 과정입니다 (기존 박스 유지) */}
+            <div className="bg-white rounded-[40px] p-12 shadow-sm border border-slate-100">
               <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center">디지털 성범죄 치료는 구조를 바꾸는 과정입니다</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {[
@@ -2715,18 +2792,32 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
               <p className="mt-12 text-center text-lg text-slate-600">단순한 다짐이 아니라 <span className="text-indigo-600 font-bold">행동 시스템을 재설계하는 과정</span>입니다.</p>
             </div>
 
-            <div className="bg-slate-900 text-white p-12 rounded-[40px] text-center space-y-6">
-              <h3 className="text-3xl font-bold">지금이 가장 중요한 시점입니다</h3>
-              <p className="text-xl text-slate-400">디지털 환경은 사라지지 않습니다. 스마트폰과 인터넷은 일상 속에 계속 존재합니다.</p>
-              <div className="max-w-3xl mx-auto space-y-6 text-lg">
-                <p>중요한 것은 환경을 피하는 것이 아니라 그 안에서 통제 가능한 자신을 만드는 것입니다.</p>
-                <div className="bg-indigo-600 p-8 rounded-3xl">
-                  <p className="font-bold text-2xl">디지털 성범죄 치료는 낙인을 위한 과정이 아니라 <br />다시는 같은 선택을 반복하지 않기 위한 준비입니다.</p>
+            {/* 6. 지금이 가장 중요한 시점입니다 */}
+            <section className="text-center space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-slate-900">지금이 가장 중요한 시점입니다</h2>
+                <div className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed space-y-4">
+                  <p>스마트폰과 인터넷은 우리의 일상에서 사라지지 않습니다.</p>
+                  <p>중요한 것은 환경을 완전히 피하는 것이 아니라 <span className="font-bold text-indigo-600">그 안에서 스스로를 통제할 수 있는 힘</span>을 만드는 것입니다.</p>
+                  <p>디지털 성범죄 상담은 낙인을 위한 과정이 아니라 다시는 같은 선택을 반복하지 않기 위한 준비 과정입니다.</p>
                 </div>
-                <p className="text-xl">혼자 해결하려 애쓰지 않으셔도 됩니다.</p>
               </div>
-              <p className="text-3xl font-black pt-6">반복을 끝내고 싶다면, 지금이 변화의 시작입니다.</p>
-            </div>
+
+              <div className="bg-indigo-600 text-white p-12 rounded-[40px] shadow-xl relative overflow-hidden">
+                <div className="relative z-10 space-y-6">
+                  <p className="text-2xl font-bold">혼자 해결하려 애쓰지 않으셔도 됩니다.</p>
+                  <p className="text-4xl font-black">반복을 끝내고 싶다면,<br />지금이 변화의 시작이 될 수 있습니다.</p>
+                </div>
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+              </div>
+
+              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 max-w-3xl mx-auto">
+                <p className="text-slate-700 font-medium leading-relaxed">
+                  디지털 성범죄 문제는 혼자 해결하려 할수록 반복되기 쉽습니다.<br />
+                  전문 상담을 통해 행동 패턴을 이해하고 재발을 예방하는 것이 중요합니다.
+                </p>
+              </div>
+            </section>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
