@@ -40,7 +40,10 @@ import {
   GraduationCap,
   Monitor,
   HelpCircle,
-  Heart
+  Heart,
+  Info,
+  PieChart,
+  Clock
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
@@ -2988,24 +2991,6 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
               </div>
             </section>
 
-            {/* Related Keywords Section */}
-            <section className="mt-12 pt-8 border-t border-slate-100">
-              <div className="flex flex-wrap gap-2 items-center">
-                <span className="text-sm font-bold text-slate-400 mr-2">관련 키워드:</span>
-                {[
-                  "성범죄 재범방지 교육",
-                  "성범죄 상담",
-                  "성범죄 양형자료",
-                  "성범죄 심리상담",
-                  "재범방지 교육 상담"
-                ].map(keyword => (
-                  <span key={keyword} className="text-xs text-slate-400 bg-slate-50 px-3 py-1 rounded-full">
-                    #{keyword}
-                  </span>
-                ))}
-              </div>
-            </section>
-
             {/* Counseling Guide & Closing */}
             <section className="mt-32 pt-20 border-t border-slate-200">
               <div className="bg-indigo-600 rounded-[48px] p-12 lg:p-20 text-white text-center shadow-2xl shadow-indigo-200">
@@ -4481,22 +4466,7 @@ const LegalAssessmentPage = () => {
               사건 이후 어떤 변화와 재발 방지 노력이 실제로 이루어지고 있는지입니다.<br className="hidden md:block" />
               전문 성심리상담과 상담 소견서는 이러한 변화를 객관적으로 설명하는 중요한 자료가 될 수 있습니다.
             </p>
-            <div className="mt-[36px] flex flex-col md:flex-row justify-center gap-4">
-              <a 
-                href={NAVER_PLACE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100"
-              >
-                상담 문의하기
-              </a>
-              <Link 
-                to="/guide/process"
-                className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:bg-slate-50 transition-all"
-              >
-                상담 안내 보기
-              </Link>
-            </div>
+              {/* Buttons removed as per request */}
           </div>
         </div>
       </section>
@@ -4662,7 +4632,294 @@ const LegalAssessmentPage = () => {
   );
 };
 
+const NoticePage = () => {
+  const externalNoticeUrl = "http://mindbrain.cafe24.com/%ec%bb%a4%eb%ae%a4%eb%8b%88%ed%8b%b0/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/";
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      className="bg-[#f7f9fb] min-h-screen"
+    >
+      {/* ① 상단 소개 영역 */}
+      <section className="relative py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 opacity-40">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/123355521f6cb02a4c959ef391321ecd.png" 
+            alt="Notice Hero Background" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4">공지사항 안내</h1>
+          <p className="text-xl text-slate-300 leading-relaxed">
+            센터 운영 안내, 교육 일정, 상담 관련 공지사항을 확인하실 수 있습니다.
+          </p>
+          <div className="mt-8">
+            <p className="text-base text-slate-300 leading-relaxed">
+              센터 운영 안내, 상담 일정, 교육 프로그램 공지 등은
+              <br />
+              별도의 공지사항 페이지에서 확인하실 수 있습니다.
+            </p>
+            <p className="text-base text-slate-300 leading-relaxed mt-4">
+              최신 공지사항은 아래 링크를 통해 확인하실 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ② 공지사항 바로가기 카드 */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-10 rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">센터 공지사항 확인</h3>
+            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+              상담 일정, 교육 프로그램 안내, 센터 운영 공지 등
+              <br />
+              최신 공지사항을 확인하실 수 있습니다.
+            </p>
+            <a 
+              href={externalNoticeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95"
+            >
+              공지사항 바로가기
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ③ 공지사항 안내 아이콘 영역 */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Monitor className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">센터 운영 공지</h3>
+              <p className="text-slate-500 leading-relaxed">상담 일정 변경, 휴무 안내 등</p>
+            </div>
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Calendar className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">교육 프로그램 일정</h3>
+              <p className="text-slate-500 leading-relaxed">재범방지 교육 및 상담 프로그램 일정 안내</p>
+            </div>
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <MessageSquare className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">상담 관련 안내</h3>
+              <p className="text-slate-500 leading-relaxed">상담 신청 및 상담 절차 관련 공지</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ④ 공지 이용 안내 */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">공지 이용 안내</h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              센터 공지사항에는 상담 일정, 교육 프로그램, 센터 운영과 관련된 다양한 안내가 게시됩니다.
+              <br />
+              공지사항은 별도의 공지 페이지에서 관리되며 최신 정보는 공지사항 페이지에서 확인하실 수 있습니다.
+            </p>
+            <a 
+              href={externalNoticeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-lg"
+            >
+              공지사항 바로가기 <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ⑤ 상담 문의 안내 */}
+      <section className="py-24 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">상담 문의 안내</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-12">
+            공지사항 확인 후 상담 문의가 필요한 경우,
+            <br />
+            센터로 연락 주시면 안내해 드립니다.
+          </p>
+          <div className="inline-flex flex-col sm:flex-row gap-6 justify-center">
+            <a 
+              href={NAVER_PLACE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
+            >
+              <Calendar className="w-5 h-5" />
+              예약하기
+            </a>
+            <a 
+              href={`tel:${CONTACT_PHONE}`}
+              className="px-12 py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-95 flex items-center justify-center gap-2"
+            >
+              <PhoneCall className="w-5 h-5" />
+              전화상담 ({CONTACT_PHONE})
+            </a>
+          </div>
+        </div>
+      </section>
+    </motion.div>
+  );
+};
+
+const MediaActivityPage = () => {
+  const externalMediaUrl = "http://mindbrain.cafe24.com/%ec%bb%a4%eb%ae%a4%eb%8b%88%ed%8b%b0/%eb%b0%a9%ec%86%a1%ec%b6%9c%ec%97%b0%eb%8c%80%ec%99%b8%ed%99%9c%eb%8f%99/";
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      className="bg-[#f7f9fb] min-h-screen"
+    >
+      {/* ① 상단 소개 영역 (Hero) */}
+      <section className="relative py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 opacity-40">
+          <img 
+            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5cb3f455097954a32bb3e0d4ff55aaad.png" 
+            alt="Media Activities Hero Background" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4">방송 · 대외활동</h1>
+          <p className="text-xl text-slate-300 leading-relaxed max-w-3xl">
+            센터의 방송 출연 및 다양한 대외활동 내용을 확인하실 수 있습니다.
+          </p>
+          <div className="mt-8 space-y-4">
+            <p className="text-base text-slate-300 leading-relaxed">
+              센터는 다양한 방송과 언론, 강연 및 교육 활동 등을 통해
+              <br />
+              심리 상담과 재범 방지 교육의 중요성을 알리는 활동을 하고 있습니다.
+            </p>
+            <p className="text-base text-slate-300 leading-relaxed">
+              방송 출연 및 대외활동 관련 내용은
+              <br />
+              별도의 페이지에서 확인하실 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ② 방송 / 대외활동 바로가기 카드 */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-10 rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">방송 및 대외활동 보기</h3>
+            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+              센터의 방송 출연, 인터뷰, 강연 활동 등
+              <br />
+              다양한 대외활동 내용을 확인하실 수 있습니다.
+            </p>
+            <a 
+              href={externalMediaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95"
+            >
+              방송 / 대외활동 페이지 바로가기
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ③ 활동 분야 안내 아이콘 영역 */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Monitor className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">방송 출연</h3>
+              <p className="text-slate-500 leading-relaxed">TV 및 언론 인터뷰</p>
+            </div>
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">강연 및 교육 활동</h3>
+              <p className="text-slate-500 leading-relaxed">재범방지 교육 및 심리 교육</p>
+            </div>
+            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Users className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">전문가 활동</h3>
+              <p className="text-slate-500 leading-relaxed">심리 상담 및 연구 활동</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ④ 활동 안내 설명 */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">활동 안내</h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              센터의 방송 및 대외활동은 심리 상담의 중요성과 건강한 사회 인식 형성을 위한 활동입니다.
+              <br />
+              관련 활동 내용은 별도의 페이지에서 확인하실 수 있습니다.
+            </p>
+            <a 
+              href={externalMediaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-lg"
+            >
+              방송 / 대외활동 페이지 바로가기 <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ⑤ 문의 안내 */}
+      <section className="py-24 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">문의 안내</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-12">
+            방송 인터뷰 요청, 강연 문의, 협력 문의가 필요한 경우
+            <br />
+            센터로 연락 주시면 안내해 드립니다.
+          </p>
+          <div className="inline-flex flex-col sm:flex-row gap-6 justify-center">
+            <a 
+              href={`tel:${CONTACT_PHONE}`}
+              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
+            >
+              <PhoneCall className="w-5 h-5" />
+              문의하기 ({CONTACT_PHONE})
+            </a>
+          </div>
+        </div>
+      </section>
+    </motion.div>
+  );
+};
+
 const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
+  if (slug === 'notice') {
+    return <NoticePage />;
+  }
+
+  if (slug === 'activities') {
+    return <MediaActivityPage />;
+  }
+
   if (slug === 'intro') {
     return (
       <motion.div 
@@ -7175,13 +7432,447 @@ const COLUMN_POSTS = [
   }
 ];
 
+const MEDIA_DATA = [
+  {
+    title: "이커머스 업체 대표 남편, 직원 강제추행 혐의 인정…검찰 집행유예 구형",
+    source: "연합뉴스",
+    date: "2026-03-10",
+    category: "사건대응",
+    summary: "직장 내 위계나 관계를 배경으로 한 성범죄 이슈가 다시 주목된 사례입니다. 사건 발생 후 초기 대응과 사실관계 정리가 얼마나 중요한지 생각하게 합니다.",
+    point: "사건 이후 진술 정리와 조기 상담 개입의 중요성을 시사합니다. 법적 판단은 사건별로 달라질 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260310114900004"
+  },
+  {
+    title: "부산 ‘돌려차기’ 사건 국가배상 확정…법무부 항소 포기",
+    source: "연합뉴스",
+    date: "2026-03-05",
+    category: "사건대응",
+    summary: "중대한 폭력·성범죄 사건 이후 국가 책임과 피해 회복 문제까지 함께 논의된 사례입니다. 사건이 남기는 사회적 파장과 제도적 대응의 중요성을 보여줍니다.",
+    point: "피해 회복과 재발 방지 체계가 함께 논의되어야 함을 시사합니다. 구체적 법률 평가는 사건별 검토가 필요합니다.",
+    url: "https://www.yna.co.kr/view/AKR20260305157300004"
+  },
+  {
+    title: "미성년자 대상 성매매·성착취물 제작 사건, 징역 5년 선고",
+    source: "연합뉴스",
+    date: "2026-03-04",
+    category: "디지털 성범죄",
+    summary: "아동·청소년 대상 범죄는 매우 엄중하게 다뤄지고 있으며, 제작과 유인, 착취 구조 전반이 함께 문제 되는 흐름을 보여줍니다.",
+    point: "왜곡된 인식 교정과 재범방지 교육의 필요성을 보여주는 사례입니다. 사건별 판단 기준은 다를 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260304086800056"
+  },
+  {
+    title: "현직 검사, 전 연인 신체 몰래촬영 의혹…경찰 수사",
+    source: "동아일보",
+    date: "2026-02-27",
+    category: "디지털 성범죄",
+    summary: "불법촬영 문제는 직업이나 지위와 무관하게 발생할 수 있으며, 친밀한 관계 안에서도 중대한 침해가 될 수 있음을 보여줍니다.",
+    point: "디지털 성범죄 예방 교육과 경계 인식의 필요성을 시사합니다. 법적 평가는 수사와 재판 과정에서 달라질 수 있습니다.",
+    url: "https://www.donga.com/news/Society/article/all/20260227/133436259/2"
+  },
+  {
+    title: "딥페이크 삭제·차단 의무 법안, 반대 의견 대량…좌표 가능성",
+    source: "경향신문",
+    date: "2026-02-19",
+    category: "디지털 성범죄",
+    summary: "딥페이크 대응 법안과 관련해 온라인 여론 형성 방식까지 함께 논의된 사례입니다. 기술 환경 변화에 맞춘 예방과 대응 체계가 중요해지고 있습니다.",
+    point: "디지털 성범죄는 기술 이해와 예방 교육이 함께 가야 함을 보여줍니다. 제도 평가는 향후 변화 가능성이 있습니다.",
+    url: "https://www.khan.co.kr/article/202602190600011"
+  },
+  {
+    title: "대학원생 성폭행 혐의 전직 교수, 항소심 징역 5년",
+    source: "연합뉴스",
+    date: "2026-02-13",
+    category: "사건대응",
+    summary: "권력관계와 신뢰관계를 이용한 성폭력 문제의 심각성이 다시 확인된 사례입니다. 교육기관 내 관계 윤리와 책임이 중요하게 다뤄졌습니다.",
+    point: "위계 관계에서의 성인지 감수성과 경계 교육의 필요성을 시사합니다. 사건별 법적 판단은 구체적 사실에 따라 다릅니다.",
+    url: "https://www.yna.co.kr/view/AKR20260213077200053"
+  },
+  {
+    title: "교회 교사-제자 관계 이용 성범죄, 1심 징역 6년",
+    source: "연합뉴스",
+    date: "2026-02-12",
+    category: "성인지 감수성",
+    summary: "신뢰관계와 보호자적 위치가 범죄에 악용될 때 피해가 더 깊어질 수 있음을 보여주는 사례입니다. 관계의 비대칭성을 이해하는 교육이 중요합니다.",
+    point: "관계 내 권한 차이와 성인지 교육의 필요성을 보여줍니다. 구체적 판단은 사건별로 달라질 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260212077400061"
+  },
+  {
+    title: "여성 신체 불법촬영한 전직 소방관, 2심 집행유예 감형",
+    source: "연합뉴스",
+    date: "2026-02-11",
+    category: "양형자료",
+    summary: "불법촬영 사건에서 양형 판단 요소가 어떻게 다뤄지는지 관심을 모은 사례입니다. 사건 이후 태도와 조치가 함께 검토되는 흐름을 생각하게 합니다.",
+    point: "심리상담 기록과 변화 과정의 객관화가 중요할 수 있음을 시사합니다. 법적 판단은 사건별로 다를 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260211129400056"
+  },
+  {
+    title: "국립대 교수 상습 성추행 사건, 징역 2년 법정구속",
+    source: "동아일보",
+    date: "2026-02-11",
+    category: "사건대응",
+    summary: "반복성과 관계 내 권한 문제가 결합된 사건으로, 교육현장에서의 윤리와 책임이 다시 강조된 사례입니다.",
+    point: "반복 행동에 대한 자기점검과 조기 개입의 중요성을 시사합니다. 구체적 법률 평가는 개별 사건 검토가 필요합니다.",
+    url: "https://www.donga.com/news/Society/article/all/20260211/133343214/1"
+  },
+  {
+    title: "불법촬영물 유통 사이트 수사…시청자 처벌 쟁점",
+    source: "연합뉴스",
+    date: "2026-02-07",
+    category: "디지털 성범죄",
+    summary: "불법촬영물 유통 구조와 소비 행위의 책임 범위가 사회적으로 다시 논의된 사례입니다. 단순 시청이라 여겨도 위험성이 작지 않다는 점을 떠올리게 합니다.",
+    point: "디지털 콘텐츠 이용 습관에 대한 인식 점검이 필요함을 보여줍니다. 관련 판단은 사건 경위에 따라 달라질 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260206126500061"
+  },
+  {
+    title: "AI 기반 디지털성범죄 모니터링·삭제지원 자동화 정책",
+    source: "대한민국 정책브리핑",
+    date: "2026-02-12",
+    category: "디지털 성범죄",
+    summary: "AI를 활용한 탐지·삭제 지원 정책이 확대되는 흐름을 소개한 자료입니다. 기술 기반 대응이 중요한 축으로 자리잡고 있음을 보여줍니다.",
+    point: "디지털 성범죄 대응은 예방 교육과 기술적 대응이 함께 가야 함을 시사합니다. 실제 적용 범위는 제도에 따라 달라질 수 있습니다.",
+    url: "https://www.korea.kr/news/policyNewsView.do?newsId=148959267"
+  },
+  {
+    title: "디지털성범죄·젠더폭력 대응 강화(연간 정책)",
+    source: "대한민국 정책브리핑",
+    date: "2026-01-30",
+    category: "성인지 감수성",
+    summary: "정부 차원의 연간 대응 방향을 통해 디지털 성범죄와 젠더폭력 예방 정책이 강화되는 흐름을 정리한 자료입니다.",
+    point: "예방 교육과 사회적 감수성 향상이 함께 필요하다는 점을 보여줍니다. 세부 제도는 계속 바뀔 수 있습니다.",
+    url: "https://www.korea.kr/news/policyNewsView.do?newsId=148958837"
+  },
+  {
+    title: "치과 엑스레이실 등 449회 불법촬영, 항소심 집행유예",
+    source: "연합뉴스",
+    date: "2026-01-26",
+    category: "양형자료",
+    summary: "반복된 불법촬영 사건에서 행위의 지속성과 양형 판단 요소가 함께 주목된 사례입니다. 행동 패턴의 누적성이 중요하게 보일 수 있음을 생각하게 합니다.",
+    point: "반복 행동에 대한 재범위험 점검과 구조적 개입의 중요성을 시사합니다. 법적 판단은 사건별로 달라질 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20260123113600065"
+  },
+  {
+    title: "어린이집 화장실 불법카메라 의혹…원장 남편 수사",
+    source: "MBC",
+    date: "2026-01-22",
+    category: "디지털 성범죄",
+    summary: "아동이 있는 공간에서의 불법촬영 의혹이 제기되며 사회적 불안이 커진 사례입니다. 보호 환경에서의 안전 관리가 중요함을 보여줍니다.",
+    point: "예방 교육과 공간 안전 점검의 필요성을 시사합니다. 구체적 사실관계는 수사 결과에 따라 달라질 수 있습니다.",
+    url: "https://imnews.imbc.com/replay/2026/nwtoday/article/6795367_37012.html"
+  },
+  {
+    title: "수면제 먹여 성폭행·촬영한 BJ·피해자 남친, 1심 실형",
+    source: "연합뉴스",
+    date: "2026-01-22",
+    category: "사건대응",
+    summary: "약물, 촬영, 관계 악용이 결합된 중대한 사건으로, 피해 통제와 왜곡된 인식의 문제가 함께 드러난 사례입니다.",
+    point: "왜곡된 관계 인식과 충동 통제 문제에 대한 심리적 개입 필요성을 시사합니다. 사건별 판단은 사실관계에 따라 달라집니다.",
+    url: "https://www.yna.co.kr/view/AKR20260122107700061"
+  },
+  {
+    title: "텔레그램 기반 성착취 ‘목사방’ 사건, 2심 첫 공판(1심 무기징역)",
+    source: "동아일보",
+    date: "2026-01-07",
+    category: "디지털 성범죄",
+    summary: "온라인 플랫폼을 매개로 한 조직적 성착취 범죄의 심각성이 계속 조명된 사례입니다. 익명성과 폐쇄성이 범죄를 강화할 수 있음을 보여줍니다.",
+    point: "디지털 환경에서의 왜곡된 인식 교정과 강한 재범방지 교육의 필요성을 시사합니다. 구체적 법적 평가는 사건별로 다릅니다.",
+    url: "https://www.donga.com/news/Society/article/all/20260107/133107710/1"
+  },
+  {
+    title: "장기간 여성 교인 대상 성폭력 의혹 전직 목사 구속",
+    source: "한겨레",
+    date: "2026-01-06",
+    category: "성인지 감수성",
+    summary: "종교적 권위와 신뢰가 악용된 의혹이 제기된 사례로, 보호와 돌봄의 위치에 있는 사람의 책임이 다시 강조됐습니다.",
+    point: "권위 관계 속 경계 교육과 자기점검의 중요성을 보여줍니다. 수사·재판 결과에 따라 평가는 달라질 수 있습니다.",
+    url: "https://www.hani.co.kr/arti/society/society_general/1238359.html"
+  },
+  {
+    title: "또래 여중생 집단 성폭행·불법촬영, 수년 후 실형 선고",
+    source: "연합뉴스",
+    date: "2025-12-22",
+    category: "디지털 성범죄",
+    summary: "청소년 집단 내 성폭력과 촬영 문제가 결합된 사건으로, 초기 행동의 심각성을 가볍게 여기면 안 된다는 점을 보여줍니다.",
+    point: "청소년 대상 성인지 교육과 디지털 윤리 교육의 필요성을 시사합니다. 사건별 평가는 구체적 경위에 따라 다릅니다.",
+    url: "https://www.yna.co.kr/view/AKR20251222111300063"
+  },
+  {
+    title: "교사 딥페이크 성착취물 제작·유포, 항소심 징역 3년",
+    source: "연합뉴스",
+    date: "2025-12-19",
+    category: "디지털 성범죄",
+    summary: "딥페이크 기술을 악용한 성착취 범죄가 교육현장과 연결되어 사회적 충격을 준 사례입니다. 기술 활용 윤리와 예방 교육의 중요성이 커지고 있습니다.",
+    point: "AI·딥페이크 관련 성인지 교육과 조기 개입의 필요성을 보여줍니다. 구체적 판단은 사건마다 다를 수 있습니다.",
+    url: "https://www.yna.co.kr/view/AKR20251219064251065"
+  },
+  {
+    title: "성인 화보 제작사 전 대표 성폭행·불법촬영, 징역 10년",
+    source: "동아일보",
+    date: "2025-12-19",
+    category: "사건대응",
+    summary: "촬영·제작 환경 안에서 동의와 권력 문제를 어떻게 봐야 하는지 다시 생각하게 한 사례입니다. 산업 현장에서도 경계와 책임이 핵심이라는 점이 드러납니다.",
+    point: "동의 개념과 관계 내 권력 인식에 대한 교육의 필요성을 시사합니다. 법적 평가는 개별 사실관계에 따라 달라집니다.",
+    url: "https://www.donga.com/news/Society/article/all/20251219/132999807/2"
+  },
+  {
+    title: "전직 국회의원 보좌관 성추행 사건, 대법원 징역 1년 확정",
+    source: "한겨레",
+    date: "2025-12-11",
+    category: "사건대응",
+    summary: "직장 내 권력관계에서 발생하는 성추행 사건이 최종심까지 이어진 사례입니다. 조직 내 성인지 감수성과 구조적 예방이 중요함을 보여줍니다.",
+    point: "직장 내 성인지 교육과 관계 경계 설정의 중요성을 시사합니다. 구체적 법적 판단은 사건별로 다릅니다.",
+    url: "https://www.hani.co.kr/arti/society/women/1234068.html"
+  }
+];
+
+const MediaArchive = () => {
+  const [filter, setFilter] = useState('전체');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('최신순');
+
+  const categories = ['전체', '재범방지', '심리상담', '사건대응', '양형자료', '디지털 성범죄', '성인지 감수성'];
+
+  const filteredData = MEDIA_DATA
+    .filter(item => (filter === '전체' || item.category === filter))
+    .filter(item => (
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.source.toLowerCase().includes(searchQuery.toLowerCase())
+    ))
+    .sort((a, b) => {
+      if (sortBy === '최신순') return new Date(b.date).getTime() - new Date(a.date).getTime();
+      if (sortBy === '카테고리순') return a.category.localeCompare(b.category);
+      return 0;
+    });
+
+  const categoryStats = categories.filter(c => c !== '전체').map(cat => ({
+    name: cat,
+    count: MEDIA_DATA.filter(item => item.category === cat).length
+  })).sort((a, b) => b.count - a.count);
+
+  const monthlyArchive = Array.from(new Set(MEDIA_DATA.map(item => item.date.substring(0, 7))))
+    .sort((a, b) => b.localeCompare(a));
+
+  const stats = {
+    total: MEDIA_DATA.length,
+    topCategory: categoryStats[0]?.name || "-",
+    lastUpdate: MEDIA_DATA.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0].date
+  };
+
+  return (
+    <div className="space-y-12">
+      {/* Stats Bar */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { label: "총 기사 수", value: `${stats.total}건`, icon: FileText },
+          { label: "주요 카테고리", value: stats.topCategory, icon: BarChart3 },
+          { label: "최근 업데이트", value: stats.lastUpdate, icon: Calendar }
+        ].map((stat, i) => (
+          <div key={i} className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm flex items-center justify-between group hover:shadow-md transition-all">
+            <div className="space-y-1">
+              <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">{stat.label}</p>
+              <p className="text-2xl font-black text-slate-900">{stat.value}</p>
+            </div>
+            <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+              <stat.icon className="w-7 h-7" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Additional Dashboard Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Category Stats Graph */}
+        <div className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm space-y-6">
+          <div className="flex items-center gap-3 text-indigo-600">
+            <PieChart className="w-6 h-6" />
+            <h4 className="font-bold">카테고리별 분포</h4>
+          </div>
+          <div className="space-y-3">
+            {categoryStats.slice(0, 4).map((stat, i) => (
+              <div key={i} className="space-y-1.5">
+                <div className="flex justify-between text-xs font-bold">
+                  <span className="text-slate-600">{stat.name}</span>
+                  <span className="text-indigo-600">{stat.count}건</span>
+                </div>
+                <div className="h-1.5 w-full bg-slate-50 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-indigo-500 rounded-full" 
+                    style={{ width: `${(stat.count / stats.total) * 100}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Monthly Archive */}
+        <div className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm space-y-6">
+          <div className="flex items-center gap-3 text-indigo-600">
+            <Clock className="w-6 h-6" />
+            <h4 className="font-bold">월별 아카이브</h4>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            {monthlyArchive.map((month, i) => (
+              <div key={i} className="px-3 py-2 bg-slate-50 rounded-xl text-center">
+                <span className="text-xs font-black text-slate-400">{month.replace('-', '.')}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Filter & Search Area */}
+      <div className="bg-white p-6 lg:p-10 rounded-[40px] border border-slate-100 shadow-sm space-y-8">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="flex flex-wrap gap-2">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
+                  filter === cat 
+                    ? 'bg-slate-900 text-white shadow-lg shadow-slate-200' 
+                    : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-4">
+            <select 
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-slate-50 border-none rounded-2xl px-4 py-3 text-sm font-bold text-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none"
+            >
+              <option value="최신순">최신순</option>
+              <option value="카테고리순">카테고리순</option>
+            </select>
+          </div>
+        </div>
+        <div className="relative">
+          <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+          <input 
+            type="text"
+            placeholder="기사 제목, 요약, 언론사 검색..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-14 pr-6 py-5 bg-slate-50 border-none rounded-3xl text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
+          />
+        </div>
+      </div>
+
+      {/* Main Dashboard (Article Cards) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {filteredData.map((item, idx) => (
+          <motion.div 
+            key={idx}
+            layout
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-[40px] border border-slate-100 shadow-sm overflow-hidden flex flex-col group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="p-8 lg:p-10 flex-grow space-y-6">
+              <div className="flex items-center justify-between">
+                <span className="px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-[11px] font-black uppercase tracking-widest">
+                  {item.category}
+                </span>
+                <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {item.date}
+                </span>
+              </div>
+              
+              <div className="space-y-3">
+                <p className="text-sm font-bold text-indigo-500">{item.source}</p>
+                <h3 className="text-xl lg:text-2xl font-black text-slate-900 leading-snug group-hover:text-indigo-600 transition-colors">
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                </h3>
+              </div>
+
+              <p className="text-slate-600 leading-relaxed text-sm lg:text-base">
+                {item.summary}
+              </p>
+
+              <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                <div className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-xs font-black text-slate-400 uppercase tracking-wider mb-1">상담/대응 포인트</p>
+                    <p className="text-sm text-slate-700 font-medium leading-relaxed">
+                      {item.point}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="px-8 pb-8 lg:px-10 lg:pb-10">
+              <a 
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-black transition-all group/btn"
+              >
+                기사 원문 보기
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {filteredData.length === 0 && (
+        <div className="py-32 text-center space-y-4 bg-slate-50 rounded-[48px] border border-dashed border-slate-200">
+          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
+            <Search className="w-8 h-8 text-slate-300" />
+          </div>
+          <p className="text-slate-400 font-bold">검색 결과가 없습니다.</p>
+        </div>
+      )}
+
+      {/* Footer Disclaimer */}
+      <footer className="bg-slate-900 rounded-[48px] p-10 lg:p-16 text-white space-y-8">
+        <div className="flex items-center gap-3">
+          <AlertCircle className="w-6 h-6 text-indigo-400" />
+          <h4 className="text-xl font-bold">자료 이용 시 유의사항</h4>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-slate-400 leading-relaxed">
+          <ul className="space-y-3">
+            <li className="flex gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
+              본 페이지는 관련 기사 제목과 링크, 그리고 자체 작성한 짧은 정보 요약을 정리한 자료입니다.
+            </li>
+            <li className="flex gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
+              기사 원문과 저작권은 각 언론사 및 저작권자에게 있습니다.
+            </li>
+          </ul>
+          <ul className="space-y-3">
+            <li className="flex gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
+              구체적인 법률 판단은 사건별로 다를 수 있으며, 필요 시 변호사 상담이 필요할 수 있습니다.
+            </li>
+            <li className="flex gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
+              심리상담은 사건 이후의 인식 변화, 재범방지 노력, 자기이해를 돕는 과정입니다.
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
 const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
   const [activeTest, setActiveTest] = useState<string | null>(null);
   const [activePost, setActivePost] = useState<typeof COLUMN_POSTS[0] | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [activeTest, activePost]);
+  }, [activeTest, activePost, slug]);
 
   return (
     <motion.div 
@@ -7189,8 +7880,12 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
       animate={{ opacity: 1 }}
       className="bg-white min-h-screen"
     >
-      <div className="bg-slate-50 py-12 lg:py-24 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div 
+        className={`relative py-12 lg:py-24 border-b border-slate-100 overflow-hidden ${slug === 'media' ? 'bg-cover bg-center' : 'bg-slate-50'}`}
+        style={slug === 'media' ? { backgroundImage: 'url(https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/c288b30e6dbc92d5fcfcf44bbd2e765d.png)' } : {}}
+      >
+        {slug === 'media' && <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]" />}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-4 mb-4">
             {(activeTest || activePost) && (
               <button 
@@ -7198,20 +7893,32 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                   setActiveTest(null);
                   setActivePost(null);
                 }}
-                className="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#4F46E5] transition-colors"
+                className={`p-2 rounded-full border transition-colors ${slug === 'media' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-slate-200 text-slate-600 hover:text-[#4F46E5]'}`}
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
             )}
-            <h1 className="text-2xl lg:text-4xl font-bold text-slate-900">
+            <h1 className={`font-bold ${slug === 'media' ? 'text-3xl lg:text-6xl text-white' : 'text-2xl lg:text-4xl text-slate-900'}`}>
               {activeTest ? activeTest : activePost ? activePost.category : title}
             </h1>
           </div>
-          <p className="text-lg text-slate-500">
+          <p className={`text-lg ${slug === 'media' ? 'text-slate-200' : 'text-slate-500'}`}>
             {activeTest 
               ? "객관적인 자가진단을 통해 자신의 상태를 점검해보세요." 
               : activePost
               ? activePost.title
+              : slug === 'media'
+              ? (
+                <div className="space-y-4">
+                  <span className="block whitespace-pre-line">
+                    재범방지, 심리상담, 사건 대응, 성인지 교육과 관련된 주요 기사를 정리한 자료입니다.
+                  </span>
+                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold ${slug === 'media' ? 'bg-white/10 text-white border border-white/10' : 'bg-indigo-50 text-indigo-600'}`}>
+                    <Info className="w-4 h-4" />
+                    기사 제목을 누르면 원문을 확인할 수 있습니다. 본 페이지는 기사 원문 재게시가 아닌 정보 정리 및 안내를 위한 자료입니다.
+                  </div>
+                </div>
+              )
               : "성범죄 예방과 교정을 위한 전문 지식과 사례를 공유합니다."
             }
           </p>
@@ -7219,6 +7926,10 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
+        {slug === 'media' && (
+          <MediaArchive />
+        )}
+
         {slug === 'check' && !activeTest && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
