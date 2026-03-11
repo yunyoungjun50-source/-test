@@ -2629,7 +2629,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
             {/* 1. 디지털 성범죄 상담·치료가 필요한 이유 */}
             <section>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">디지털 성범죄 상담·치료가 필요한 이유</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
                   <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100">
                     <p className="text-slate-500 mb-6 italic">“많은 분들이 처음에는 이렇게 말합니다.”</p>
@@ -2640,26 +2640,39 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                     </div>
                   </div>
                   <p className="text-slate-600 leading-relaxed">처음에는 사건을 그렇게 이해하려 합니다. 하지만 시간이 지나면 대부분 같은 질문에 다시 마주하게 됩니다.</p>
+                  
+                  <div className="bg-indigo-900 text-white p-10 rounded-[40px] shadow-xl">
+                    <h3 className="text-xl font-bold mb-8 text-indigo-200">우리가 마주해야 할 질문들</h3>
+                    <ul className="space-y-6">
+                      {[
+                        "왜 그 순간에 멈추지 못했는가.",
+                        "왜 화면 앞에서는 판단이 느슨해졌는가.",
+                        "다시 같은 상황이 오면 나는 통제할 수 있는가."
+                      ].map((q, i) => (
+                        <li key={i} className="flex gap-4 items-start">
+                          <span className="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center shrink-0 text-xs">{i+1}</span>
+                          <p className="text-lg leading-tight">{q}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="bg-indigo-900 text-white p-10 rounded-[40px] shadow-xl">
-                  <h3 className="text-xl font-bold mb-8 text-indigo-200">우리가 마주해야 할 질문들</h3>
-                  <ul className="space-y-6">
-                    {[
-                      "왜 그 순간에 멈추지 못했는가.",
-                      "왜 화면 앞에서는 판단이 느슨해졌는가.",
-                      "다시 같은 상황이 오면 나는 통제할 수 있는가."
-                    ].map((q, i) => (
-                      <li key={i} className="flex gap-4 items-start">
-                        <span className="w-6 h-6 rounded-full bg-indigo-700 flex items-center justify-center shrink-0 text-xs">{i+1}</span>
-                        <p className="text-lg leading-tight">{q}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-10 pt-6 border-t border-indigo-800 text-indigo-300 text-sm">
-                    이 질문은 단순한 법적 문제를 넘어 자신의 행동을 이해하려는 과정에서 시작됩니다.
-                  </p>
+                
+                <div className="relative">
+                  <img 
+                    src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/67d97b84c9f7063f52c317540fa1688a.png" 
+                    alt="Digital Crime Therapy" 
+                    className="rounded-[40px] shadow-2xl w-full"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute -bottom-8 -right-8 p-8 bg-white rounded-3xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
+                    <p className="text-slate-900 font-bold italic text-sm">"온라인 환경의 특수성과 심리적 제동 장치의 약화"</p>
+                  </div>
                 </div>
               </div>
+              <p className="mt-12 text-center text-slate-500 text-sm max-w-3xl mx-auto">
+                이 질문은 단순한 법적 문제를 넘어 자신의 행동을 이해하려는 과정에서 시작됩니다.
+              </p>
             </section>
 
             {/* 2. 디지털 성범죄는 단순한 환경의 문제가 아닙니다 */}
