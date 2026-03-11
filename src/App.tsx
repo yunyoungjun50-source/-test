@@ -119,7 +119,6 @@ const NAV_STRUCTURE: NavItem[] = [
     href: "/guide",
     children: [
       { title: "상담 절차", href: "/guide/process", description: "문의부터 프로그램 설계까지" },
-      { title: "비용 안내", href: "/guide/cost" },
       { title: "비밀보장 원칙", href: "/guide/privacy", description: "철저한 기록 관리 및 보안" },
       { title: "자주 묻는 질문", href: "/guide/faq" },
     ]
