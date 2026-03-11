@@ -4642,7 +4642,7 @@ const NoticePage = () => {
       className="bg-[#f7f9fb] min-h-screen"
     >
       {/* ① 상단 소개 영역 */}
-      <section className="relative py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
+      <section className="relative py-16 md:py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
         <div className="absolute inset-0 opacity-40">
           <img 
             src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/123355521f6cb02a4c959ef391321ecd.png" 
@@ -4652,17 +4652,17 @@ const NoticePage = () => {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">공지사항 안내</h1>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 break-keep">공지사항 안내</h1>
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed break-keep">
             센터 운영 안내, 교육 일정, 상담 관련 공지사항을 확인하실 수 있습니다.
           </p>
           <div className="mt-8">
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-slate-300 leading-relaxed break-keep">
               센터 운영 안내, 상담 일정, 교육 프로그램 공지 등은
-              <br />
+              <br className="hidden sm:block" />
               별도의 공지사항 페이지에서 확인하실 수 있습니다.
             </p>
-            <p className="text-base text-slate-300 leading-relaxed mt-4">
+            <p className="text-base text-slate-300 leading-relaxed mt-4 break-keep">
               최신 공지사항은 아래 링크를 통해 확인하실 수 있습니다.
             </p>
           </div>
@@ -4670,20 +4670,20 @@ const NoticePage = () => {
       </section>
 
       {/* ② 공지사항 바로가기 카드 */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-10 rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">센터 공지사항 확인</h3>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+          <div className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 break-keep">센터 공지사항 확인</h3>
+            <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-8 break-keep">
               상담 일정, 교육 프로그램 안내, 센터 운영 공지 등
-              <br />
+              <br className="hidden sm:block" />
               최신 공지사항을 확인하실 수 있습니다.
             </p>
             <a 
               href={externalNoticeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95"
+              className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 text-center"
             >
               공지사항 바로가기
             </a>
@@ -4692,49 +4692,49 @@ const NoticePage = () => {
       </section>
 
       {/* ③ 공지사항 안내 아이콘 영역 */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Monitor className="w-8 h-8" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Monitor className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">센터 운영 공지</h3>
-              <p className="text-slate-500 leading-relaxed">상담 일정 변경, 휴무 안내 등</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">센터 운영 공지</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">상담 일정 변경, 휴무 안내 등</p>
             </div>
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Calendar className="w-8 h-8" />
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Calendar className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">교육 프로그램 일정</h3>
-              <p className="text-slate-500 leading-relaxed">재범방지 교육 및 상담 프로그램 일정 안내</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">교육 프로그램 일정</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">재범방지 교육 및 상담 프로그램 일정 안내</p>
             </div>
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <MessageSquare className="w-8 h-8" />
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <MessageSquare className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">상담 관련 안내</h3>
-              <p className="text-slate-500 leading-relaxed">상담 신청 및 상담 절차 관련 공지</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">상담 관련 안내</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">상담 신청 및 상담 절차 관련 공지</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ④ 공지 이용 안내 */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">공지 이용 안내</h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6 md:mb-8 break-keep">공지 이용 안내</h2>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8 break-keep">
               센터 공지사항에는 상담 일정, 교육 프로그램, 센터 운영과 관련된 다양한 안내가 게시됩니다.
-              <br />
+              <br className="hidden sm:block" />
               공지사항은 별도의 공지 페이지에서 관리되며 최신 정보는 공지사항 페이지에서 확인하실 수 있습니다.
             </p>
             <a 
               href={externalNoticeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-lg"
+              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-base md:text-lg"
             >
               공지사항 바로가기 <ArrowRight className="w-5 h-5" />
             </a>
@@ -4743,27 +4743,27 @@ const NoticePage = () => {
       </section>
 
       {/* ⑤ 상담 문의 안내 */}
-      <section className="py-24 lg:py-32 bg-slate-50">
+      <section className="py-16 md:py-24 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">상담 문의 안내</h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6 md:mb-8 break-keep">상담 문의 안내</h2>
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-10 md:mb-12 break-keep">
             공지사항 확인 후 상담 문의가 필요한 경우,
-            <br />
+            <br className="hidden sm:block" />
             센터로 연락 주시면 안내해 드립니다.
           </p>
-          <div className="inline-flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
             <a 
               href={NAVER_PLACE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
             >
               <Calendar className="w-5 h-5" />
               예약하기
             </a>
             <a 
               href={`tel:${CONTACT_PHONE}`}
-              className="px-12 py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-95 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-95 flex items-center justify-center gap-2"
             >
               <PhoneCall className="w-5 h-5" />
               전화상담 ({CONTACT_PHONE})
@@ -4785,7 +4785,7 @@ const MediaActivityPage = () => {
       className="bg-[#f7f9fb] min-h-screen"
     >
       {/* ① 상단 소개 영역 (Hero) */}
-      <section className="relative py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
+      <section className="relative py-16 md:py-24 lg:py-32 text-white overflow-hidden bg-slate-900">
         <div className="absolute inset-0 opacity-40">
           <img 
             src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5cb3f455097954a32bb3e0d4ff55aaad.png" 
@@ -4795,19 +4795,19 @@ const MediaActivityPage = () => {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">방송 · 대외활동</h1>
-          <p className="text-xl text-slate-300 leading-relaxed max-w-3xl">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 break-keep">방송 · 대외활동</h1>
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl break-keep">
             센터의 방송 출연 및 다양한 대외활동 내용을 확인하실 수 있습니다.
           </p>
           <div className="mt-8 space-y-4">
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-slate-300 leading-relaxed break-keep">
               센터는 다양한 방송과 언론, 강연 및 교육 활동 등을 통해
-              <br />
+              <br className="hidden sm:block" />
               심리 상담과 재범 방지 교육의 중요성을 알리는 활동을 하고 있습니다.
             </p>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-slate-300 leading-relaxed break-keep">
               방송 출연 및 대외활동 관련 내용은
-              <br />
+              <br className="hidden sm:block" />
               별도의 페이지에서 확인하실 수 있습니다.
             </p>
           </div>
@@ -4815,20 +4815,20 @@ const MediaActivityPage = () => {
       </section>
 
       {/* ② 방송 / 대외활동 바로가기 카드 */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-10 rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">방송 및 대외활동 보기</h3>
-            <p className="text-lg text-slate-500 leading-relaxed mb-8">
+          <div className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[40px] shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 break-keep">방송 및 대외활동 보기</h3>
+            <p className="text-base md:text-lg text-slate-500 leading-relaxed mb-8 break-keep">
               센터의 방송 출연, 인터뷰, 강연 활동 등
-              <br />
+              <br className="hidden sm:block" />
               다양한 대외활동 내용을 확인하실 수 있습니다.
             </p>
             <a 
               href={externalMediaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95"
+              className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 text-center"
             >
               방송 / 대외활동 페이지 바로가기
             </a>
@@ -4837,49 +4837,49 @@ const MediaActivityPage = () => {
       </section>
 
       {/* ③ 활동 분야 안내 아이콘 영역 */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Monitor className="w-8 h-8" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Monitor className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">방송 출연</h3>
-              <p className="text-slate-500 leading-relaxed">TV 및 언론 인터뷰</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">방송 출연</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">TV 및 언론 인터뷰</p>
             </div>
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <GraduationCap className="w-8 h-8" />
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <GraduationCap className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">강연 및 교육 활동</h3>
-              <p className="text-slate-500 leading-relaxed">재범방지 교육 및 심리 교육</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">강연 및 교육 활동</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">재범방지 교육 및 심리 교육</p>
             </div>
-            <div className="text-center p-8 rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Users className="w-8 h-8" />
+            <div className="text-center p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-[#f7f9fb] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white text-[#1565C0] flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Users className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">전문가 활동</h3>
-              <p className="text-slate-500 leading-relaxed">심리 상담 및 연구 활동</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 break-keep">전문가 활동</h3>
+              <p className="text-slate-500 leading-relaxed break-keep">심리 상담 및 연구 활동</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ④ 활동 안내 설명 */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">활동 안내</h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6 md:mb-8 break-keep">활동 안내</h2>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8 break-keep">
               센터의 방송 및 대외활동은 심리 상담의 중요성과 건강한 사회 인식 형성을 위한 활동입니다.
-              <br />
+              <br className="hidden sm:block" />
               관련 활동 내용은 별도의 페이지에서 확인하실 수 있습니다.
             </p>
             <a 
               href={externalMediaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-lg"
+              className="inline-flex items-center gap-2 text-[#1565C0] font-bold hover:underline text-base md:text-lg"
             >
               방송 / 대외활동 페이지 바로가기 <ArrowRight className="w-5 h-5" />
             </a>
@@ -4888,18 +4888,18 @@ const MediaActivityPage = () => {
       </section>
 
       {/* ⑤ 문의 안내 */}
-      <section className="py-24 lg:py-32 bg-slate-50">
+      <section className="py-16 md:py-24 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">문의 안내</h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6 md:mb-8 break-keep">문의 안내</h2>
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-10 md:mb-12 break-keep">
             방송 인터뷰 요청, 강연 문의, 협력 문의가 필요한 경우
-            <br />
+            <br className="hidden sm:block" />
             센터로 연락 주시면 안내해 드립니다.
           </p>
-          <div className="inline-flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
             <a 
               href={`tel:${CONTACT_PHONE}`}
-              className="px-12 py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-[#1565C0] text-white font-bold rounded-2xl hover:bg-[#115599] transition-all shadow-lg shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
             >
               <PhoneCall className="w-5 h-5" />
               문의하기 ({CONTACT_PHONE})
