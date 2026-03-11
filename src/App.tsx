@@ -293,59 +293,80 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden bg-slate-50">
+  <section className="relative pt-16 pb-24 md:pt-20 md:pb-32 lg:pt-32 lg:pb-48 overflow-hidden bg-slate-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-[#4F46E5] text-sm font-bold mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-[#4F46E5] text-sm font-bold mb-6 md:mb-8">
             <ShieldCheck className="w-4 h-4" />
             성범죄 특화 심리치료 전문 기관
           </div>
-          <h1 className="text-4xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-8">
-            창원 성범죄 특화 심리 상담, <br />
-            <span className="text-[#4F46E5]">교정 치료</span> 및 전문 상담
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-[1.15] md:leading-[1.1] mb-6 md:mb-8 break-keep">
+            창원 성범죄 특화 심리상담<br />
+            <span className="text-[#4F46E5]">재범방지 교정치료 전문기관</span>
           </h1>
-          <p className="text-xl lg:text-2xl text-slate-500 font-medium leading-relaxed max-w-xl mb-12">
-            처벌 이후가 아니라, 재발을 막는 것이 진정한 해결입니다. <br className="hidden lg:block" />
-            우리는 당신의 변화를 위한 가장 객관적인 조력자가 됩니다.
-          </p>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
+            <p className="text-lg md:text-xl lg:text-2xl text-slate-600 font-medium leading-relaxed max-w-xl break-keep">
+              성범죄 사건 이후의 상담 경험이 풍부한<br className="hidden md:block" />
+              전문 심리상담 기관입니다.
+            </p>
+
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-slate-900 font-bold leading-relaxed break-keep">
+                사건 이후 가장 중요한 것은<br className="hidden sm:block" />
+                재범을 막는 변화입니다.
+              </p>
+              
+              <div className="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl space-y-4 break-keep">
+                <p>
+                  전문 심리상담과 교정 치료를 통해 문제 행동의 원인을 이해하고<br className="hidden md:block" />
+                  재범 방지를 위한 실질적인 변화를 돕습니다.
+                </p>
+                <p>
+                  또한 상담 과정과 변화를 객관적으로 기록하여<br className="hidden md:block" />
+                  양형자료 준비에도 도움을 드립니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <a 
               href={NAVER_PLACE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 bg-[#4F46E5] text-white text-lg font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-2xl shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-3"
+              className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-[#4F46E5] text-white text-base md:text-lg font-bold rounded-2xl hover:bg-[#4338ca] transition-all shadow-2xl shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3"
             >
               상담 예약하기
               <ArrowRight className="w-5 h-5" />
             </a>
-            <Link to="/legal/info" className="px-10 py-5 bg-white text-slate-900 text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center gap-2">
+            <Link to="/legal/info" className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-slate-900 text-base md:text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center justify-center gap-2">
               양형자료 안내
             </Link>
-            <Link to="/legal/education/prevention" className="px-10 py-5 bg-white text-slate-900 text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center gap-2">
+            <Link to="/legal/education/prevention" className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-slate-900 text-base md:text-lg font-bold rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:bg-slate-50 flex items-center justify-center gap-2">
               재범방지교육 안내
             </Link>
           </div>
 
-          <div className="mt-16 flex items-center gap-8 border-t border-slate-200 pt-8">
-            <div>
-              <div className="text-3xl font-bold text-slate-900">100%</div>
-              <div className="text-sm text-slate-500 font-medium">비밀보장 원칙</div>
+          <div className="mt-12 md:mt-16 flex flex-wrap items-center gap-6 md:gap-8 border-t border-slate-200 pt-8">
+            <div className="flex flex-col">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">100%</div>
+              <div className="text-xs md:text-sm text-slate-500 font-medium">비밀보장 원칙</div>
             </div>
-            <div className="w-px h-10 bg-slate-200"></div>
-            <div>
-              <div className="text-3xl font-bold text-slate-900">10+</div>
-              <div className="text-sm text-slate-500 font-medium">전문가 그룹</div>
+            <div className="hidden sm:block w-px h-10 bg-slate-200"></div>
+            <div className="flex flex-col">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">10+</div>
+              <div className="text-xs md:text-sm text-slate-500 font-medium">전문가 그룹</div>
             </div>
-            <div className="w-px h-10 bg-slate-200"></div>
-            <div>
-              <div className="text-3xl font-bold text-slate-900">24/7</div>
-              <div className="text-sm text-slate-500 font-medium">긴급 상담 지원</div>
+            <div className="hidden sm:block w-px h-10 bg-slate-200"></div>
+            <div className="flex flex-col">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">24/7</div>
+              <div className="text-xs md:text-sm text-slate-500 font-medium">긴급 상담 지원</div>
             </div>
           </div>
         </motion.div>
@@ -378,7 +399,7 @@ const Hero = () => (
               </div>
               <span className="font-bold text-slate-900 text-sm lg:text-base">신뢰와 보안</span>
             </div>
-            <p className="text-[10px] lg:text-xs text-slate-500 leading-relaxed">모든 상담 기록은 암호화되어 철저히 보호됩니다.</p>
+            <p className="text-[10px] lg:text-xs text-slate-500 leading-relaxed">상담 내용과 기록은 철저한 보안 기준에 따라 안전하게 관리됩니다.</p>
           </motion.div>
 
           <motion.div 
@@ -410,79 +431,84 @@ const Hero = () => (
 );
 
 const HomeIntro = () => (
-  <section className="py-32 bg-white overflow-hidden">
+  <section className="py-20 md:py-32 bg-white overflow-hidden">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
-        <div className="relative">
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-6 pt-12">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600" className="rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
-              <div className="p-8 bg-indigo-600 rounded-[32px] text-white">
-                <h4 className="text-3xl font-bold mb-2">10+</h4>
-                <p className="text-indigo-100 text-sm">성범죄 상담 특화 경력</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-20 md:mb-32">
+        <div className="relative order-2 lg:order-1">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="space-y-4 md:space-y-6 pt-8 md:pt-12">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600" className="rounded-[24px] md:rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
+              <div className="p-6 md:p-8 bg-indigo-600 rounded-[24px] md:rounded-[32px] text-white">
+                <h4 className="text-2xl md:text-3xl font-bold mb-2">10+</h4>
+                <p className="text-indigo-100 text-xs md:text-sm">성범죄 상담 특화 경력</p>
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="p-8 bg-slate-100 rounded-[32px]">
-                <h4 className="text-3xl font-bold text-slate-900 mb-2">1,200+</h4>
-                <p className="text-slate-500 text-sm">누적 상담 케이스</p>
+            <div className="space-y-4 md:space-y-6">
+              <div className="p-6 md:p-8 bg-slate-100 rounded-[24px] md:rounded-[32px]">
+                <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">1,200+</h4>
+                <p className="text-slate-500 text-xs md:text-sm">누적 상담 케이스</p>
               </div>
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" className="rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" className="rounded-[24px] md:rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
             </div>
           </div>
-          {/* Decorative element */}
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-indigo-50 rounded-full blur-[100px] opacity-50"></div>
         </div>
 
-        <div>
-          <span className="text-[#4F46E5] font-bold tracking-widest uppercase text-sm mb-6 block">Our Philosophy</span>
-          <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">
-            우리는 왜 <br />
-            <span className="text-[#4F46E5]">성범죄 심리</span>에 <br />
+        <div className="order-1 lg:order-2">
+          <span className="text-[#4F46E5] font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block">Our Philosophy</span>
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-slate-900 mb-8 md:mb-12 tracking-tighter leading-[1.2] md:leading-[1.1] break-keep">
+            우리는 왜 <br className="hidden md:block" />
+            <span className="text-[#4F46E5]">성범죄 심리</span>에 <br className="hidden md:block" />
             집중하는가?
           </h2>
-          <div className="space-y-8">
-            <div className="flex gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                <Zap className="w-8 h-8 text-[#4F46E5]" />
+          <div className="space-y-8 md:space-y-10">
+            <div className="flex gap-4 md:gap-6 group">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
+                <Zap className="w-6 h-6 md:w-8 md:h-8 text-[#4F46E5]" />
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">재범 방지가 최고의 피해자 보호입니다</h4>
-                <p className="text-slate-500 leading-relaxed">단순한 처벌은 일시적인 격리일 뿐입니다. 근본적인 심리 구조를 교정하여 다시는 같은 잘못을 반복하지 않게 하는 것이 우리 센터의 존재 이유입니다.</p>
+                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 break-keep">재범 방지는 가장 근본적인 피해자 보호입니다</h4>
+                <p className="text-sm md:text-base text-slate-500 leading-relaxed break-keep">
+                  단순한 처벌만으로는 문제 행동이 근본적으로 해결되지 않습니다. 문제를 일으킨 심리 구조를 이해하고 교정하여 같은 행동이 반복되지 않도록 하는 것이 우리 센터가 존재하는 이유입니다.
+                </p>
               </div>
             </div>
-            <div className="flex gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                <Users className="w-8 h-8 text-[#4F46E5]" />
+            <div className="flex gap-4 md:gap-6 group">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
+                <Users className="w-6 h-6 md:w-8 md:h-8 text-[#4F46E5]" />
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">비난보다는 변화의 가능성을 믿습니다</h4>
-                <p className="text-slate-500 leading-relaxed">우리는 내담자를 비난하는 심판자가 아닙니다. 내담자가 자신의 문제를 직시하고, 건강한 사회 구성원으로 복귀할 수 있도록 돕는 전문 가이드입니다.</p>
+                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 break-keep">우리는 변화의 가능성을 중요하게 봅니다</h4>
+                <p className="text-sm md:text-base text-slate-500 leading-relaxed break-keep">
+                  우리는 내담자를 비난하는 기관이 아닙니다. 내담자가 자신의 문제 행동을 이해하고 건강한 사회 구성원으로 복귀할 수 있도록 돕는 전문 심리 상담 기관입니다.
+                </p>
               </div>
             </div>
-            <div className="flex gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                <ShieldCheck className="w-8 h-8 text-[#4F46E5]" />
+            <div className="flex gap-4 md:gap-6 group">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
+                <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-[#4F46E5]" />
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">객관적 데이터와 임상 경험의 조화</h4>
-                <p className="text-slate-500 leading-relaxed">수많은 케이스를 통해 축적된 데이터와 고도화된 심리 평가 도구를 활용하여, 가장 효과적인 교정 솔루션을 제공합니다.</p>
+                <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 break-keep">임상 경험과 객관적 데이터 기반 상담</h4>
+                <p className="text-sm md:text-base text-slate-500 leading-relaxed break-keep">
+                  수많은 상담 사례를 통해 축적된 임상 경험과 심리 평가 도구를 활용하여 문제 행동을 분석하고 효과적인 교정 방향을 제시합니다.
+                </p>
               </div>
             </div>
           </div>
           
-          <div className="mt-12 flex items-center gap-6">
-            <Link to="/about/intro" className="px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all flex items-center gap-2">
+          <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <Link to="/about/intro" className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
               센터 소개 더보기 <ArrowRight className="w-5 h-5" />
             </Link>
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Expert" />
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Expert" className="w-full h-full object-cover" />
                 </div>
               ))}
-              <div className="w-10 h-10 rounded-full border-2 border-white bg-indigo-100 flex items-center justify-center text-[10px] font-bold text-indigo-600">
-                +12
+              <div className="w-10 h-10 rounded-full border-2 border-white bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600">
+                +10
               </div>
             </div>
           </div>
@@ -494,26 +520,26 @@ const HomeIntro = () => (
         {[
           { 
             title: "전문성", 
-            desc: "성범죄 교정 치료에 특화된 임상심리사 및 범죄심리학자들로 구성된 전문 팀이 함께합니다.",
+            desc: "성범죄 심리 교정 상담에 특화된 임상심리 및 범죄심리 전문가가 함께합니다. 문제 행동의 원인을 분석하고 재범 방지를 위한 전문 상담을 진행합니다.",
             icon: Star
           },
           { 
             title: "신뢰성", 
-            desc: "법원 및 수사기관에서 인정받는 객관적인 평가 도구와 공신력 있는 소견서를 제공합니다.",
+            desc: "객관적인 심리 평가와 상담 기록을 기반으로 전문 소견서 및 양형자료 준비를 지원합니다. 상담 과정에서 정리된 기록과 평가는 법원과 수사기관에서 비중 있는 참고 자료가 될 수 있습니다.",
             icon: ShieldCheck
           },
           { 
             title: "비밀성", 
-            desc: "철저한 익명 보장과 암호화된 기록 관리를 통해 내담자의 프라이버시를 완벽하게 보호합니다.",
+            desc: "상담 내용과 기록은 철저한 비밀 원칙에 따라 보호됩니다. 모든 상담 정보는 엄격한 기준에 따라 안전하게 관리됩니다.",
             icon: Lock
           }
         ].map((item, idx) => (
-          <div key={idx} className="p-10 rounded-[40px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-indigo-100/50 transition-all group">
-            <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <item.icon className="w-8 h-8 text-[#4F46E5]" />
+          <div key={idx} className="p-8 md:p-10 rounded-[32px] md:rounded-[40px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-indigo-100/50 transition-all group">
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform">
+              <item.icon className="w-7 h-7 md:w-8 md:h-8 text-[#4F46E5]" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
-            <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{item.title}</h3>
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed break-keep">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -601,10 +627,15 @@ const HomeExperts = () => (
               <p className="text-slate-500 text-sm leading-relaxed mb-10 font-medium">
                 {expert.desc}
               </p>
-              <button className="w-full py-5 rounded-2xl bg-slate-50 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all flex items-center justify-center gap-2">
+              <a 
+                href={NAVER_PLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-5 rounded-2xl bg-slate-50 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all flex items-center justify-center gap-2"
+              >
                 상담 예약하기
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </motion.div>
         ))}
@@ -617,9 +648,11 @@ const CoreServices = () => (
   <section className="py-24 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-20">
-        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 tracking-tight">전문 특화 프로그램</h2>
-        <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-          단순한 대화가 아닌, 과학적 근거에 기반한 구조적 개입을 통해 확실한 변화를 이끌어냅니다.
+        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">전문 특화 프로그램</h2>
+        <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed break-keep">
+          단순한 대화 상담이 아니라<br className="hidden sm:block" />
+          과학적 근거에 기반한 구조적 프로그램을 통해<br className="hidden sm:block" />
+          실질적인 변화를 돕습니다.
         </p>
       </div>
 
@@ -764,15 +797,29 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div className="col-span-1 lg:col-span-1">
-          <Link to="/" className="flex items-center gap-2 mb-6 relative z-10">
-            <Scale className="w-6 h-6 text-[#4F46E5]" />
-            <span className="text-xl font-bold text-slate-900">성범죄심리상담치료센터창원</span>
+          {/* 센터 이름 (강조된 제목) */}
+          <Link to="/" className="flex items-center gap-2 mb-8 relative z-10">
+            <Scale className="w-7 h-7 text-[#4F46E5]" />
+            <span className="text-xl font-bold text-slate-900 tracking-tight">성범죄심리상담치료센터창원</span>
           </Link>
-          <div className="text-slate-500 text-sm leading-relaxed mb-6 space-y-2">
-            <p>창원 지역 최고의 성범죄 특화 심리치료 전문 기관입니다. 철저한 비밀 보장과 전문적인 개입을 통해 재발 없는 삶을 지원합니다.</p>
-            <div className="pt-2 space-y-1">
-              <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> 경남 창원시 마산회원구 석전북11길 17 2층</p>
-              <p className="flex items-center gap-2"><PhoneCall className="w-4 h-4" /> {CONTACT_PHONE}</p>
+
+          {/* 소개 문구 (가독성 개선) */}
+          <div className="max-w-[300px] mb-8">
+            <p className="text-slate-500 text-[14px] leading-[1.8] break-keep">
+              창원 지역에서 성범죄 심리 상담과 교정 치료에 특화된 최고 수준의 전문 상담 기관입니다.
+              철저한 비밀 원칙과 체계적인 상담 과정을 통해 재범 방지를 위한 변화를 돕습니다.
+            </p>
+          </div>
+
+          {/* 주소 및 연락처 (아이콘과 수평 정렬) */}
+          <div className="space-y-3 mb-8">
+            <div className="flex items-start gap-3 text-slate-500 text-[13px]">
+              <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+              <span className="leading-relaxed">경남 창원시 마산회원구 석전북11길 17 2층</span>
+            </div>
+            <div className="flex items-center gap-3 text-slate-500 text-[13px]">
+              <PhoneCall className="w-4 h-4 text-slate-400 shrink-0" />
+              <span className="font-medium">{CONTACT_PHONE}</span>
             </div>
           </div>
           <div className="flex gap-4 relative z-10">
