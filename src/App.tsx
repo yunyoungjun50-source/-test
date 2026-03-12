@@ -312,23 +312,23 @@ const Hero = () => (
           
           <div className="space-y-6 md:space-y-8 mb-10 md:mb-12">
             <p className="text-lg md:text-xl lg:text-2xl text-slate-600 font-medium leading-relaxed max-w-xl break-keep">
-              성범죄 사건 이후의 상담 경험이 풍부한<br className="hidden md:block" />
+              성범죄 사건 이후의 상담 경험이 풍부한 <br className="hidden md:block" />
               전문 심리상담 기관입니다.
             </p>
 
             <div className="space-y-4">
               <p className="text-lg md:text-xl text-slate-900 font-bold leading-relaxed break-keep">
-                사건 이후 가장 중요한 것은<br className="hidden sm:block" />
+                사건 이후 가장 중요한 것은 <br className="hidden sm:block" />
                 재범을 막는 변화입니다.
               </p>
               
               <div className="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl space-y-4 break-keep">
                 <p>
-                  전문 심리상담과 교정 치료를 통해 문제 행동의 원인을 이해하고<br className="hidden md:block" />
+                  전문 심리상담과 교정 치료를 통해 문제 행동의 원인을 이해하고 <br className="hidden md:block" />
                   재범 방지를 위한 실질적인 변화를 돕습니다.
                 </p>
                 <p>
-                  또한 상담 과정과 변화를 객관적으로 기록하여<br className="hidden md:block" />
+                  또한 상담 과정과 변화를 객관적으로 기록하여 <br className="hidden md:block" />
                   양형자료 준비에도 도움을 드립니다.
                 </p>
               </div>
@@ -650,8 +650,8 @@ const CoreServices = () => (
       <div className="text-center mb-20">
         <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">전문 특화 프로그램</h2>
         <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed break-keep">
-          단순한 대화 상담이 아니라<br className="hidden sm:block" />
-          과학적 근거에 기반한 구조적 프로그램을 통해<br className="hidden sm:block" />
+          단순한 대화 상담이 아니라 <br className="hidden sm:block" />
+          과학적 근거에 기반한 구조적 프로그램을 통해 <br className="hidden sm:block" />
           실질적인 변화를 돕습니다.
         </p>
       </div>
@@ -4612,8 +4612,8 @@ const LegalAssessmentPage = () => {
               성심리상담과 전문가 소견서가<br />양형에 중요한 이유
             </h1>
             <p className="text-[16px] md:text-[19px] leading-[1.75] text-slate-600 max-w-[700px] mx-auto break-keep">
-              성범죄 사건 이후의 대응에서 중요한 것은 형식적인 반성이 아니라,<br className="hidden md:block" />
-              사건 이후 어떤 변화와 재발 방지 노력이 실제로 이루어지고 있는지입니다.<br className="hidden md:block" />
+              성범죄 사건 이후의 대응에서 중요한 것은 형식적인 반성이 아니라, <br className="hidden md:block" />
+              사건 이후 어떤 변화와 재발 방지 노력이 실제로 이루어지고 있는지입니다. <br className="hidden md:block" />
               전문 성심리상담과 상담 소견서는 이러한 변화를 객관적으로 설명하는 중요한 자료가 될 수 있습니다.
             </p>
               {/* Buttons removed as per request */}
