@@ -360,7 +360,7 @@ const Hero = () => (
             </div>
             <div className="hidden sm:block w-px h-10 bg-slate-200"></div>
             <div className="flex flex-col">
-              <div className="text-2xl md:text-3xl font-bold text-slate-900">10+</div>
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">20+</div>
               <div className="text-xs md:text-sm text-slate-500 font-medium">전문가 그룹</div>
             </div>
             <div className="hidden sm:block w-px h-10 bg-slate-200"></div>
@@ -399,7 +399,7 @@ const Hero = () => (
               </div>
               <span className="font-bold text-slate-900 text-sm lg:text-base">신뢰와 보안</span>
             </div>
-            <p className="text-[10px] lg:text-xs text-slate-500 leading-relaxed">상담 내용과 기록은 철저한 보안 기준에 따라 안전하게 관리됩니다.</p>
+            <p className="text-[10px] lg:text-xs text-slate-500 leading-relaxed">상담 내용과 기록은 철저한 보안 기준에 따라 안전하게 보호됩니다.</p>
           </motion.div>
 
           <motion.div 
@@ -439,13 +439,13 @@ const HomeIntro = () => (
             <div className="space-y-4 md:space-y-6 pt-8 md:pt-12">
               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600" className="rounded-[24px] md:rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
               <div className="p-6 md:p-8 bg-indigo-600 rounded-[24px] md:rounded-[32px] text-white">
-                <h4 className="text-2xl md:text-3xl font-bold mb-2">10+</h4>
+                <h4 className="text-2xl md:text-3xl font-bold mb-2">20+</h4>
                 <p className="text-indigo-100 text-xs md:text-sm">성범죄 상담 특화 경력</p>
               </div>
             </div>
             <div className="space-y-4 md:space-y-6">
               <div className="p-6 md:p-8 bg-slate-100 rounded-[24px] md:rounded-[32px]">
-                <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">1,200+</h4>
+                <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">12,000 +</h4>
                 <p className="text-slate-500 text-xs md:text-sm">누적 상담 케이스</p>
               </div>
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" className="rounded-[24px] md:rounded-[32px] shadow-xl" referrerPolicy="no-referrer" />
@@ -2109,7 +2109,7 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
           <ArrowLeft className="w-4 h-4" />
           사건유형 전체보기
         </Link>
-        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">{title} 전문 대응</h1>
+        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">창원 {title} 전문 대응</h1>
         <div className="max-w-2xl leading-relaxed">
           {slug === 'workplace' ? (
             <p className="text-2xl lg:text-3xl text-slate-300 font-medium">
@@ -2279,7 +2279,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
           <ArrowLeft className="w-4 h-4" />
           상담/치료 전체보기
         </Link>
-        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">{title} 프로그램</h1>
+        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">창원 {title} 프로그램</h1>
         <p className="text-xl text-indigo-100 max-w-2xl leading-relaxed">
           단순한 억제가 아닌, 행동의 근본 원인을 분석하고 심리적 루프를 해체하는 전문 치료 과정입니다.
         </p>
@@ -2985,7 +2985,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
               전문가 칼럼: 성범죄 재범방지 교육의 중요성
             </motion.div>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 tracking-tight leading-[1.25] max-w-[800px] mx-auto break-keep [text-wrap:balance]">
-              성범죄 재범방지 교육이 중요한 이유 : <br className="hidden sm:block" />
+              창원 성범죄 재범방지 교육이 중요한 이유 : <br className="hidden sm:block" />
               단순한 절차가 아니라 <span className="text-indigo-400">‘변화의 증거’</span>입니다
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -3187,7 +3187,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
         {/* 1. 상단 인트로 영역 */}
         <header className="bg-slate-50 py-20 lg:py-28 text-center border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tight">준법정신 강화 교육 프로그램</h1>
+            <h1 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tight">창원 준법정신 강화 교육 프로그램</h1>
             <p className="text-xl lg:text-2xl font-bold text-slate-800 mb-6 leading-tight">
               준법정신 강화 교육은 자신의 행동이 사회와 타인에게 어떤 영향을 미칠 수 있는지 이해하고 책임 있는 선택을 할 수 있도록 돕는 교육 과정입니다.
             </p>
@@ -3380,7 +3380,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
         <header className="bg-slate-50 py-[110px] px-6 text-center border-b border-slate-100">
           <div className="max-w-[860px] mx-auto">
             <h1 className="text-[34px] md:text-[52px] font-bold text-slate-900 mb-[36px] leading-[1.2] tracking-tight max-w-[700px] mx-auto break-keep">
-              성차별 인식 교육 프로그램
+              창원 성차별 인식 교육 프로그램
             </h1>
             <div className="flex flex-col items-center">
               <p className="text-[16px] md:text-[19px] leading-[1.75] text-slate-700 max-w-[680px] mb-[24px] break-keep">
@@ -3564,7 +3564,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
         {/* 1. 상단 인트로 영역 */}
         <header className="bg-slate-50 py-20 lg:py-28 text-center border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tight">성인지 왜곡 교정 교육</h1>
+            <h1 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tight">창원 성인지 왜곡 교정 교육</h1>
             <p className="text-xl lg:text-2xl font-bold text-slate-800 mb-6 leading-tight">
               성인지 왜곡 교정 교육은 성과 관계에 대한 잘못된 인식 구조를 점검하고 행동 판단 과정에 영향을 미치는 사고 패턴을 교정하는 교육입니다.
             </p>
@@ -3725,7 +3725,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
               재범방지 교육 · 관계 인식 교육 · 성인지 감수성 교육
             </p>
             <h1 className="text-[34px] md:text-[52px] font-bold text-slate-900 mb-[28px] leading-[1.2] tracking-tight max-w-[620px] mx-auto break-keep">
-              성인지 감수성 교육
+              창원 성인지 감수성 교육
             </h1>
             <div className="flex flex-col items-center">
               <p className="text-[18px] md:text-[22px] font-medium leading-[1.6] text-slate-800 max-w-[720px] mb-[28px] break-keep">
@@ -3940,7 +3940,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
     >
       <div className="bg-slate-50 py-12 lg:py-24 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">{title}</h1>
+          <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">창원 {title}</h1>
           <p className="text-lg text-slate-500">{content.subtitle}</p>
         </div>
       </div>
@@ -4019,7 +4019,7 @@ const CoachingPage = () => (
           <PenTool className="w-5 h-5" />
           진정성 있는 반성을 위한 전문 가이드
         </motion.div>
-        <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">반성문 코칭</h1>
+        <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">창원 반성문 코칭</h1>
         <p className="text-xl text-slate-400 leading-relaxed">
           단순한 사과가 아닌, 책임 인식을 바탕으로 한 진실된 고백을 돕습니다.
         </p>
@@ -4137,7 +4137,7 @@ const CollaborationPage = () => (
             법적 절차를 이해하는 성범죄 사건 전문 심리상담
           </motion.div>
           <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight leading-tight">
-            변호사 협업 상담 시스템
+            창원 변호사 협업 상담 시스템
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed">
             성범죄 사건은 일반적인 심리 상담과 다르게 수사 절차와 법적 상황이 함께 진행되는 특수한 사건입니다. 본 센터는 사건 상담 경험과 법적 절차에 대한 높은 이해를 바탕으로, 변호사와 협업하는 상담 시스템을 운영하고 있습니다.
@@ -4367,7 +4367,7 @@ const LegalPage = () => (
           <ShieldCheck className="w-5 h-5" />
           성범죄 사건 심리상담 및 양형자료 지원 서비스 안내
         </motion.div>
-        <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">법원·검찰 제출용 양형자료</h1>
+        <h1 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tight">창원 법원·검찰 제출용 양형자료</h1>
         <p className="text-xl text-slate-400 leading-relaxed">
           심리치료는 당신의 진지한 반성과 재범 방지 의지를 입증하는 객관적인 증거입니다.
         </p>
@@ -4609,7 +4609,7 @@ const LegalAssessmentPage = () => {
               전문 성심리상담 · 재범방지 교육 · 법원 제출 상담 소견서
             </p>
             <h1 className="text-[32px] md:text-[54px] lg:text-[58px] font-bold md:font-extrabold leading-[1.18] md:leading-[1.24] tracking-tight text-slate-900 mb-[30px] max-w-[760px] mx-auto break-keep">
-              성심리상담과 전문가 소견서가<br />양형에 중요한 이유
+              창원 성심리상담과 전문가 소견서가<br />양형에 중요한 이유
             </h1>
             <p className="text-[16px] md:text-[19px] leading-[1.75] text-slate-600 max-w-[700px] mx-auto break-keep">
               성범죄 사건 이후의 대응에서 중요한 것은 형식적인 반성이 아니라, <br className="hidden md:block" />
@@ -5636,7 +5636,7 @@ const FAQ_DATA = [
   },
   {
     q: "Q10. 상담 기록은 어떻게 관리되나요?",
-    a: "상담 기록은 상담 윤리 기준에 따라 안전하게 보관됩니다. 필요한 경우 내담자의 동의 하에 상담 참여 사실이나 상담 과정에 대한 전문가 의견이 정리될 수 있습니다."
+    a: "상담 기록은 상담 윤리 기준과 개인정보 보호 원칙에 따라 철저히 비밀로 관리됩니다. 상담 내용은 외부에 공개되지 않으며, 센터 내규에 따라 일정 기간 경과 후 안전하게 폐기됩니다. 내담자의 개인정보와 상담 내용 보호를 최우선으로 관리하고 있습니다."
   },
   {
     q: "Q11. 상담을 받는 사람들이 실제로 많나요?",
@@ -8285,7 +8285,7 @@ const Home = () => (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">사건 유형별 전문 대응</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">창원 사건 유형별 전문 대응</h2>
           <p className="text-slate-500">각 사건의 특수성을 고려한 맞춤형 심리 개입 프로그램을 제공합니다.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
